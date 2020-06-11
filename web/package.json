@@ -1,0 +1,19 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.9.0",
+    "@redwoodjs/auth": "^0.10.0",
+    "@redwoodjs/router": "^0.10.0",
+    "@redwoodjs/web": "^0.10.0",
+    "magic-sdk": "^2.0.0",
+    "netlify-identity-widget": "^1.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
