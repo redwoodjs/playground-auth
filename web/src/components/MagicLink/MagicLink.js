@@ -41,7 +41,7 @@ const MagicLinkUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={m} type="magic.link">
+    <AuthProvider client={m} type="magicLink">
       <MagicLinkUserTools />
     </AuthProvider>
   )
