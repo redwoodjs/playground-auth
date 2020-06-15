@@ -2,6 +2,7 @@ import { useAuth } from '@redwoodjs/auth'
 
 const Auth0 = () => {
   const {
+    loading,
     logIn,
     logOut,
     isAuthenticated,
@@ -9,6 +10,10 @@ const Auth0 = () => {
     currentUser,
     type,
   } = useAuth()
+
+  if (loading) {
+    return 'Loading...'
+  }
 
   return (
     <>
