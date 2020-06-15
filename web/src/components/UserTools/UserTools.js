@@ -1,7 +1,14 @@
 import { useAuth } from '@redwoodjs/auth'
 
 const Auth0 = () => {
-  const { logIn, logOut, isAuthenticated, currentUser, type } = useAuth()
+  const {
+    logIn,
+    logOut,
+    isAuthenticated,
+    userMetadata,
+    currentUser,
+    type,
+  } = useAuth()
 
   return (
     <>
@@ -15,7 +22,17 @@ const Auth0 = () => {
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
       <br />
-      <code>{JSON.stringify(currentUser, 2)}</code>
+      <code>
+        userMetaData:
+        <br />
+        {JSON.stringify(userMetadata, 2)}
+      </code>
+      <br />
+      <code>
+        currentUser:
+        <br />
+        {JSON.stringify(currentUser, 2)}
+      </code>
     </>
   )
 }

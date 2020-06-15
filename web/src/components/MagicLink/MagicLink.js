@@ -6,7 +6,14 @@ const m = new Magic('pk_test_3471FA4515E86534')
 
 const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
-  const { logIn, logOut, isAuthenticated, currentUser, type } = useAuth()
+  const {
+    logIn,
+    logOut,
+    isAuthenticated,
+    currentUser,
+    userMetadata,
+    type,
+  } = useAuth()
 
   return (
     <>
@@ -22,7 +29,6 @@ const MagicLinkUserTools = () => {
         <button
           disabled={!email.length}
           onClick={async () => {
-            console.log(email)
             if (!isAuthenticated && email.length) {
               await logIn({ email })
             } else {
@@ -34,7 +40,17 @@ const MagicLinkUserTools = () => {
         </button>
       </form>
       <br />
-      <code>{JSON.stringify(currentUser, 2)}</code>
+      <code>
+        userMetaData:
+        <br />
+        {JSON.stringify(userMetadata, 2)}
+      </code>
+      <br />
+      <code>
+        currentUser:
+        <br />
+        {JSON.stringify(currentUser, 2)}
+      </code>
     </>
   )
 }

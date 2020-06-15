@@ -2,6 +2,7 @@ import UserTools from 'src/components/UserTools'
 import Auth0 from 'src/components/Auth0'
 import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
+import Firebase from 'src/components/Firebase'
 
 const HomePage = () => {
   return (
@@ -18,6 +19,9 @@ const HomePage = () => {
         <UserTools />
       </Netlify>
       <MagicLink />
+      <Firebase>
+        <UserTools />
+      </Firebase>
     </div>
   )
 }
