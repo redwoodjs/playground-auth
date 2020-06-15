@@ -1,6 +1,7 @@
 [build]
-  command = "yarn rw build web"
+  command = "yarn rw build api && yarn rw build web"
   publish = "web/dist"
+  functions = "api/dist/functions"
 
 [dev]
   command = "yarn rw dev"
