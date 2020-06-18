@@ -8,7 +8,7 @@
 import { AuthenticationError } from '@redwoodjs/api'
 
 //
-export const getCurrentUser = async (token) => {
+export const getCurrentUser = async (_token) => {
   return {
     hello: 'I come from the `getCurrentUser` function on the api side.',
   }
