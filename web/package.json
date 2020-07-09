@@ -7,9 +7,9 @@
   ],
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.9.0",
-    "@redwoodjs/auth": "^0.10.1-canary.8",
-    "@redwoodjs/router": "^0.10.1-canary.8",
-    "@redwoodjs/web": "^0.10.1-canary.8",
+    "@redwoodjs/auth": "^0.12.1-canary.25",
+    "@redwoodjs/router": "^0.12.1-canary.25",
+    "@redwoodjs/web": "^0.12.1-canary.25",
     "firebase": "^7.15.1",
     "magic-sdk": "^2.0.0",
     "netlify-identity-widget": "^1.6.0",
