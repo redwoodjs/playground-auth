@@ -21,7 +21,7 @@ const Auth0 = () => {
   }
 
   return (
-    <>
+    <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
       <button
@@ -50,7 +50,7 @@ const Auth0 = () => {
         <br />
         {JSON.stringify(currentUser, 2)}
       </code>
-    </>
+    </div>
   )
 }
 
