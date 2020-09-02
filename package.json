@@ -7,7 +7,8 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.16.0",
+    "@redwoodjs/core": "^0.16.1-canary.52",
+    "lodash-decorators": "^6.0.1",
     "netlify-plugin-prisma-provider": "^0.3.0"
   },
   "eslintConfig": {

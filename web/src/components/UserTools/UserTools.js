@@ -5,11 +5,16 @@ const Auth0 = () => {
     loading,
     logIn,
     logOut,
+    signUp,
     isAuthenticated,
     userMetadata,
     currentUser,
     type,
   } = useAuth()
+
+  const logInOptions = {}
+  const logOutOptions = {}
+  const signUpOptions = {}
 
   if (loading) {
     return 'Loading...'
@@ -21,10 +26,17 @@ const Auth0 = () => {
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
       <button
         onClick={() => {
-          isAuthenticated ? logOut() : logIn()
+          isAuthenticated ? logOut(logOutOptions) : logIn(logInOptions)
         }}
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
+      </button>
+      <button
+        onClick={() => {
+          signUp(signUpOptions)
+        }}
+      >
+        Sign Up
       </button>
       <br />
       <code>
