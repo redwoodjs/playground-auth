@@ -22,7 +22,7 @@ Set site
 ### Magic.link
 
 ```
-MAGIC_API_KEY=""
+MAGIC_SECRET_KEY=""
 ```
 
 ### Fierebase

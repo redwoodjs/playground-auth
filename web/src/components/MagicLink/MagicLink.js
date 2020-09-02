@@ -2,11 +2,10 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
-const m = new Magic(process.env.MAGIC_API_KEY)
+const m = new Magic(process.env.MAGIC_SECRET_KEY)
 
 const MagicLinkUserTools = () => {
-  const [logInEmail, setLogInEmail] = useState('')
-  const [signUpEmail, setSignUpEmail] = useState('')
+  const [email, setemail] = useState('')
 
   const {
     logIn,
@@ -27,13 +26,13 @@ const MagicLinkUserTools = () => {
           type="email"
           placeholder="email address"
           required
-          onChange={(e) => setLogInEmail(e.target.value)}
+          onChange={(e) => setemail(e.target.value)}
         />
         <button
-          disabled={!logInEmail.length && !isAuthenticated}
+          disabled={!email.length && !isAuthenticated}
           onClick={async () => {
-            if (!isAuthenticated && logInEmail.length) {
-              await logIn({ email: logInEmail })
+            if (!isAuthenticated && email.length) {
+              await logIn({ email })
             } else {
               await logOut()
             }
@@ -41,26 +40,19 @@ const MagicLinkUserTools = () => {
         >
           {isAuthenticated ? 'Log Out' : 'Log In'}
         </button>
-      </form>
-      <form action="#">
-        <input
-          type="email"
-          placeholder="email address"
-          required
-          onChange={(e) => setSignUpEmail(e.target.value)}
-        />
-        <button
-          disabled={!signUpEmail.length && !isAuthenticated}
-          onClick={async () => {
-            if (!isAuthenticated && signUpEmail.length) {
-              await signUp({ email: signUpEmail })
-            } else {
-              await logOut()
-            }
-          }}
-        >
-          {isAuthenticated ? 'Log Out' : 'Sign Up'}
-        </button>
+
+        {!isAuthenticated && (
+          <button
+            disabled={!email.length && !isAuthenticated}
+            onClick={async () => {
+              if (!isAuthenticated && email.length) {
+                await signUp({ email: email })
+              }
+            }}
+          >
+            Sign Up
+          </button>
+        )}
       </form>
       <br />
       <code>
