@@ -31,13 +31,15 @@ const Auth0 = () => {
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
-      <button
-        onClick={() => {
-          signUp(signUpOptions)
-        }}
-      >
-        Sign Up
-      </button>
+      {!isAuthenticated && (
+        <button
+          onClick={() => {
+            signUp(signUpOptions)
+          }}
+        >
+          Sign Up
+        </button>
+      )}
       <br />
       <code>
         userMetaData:
