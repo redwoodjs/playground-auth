@@ -5,7 +5,7 @@ import { useState } from 'react'
 const m = new Magic(process.env.MAGIC_SECRET_KEY)
 
 const MagicLinkUserTools = () => {
-  const [email, setemail] = useState('')
+  const [email, setEmail] = useState('')
 
   const {
     logIn,
@@ -26,7 +26,7 @@ const MagicLinkUserTools = () => {
           type="email"
           placeholder="email address"
           required
-          onChange={(e) => setemail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <button
           disabled={!email.length && !isAuthenticated}
