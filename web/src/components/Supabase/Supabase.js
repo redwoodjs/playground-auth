@@ -57,6 +57,8 @@ const SupabaseUserTools = () => {
               resetForm()
             } catch (e) {
               console.log(e)
+              const supabaseError = JSON.parse(e.message)
+              alert(supabaseError.error_description)
             }
           } else {
             await logOut()
@@ -72,8 +74,11 @@ const SupabaseUserTools = () => {
             if (!isAuthenticated && email.length && password.length) {
               try {
                 await signUp({ email, password })
+
                 resetForm()
               } catch (e) {
+                const supabaseError = JSON.parse(e.message)
+                alert(supabaseError.msg)
                 console.log(e)
               }
             }
