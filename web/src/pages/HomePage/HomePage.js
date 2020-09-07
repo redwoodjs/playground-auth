@@ -14,7 +14,11 @@ const HomePage = () => {
         supports.
       </p>
       <Auth0>
-        <UserTools />
+        <UserTools
+          logOutOptions={{
+            returnTo: process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
+          }}
+        />
       </Auth0>
       <Netlify>
         <UserTools />

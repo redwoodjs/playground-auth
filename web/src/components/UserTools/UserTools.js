@@ -1,6 +1,10 @@
 import { useAuth } from '@redwoodjs/auth'
 
-const Auth0 = () => {
+const UserTools = ({
+  logInOptions = {},
+  logOutOptions = {},
+  signUpOptions = {},
+}) => {
   const {
     loading,
     logIn,
@@ -11,10 +15,6 @@ const Auth0 = () => {
     currentUser,
     type,
   } = useAuth()
-
-  const logInOptions = {}
-  const logOutOptions = {}
-  const signUpOptions = {}
 
   if (loading) {
     return 'Loading...'
@@ -56,4 +56,4 @@ const Auth0 = () => {
   )
 }
 
-export default Auth0
+export default UserTools
