@@ -1,10 +1,15 @@
 import { useAuth } from '@redwoodjs/auth'
 
-const Auth0 = () => {
+const UserTools = ({
+  logInOptions = {},
+  logOutOptions = {},
+  signUpOptions = {},
+}) => {
   const {
     loading,
     logIn,
     logOut,
+    signUp,
     isAuthenticated,
     userMetadata,
     currentUser,
@@ -16,16 +21,25 @@ const Auth0 = () => {
   }
 
   return (
-    <>
+    <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
       <button
         onClick={() => {
-          isAuthenticated ? logOut() : logIn()
+          isAuthenticated ? logOut(logOutOptions) : logIn(logInOptions)
         }}
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
+      {!isAuthenticated && (
+        <button
+          onClick={() => {
+            signUp(signUpOptions)
+          }}
+        >
+          Sign Up
+        </button>
+      )}
       <br />
       <code>
         userMetaData:
@@ -38,8 +52,8 @@ const Auth0 = () => {
         <br />
         {JSON.stringify(currentUser, 2)}
       </code>
-    </>
+    </div>
   )
 }
 
-export default Auth0
+export default UserTools

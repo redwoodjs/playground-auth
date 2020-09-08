@@ -2,13 +2,15 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
-const m = new Magic('pk_test_3471FA4515E86534')
+const m = new Magic(process.env.MAGIC_SECRET_KEY)
 
 const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
+
   const {
     logIn,
     logOut,
+    signUp,
     isAuthenticated,
     currentUser,
     userMetadata,
@@ -16,7 +18,7 @@ const MagicLinkUserTools = () => {
   } = useAuth()
 
   return (
-    <>
+    <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
       <form action="#">
@@ -27,10 +29,10 @@ const MagicLinkUserTools = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
-          disabled={!email.length}
+          disabled={!email.length && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length) {
-              await logIn({ email })
+              await logIn({ email, showUI: true })
             } else {
               await logOut()
             }
@@ -38,6 +40,19 @@ const MagicLinkUserTools = () => {
         >
           {isAuthenticated ? 'Log Out' : 'Log In'}
         </button>
+
+        {!isAuthenticated && (
+          <button
+            disabled={!email.length && !isAuthenticated}
+            onClick={async () => {
+              if (!isAuthenticated && email.length) {
+                await signUp({ email, showUI: true })
+              }
+            }}
+          >
+            Sign Up
+          </button>
+        )}
       </form>
       <br />
       <code>
@@ -51,7 +66,7 @@ const MagicLinkUserTools = () => {
         <br />
         {JSON.stringify(currentUser, 2)}
       </code>
-    </>
+    </div>
   )
 }
 

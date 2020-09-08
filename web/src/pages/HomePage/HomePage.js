@@ -3,6 +3,7 @@ import Auth0 from 'src/components/Auth0'
 import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
+import Supabase from 'src/components/Supabase'
 
 const HomePage = () => {
   return (
@@ -13,7 +14,11 @@ const HomePage = () => {
         supports.
       </p>
       <Auth0>
-        <UserTools />
+        <UserTools
+          logOutOptions={{
+            returnTo: process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
+          }}
+        />
       </Auth0>
       <Netlify>
         <UserTools />
@@ -22,6 +27,9 @@ const HomePage = () => {
       <Firebase>
         <UserTools />
       </Firebase>
+      <Supabase>
+        <UserTools />
+      </Supabase>
     </div>
   )
 }
