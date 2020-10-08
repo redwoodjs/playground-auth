@@ -2578,10 +2578,10 @@
     lodash.omitby "^4.6.0"
     merge-graphql-schemas "^1.7.6"
 
-"@redwoodjs/auth@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-0.18.0.tgz#86ac1f18a15a9018cb7ec0bc00c1e5586a006383"
-  integrity sha512-HCa7TZjKGabZBw0fFa+RH6xCnwReXEtgsOlqGL9FL9e4YG6vqi1jeKxoN9+4m3Fbu+HuWzabvVzmvpjFMxCLDg==
+"@redwoodjs/auth@^0.19.2":
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-0.19.2.tgz#b94b5240c2d88701d9a0b8b015f38e60685f9ac4"
+  integrity sha512-S8U+g7HuIO14jgrMBoNkfok2sA1MqNC4esJtGvdxZpDCBOSvjCiu/DCAL9vXUpU7W4n1h0m9a915jupxmzZtbQ==
 
 "@redwoodjs/cli@^0.18.0":
   version "0.18.0"
@@ -11567,6 +11567,13 @@ ms@2.1.2, ms@^2.1.1, ms@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+
+msal@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/msal/-/msal-1.4.1.tgz#06dfad9e413ccc7ceaaf3b4378814e00425e7c2a"
+  integrity sha512-FnRHbE7U7MoG5BAupupRP/0Zurvzc9OnZFiH6n9YeM9anRPYhur/gX87Gxw+DpM46kSoLHyKNtEN3U46fQw/8w==
+  dependencies:
+    tslib "^1.9.3"
 
 msw@^0.20.0:
   version "0.20.5"

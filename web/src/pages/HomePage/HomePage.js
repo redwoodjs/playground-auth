@@ -1,5 +1,6 @@
 import UserTools from 'src/components/UserTools'
 import Auth0 from 'src/components/Auth0'
+import AzureAd from 'src/components/AzureAd'
 import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
@@ -20,6 +21,9 @@ const HomePage = () => {
           }}
         />
       </Auth0>
+      <AzureAd>
+        <UserTools />
+      </AzureAd>
       <Netlify>
         <UserTools />
       </Netlify>
