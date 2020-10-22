@@ -11634,13 +11634,6 @@ netlify-identity-widget@^1.6.0:
   resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.6.0.tgz#35f89f802311ad45ff6fdb271167429192ec0aad"
   integrity sha512-TcZLl0bWCyudCOThskOGyAhBqy1zRmBLbLWpyOmnK/8Vf5+6UwPwTVl71muWwybRoSFlSyc5Qyu+c4D5sBLSDA==
 
-netlify-plugin-prisma-provider@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/netlify-plugin-prisma-provider/-/netlify-plugin-prisma-provider-0.3.0.tgz#8b56ddf35c350583b6265a5579fe7921a5e13843"
-  integrity sha512-o4rnxWNHDg1yJGnpKAtMX5eGgazkuKru+Qa13+t/SIxg2wmMXvnMvkzXB5kd5LnAov0bODT7DIQrHA2k5wiMCQ==
-  dependencies:
-    glob "^7.1.6"
-
 new-github-issue-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/new-github-issue-url/-/new-github-issue-url-0.2.1.tgz#e17be1f665a92de465926603e44b9f8685630c1d"

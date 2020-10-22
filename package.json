@@ -8,8 +8,7 @@
   },
   "devDependencies": {
     "@redwoodjs/core": "^0.19.3",
-    "lodash-decorators": "^6.0.1",
-    "netlify-plugin-prisma-provider": "^0.3.0"
+    "lodash-decorators": "^6.0.1"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config"
