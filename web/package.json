@@ -11,11 +11,15 @@
     "@redwoodjs/router": "^0.18.0",
     "@redwoodjs/web": "^0.18.0",
     "@supabase/supabase-js": "^0.36.5",
+    "fb-sdk-wrapper": "^1.1.0",
     "firebase": "^7.15.1",
     "magic-sdk": "^2.0.0",
     "netlify-identity-widget": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/facebook-js-sdk": "^3.3.1"
   }
 }

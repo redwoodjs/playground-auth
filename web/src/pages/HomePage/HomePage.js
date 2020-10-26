@@ -4,6 +4,7 @@ import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
+import Facebook from "src/components/Facebook/Facebook";
 
 const HomePage = () => {
   return (
@@ -30,6 +31,7 @@ const HomePage = () => {
       <Supabase>
         <UserTools />
       </Supabase>
+      <Facebook/>
     </div>
   )
 }
