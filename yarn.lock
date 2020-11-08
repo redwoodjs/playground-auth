@@ -21,6 +21,26 @@
     tslib "^1.10.0"
     zen-observable "^0.8.14"
 
+"@apollo/client@^3.1.5":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.2.4.tgz#d9a308a900bd9e7053348367f66f3962804ed385"
+  integrity sha512-lfsxKINoc11+g4NQFyKFuxszc/GlecHrxkJYvx/oWkdpscSU5bm/c+BwI/yvk1/E3yfbR7Afi9XIYrt212xrtA==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.0.0"
+    "@types/zen-observable" "^0.8.0"
+    "@wry/context" "^0.5.2"
+    "@wry/equality" "^0.2.0"
+    fast-json-stable-stringify "^2.0.0"
+    graphql-tag "^2.11.0"
+    hoist-non-react-statics "^3.3.2"
+    optimism "^0.13.0"
+    prop-types "^15.7.2"
+    symbol-observable "^2.0.0"
+    terser "^5.2.0"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+    zen-observable "^0.8.14"
+
 "@apollo/protobufjs@^1.0.3":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@apollo/protobufjs/-/protobufjs-1.0.5.tgz#a78b726147efc0795e74c8cb8a11aafc6e02f773"
@@ -1512,6 +1532,7 @@
     graphql-tools "5.0.0"
     tslib "1.11.1"
 
+<<<<<<< main
 "@graphql-tools/batch-delegate@^6.2.4":
   version "6.2.6"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-delegate/-/batch-delegate-6.2.6.tgz#fbea98dc825f87ef29ea5f3f371912c2a2aa2f2c"
@@ -1549,10 +1570,40 @@
     "@ardatan/aggregate-error" "0.0.6"
     "@graphql-tools/schema" "^6.2.4"
     "@graphql-tools/utils" "^6.2.4"
+=======
+"@graphql-tools/batch-delegate@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/batch-delegate/-/batch-delegate-6.2.2.tgz#f81026796f5e953eede7d460d45019d02bf79ea5"
+  integrity sha512-xXJKVvBxafdn9tVWe3oJreTHuFAKWblw4zK0KvKhEVJOjPytKweGCZI3kTs9hdmjgPz1ZjSQEVvgmZJ0GubrWA==
+  dependencies:
+    "@graphql-tools/delegate" "6.2.2"
+    dataloader "2.0.0"
+    tslib "~2.0.1"
+
+"@graphql-tools/code-file-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/code-file-loader/-/code-file-loader-6.2.2.tgz#9640a4e593ab4aa91b05adb0968ec8aeea969264"
+  integrity sha512-2EDdgNR2fu1aKnU77jpkfwuUNOOZjBe6VQW/hI//GSVK5AYh+a/zm2vusAwdJQdC4yt2A1zEY8095bk4i9XD7w==
+  dependencies:
+    "@graphql-tools/graphql-tag-pluck" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    fs-extra "9.0.1"
+    tslib "~2.0.1"
+
+"@graphql-tools/delegate@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-6.2.2.tgz#3c401a06f6f7c3ef068d78217bde5e9b7b3830a0"
+  integrity sha512-8VycfZYQ+m4HgajewQT6v6BzAEFxc6mh6rO+uqewnvh143nvv3ud4nXEAfOddUm0PrE6iD3Ng2BZtPSWF5mt+w==
+  dependencies:
+    "@ardatan/aggregate-error" "0.0.6"
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     dataloader "2.0.0"
     is-promise "4.0.0"
     tslib "~2.0.1"
 
+<<<<<<< main
 "@graphql-tools/delegate@^7.0.0", "@graphql-tools/delegate@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-7.0.1.tgz#dd8651394b10b826f3a7f61cf1722d201a986e46"
@@ -1604,19 +1655,67 @@
     "@babel/traverse" "7.12.1"
     "@babel/types" "7.12.1"
     "@graphql-tools/utils" "^7.0.0"
+=======
+"@graphql-tools/git-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/git-loader/-/git-loader-6.2.2.tgz#6e2fe4e5853b90a3096dc88d9827f3d4b47c16d9"
+  integrity sha512-gfhQX5ZQ7nc4AAW6tT0s2d0o2lkYtMMhaeX4miPMGd+Hgej1phLrIeSSEAfrlSy0JWgARmmsoXGuz76wDZdhjw==
+  dependencies:
+    "@graphql-tools/graphql-tag-pluck" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    tslib "~2.0.1"
+
+"@graphql-tools/github-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/github-loader/-/github-loader-6.2.2.tgz#6d0bf63e5dd0319c47cfb0cd52e2b6632e7bb7da"
+  integrity sha512-tPUWfD8Dwc2YuiO8WtMg9rtsnq1tyfk8NEfjwxqe7cKwyEKRb8ybRURT/acwEroAgENc3Jwa3cgju+OJCbw4pQ==
+  dependencies:
+    "@graphql-tools/graphql-tag-pluck" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    cross-fetch "3.0.5"
+    tslib "~2.0.1"
+
+"@graphql-tools/graphql-file-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/graphql-file-loader/-/graphql-file-loader-6.2.2.tgz#88e9d41f8fb1aac7f9f486cb61fbdb6bdc18d6f6"
+  integrity sha512-dKuOk4vH2WWzVGydL13FjdR3WEmJHMoud3MXF9uyvLcjuDm9L0r+PdSI1PSPiCYs7Ii2bJ8zgmdz32jCBHZszA==
+  dependencies:
+    "@graphql-tools/import" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    fs-extra "9.0.1"
+    tslib "~2.0.1"
+
+"@graphql-tools/graphql-tag-pluck@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/graphql-tag-pluck/-/graphql-tag-pluck-6.2.2.tgz#b6c2ef7fe04c58a3ef242926e0b7b7845e555b68"
+  integrity sha512-KH6QoJYo3WXtc4+3e2oTfm627oszRGsKVpMF7A0IvtiVUU0XxoXLAjmJBlNrGN/PdqpBDPEVSdz2VLX2eDkokw==
+  dependencies:
+    "@babel/parser" "7.11.5"
+    "@babel/traverse" "7.11.5"
+    "@babel/types" "7.11.5"
+    "@graphql-tools/utils" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     tslib "~2.0.1"
   optionalDependencies:
     vue-template-compiler "^2.6.12"
 
+<<<<<<< main
 "@graphql-tools/import@^6.2.4":
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/@graphql-tools/import/-/import-6.2.4.tgz#0547f6d4754a924e80439d6af013577cdb617194"
   integrity sha512-Q6fk6hbtDevoEVcgwb3WRn7XOqGY4MnX3Mvc+x8/b8k4RZ4wT+0WSLRDXGAKiVKRxGhgouU2lZVnGE/LDrGSCg==
+=======
+"@graphql-tools/import@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/import/-/import-6.2.2.tgz#5f5341ff419851c1d2cf18d10d48abbb7763902e"
+  integrity sha512-fxQx+960CBzG6+MGGRaWv9tQ71ir2NZQeVC2dfieQLv5/LXH0fqKe9ltYCfJFskscAmzWeuS19Sibhdn0JMecw==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     fs-extra "9.0.1"
     resolve-from "5.0.0"
     tslib "~2.0.1"
 
+<<<<<<< main
 "@graphql-tools/json-file-loader@^6.2.4":
   version "6.2.5"
   resolved "https://registry.yarnpkg.com/@graphql-tools/json-file-loader/-/json-file-loader-6.2.5.tgz#1357d2efd2f416f44e0dd717da06463c29adbf60"
@@ -1632,6 +1731,23 @@
   integrity sha512-XeGDioW7F+HK6HHD/zCeF0HRC9s12NfOXAKv1HC0J7D50F4qqMvhdS/OkjzLoBqsgh/Gm8icRc36B5s0rOA9ig==
   dependencies:
     "@graphql-tools/utils" "^7.0.0"
+=======
+"@graphql-tools/json-file-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/json-file-loader/-/json-file-loader-6.2.2.tgz#d411a0195797a47028a97101a7c8059679364011"
+  integrity sha512-m/gKQGJS+4bUy/8v0uup3su9RcCLdWvmhYW9+J8WDSzDE2QEdYQMeyDFYV14x0r92IhRpftLd//JvoE3cTV5Kg==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+    fs-extra "9.0.1"
+    tslib "~2.0.1"
+
+"@graphql-tools/links@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/links/-/links-6.2.2.tgz#cf3620b6b68f48137637f7eee73eb0274dcda924"
+  integrity sha512-x1B75Flc10PSmF1hzar1kty9q9wfWjlwlPXYC5AYGmRIVfzbZui3SEZcEPP8cviedBCI84l9O+dX5S4dE2Oz6Q==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     apollo-link "1.2.14"
     apollo-upload-client "14.1.2"
     cross-fetch "3.0.6"
@@ -1639,16 +1755,24 @@
     is-promise "4.0.0"
     tslib "~2.0.1"
 
+<<<<<<< main
 "@graphql-tools/load-files@^6.2.4":
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/@graphql-tools/load-files/-/load-files-6.2.4.tgz#17a6c10791d040da31458c8cfe70b187b13f169f"
   integrity sha512-uQt8Bbd1WC8yewjChnvtxFdSw4reOM1B4MN17EzQr4Bw0nqp5LKXWfte0Y8ienS8MrGgjCUma1GWLKxvmRdTWQ==
+=======
+"@graphql-tools/load-files@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load-files/-/load-files-6.2.2.tgz#8c67e28b714d2f7cced28066ec97a9472c6950f2"
+  integrity sha512-fyE8X2vohEHbHntyDHXXJaQkflHWaK8OkaIlbmi1A9CVuXdvhDcEBaUrbC69Wu02vOYeNgmwPB22qyeh6a3FHw==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     fs-extra "9.0.1"
     globby "11.0.1"
     tslib "~2.0.1"
     unixify "1.0.0"
 
+<<<<<<< main
 "@graphql-tools/load@^6.2.4":
   version "6.2.5"
   resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-6.2.5.tgz#7dd0d34c8ce2cfb24f61c6beba2817d9afdd7f2b"
@@ -1656,6 +1780,15 @@
   dependencies:
     "@graphql-tools/merge" "^6.2.5"
     "@graphql-tools/utils" "^7.0.0"
+=======
+"@graphql-tools/load@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-6.2.2.tgz#54fb6f3594e3fb4774a1adb8d7129f788512c752"
+  integrity sha512-p5fvGSvtrIjL3rmQbdESnYH5zxqdKeQOIwoPnfvx6uDqqm3HaRBzS+k5V/PkhGsFRR5VFrqA8kPAbE87BYpkqw==
+  dependencies:
+    "@graphql-tools/merge" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     globby "11.0.1"
     import-from "3.0.0"
     is-glob "4.0.1"
@@ -1664,6 +1797,7 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
+<<<<<<< main
 "@graphql-tools/merge@^6.2.4", "@graphql-tools/merge@^6.2.5":
   version "6.2.5"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.5.tgz#a03d6711f2a468b8de97c0fe9092469280ca66c9"
@@ -1746,6 +1880,82 @@
     "@graphql-tools/delegate" "^7.0.1"
     "@graphql-tools/utils" "^7.0.1"
     "@graphql-tools/wrap" "^7.0.0"
+=======
+"@graphql-tools/merge@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.2.tgz#49d8da0e706530ad484dee8ba7b91f8d80126030"
+  integrity sha512-2YyErSvq4hn5mjE6qJ/0Q8r3WU9JB3+obv2xyvb+oW+E/T1iYRJGxSFldi6lqO5IADZz8QASLJeSpRBw40gpBg==
+  dependencies:
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    tslib "~2.0.1"
+
+"@graphql-tools/mock@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/mock/-/mock-6.2.2.tgz#a3566684e8ff248fd6bc35ec3f5b8d09c2d91c53"
+  integrity sha512-+r4B+E6BfW464pKE/fOW1edctEJp4Pm2TZLScwMiJdMb8BH11LDj7ByxPg9i/y+QiMRZIoJWbsKdJuqVULtbkQ==
+  dependencies:
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    tslib "~2.0.1"
+
+"@graphql-tools/module-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/module-loader/-/module-loader-6.2.2.tgz#0e98dc2bbea06aa84f8ae1bf0b8791289fd2da22"
+  integrity sha512-qa+tM4GBBxJpXQ21+HRaO/yzTqRtsQcq+unCkFjsMpwiGM5MCGRBIV/KOJIhuDpyBssfdc3cQG0p8Uzdqidbag==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+    tslib "~2.0.1"
+
+"@graphql-tools/relay-operation-optimizer@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/relay-operation-optimizer/-/relay-operation-optimizer-6.2.2.tgz#136ccca5ea33466391a9295c33408b27fe675fe6"
+  integrity sha512-4kU+X/IpTNtO1MS/rBxW1ybflFonZ1WeBV9gv4tqXGPpHywJsO3y085PwMumoNfBpF755UfEu6XjE43SPg0m1g==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+    relay-compiler "10.0.1"
+    tslib "~2.0.1"
+
+"@graphql-tools/resolvers-composition@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/resolvers-composition/-/resolvers-composition-6.2.2.tgz#d8b834769a314fa6825d2aa37fd8a5f9a67a837a"
+  integrity sha512-Ejrf/5eyg+QCQ5TZaBIttiBmwQ3RQD+eF1zcLN9aXF7S6nz90CEKzZjPHxvEfC2ZeMWDZhq81BPDk0mvUsqJuA==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+    lodash "4.17.20"
+    tslib "~2.0.1"
+
+"@graphql-tools/schema@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.2.2.tgz#2dd7c6fbb4b6ccad239d0fefc3eb6d98a1bfcb01"
+  integrity sha512-KITlyr//1oKyxIOlGvNZDl4c6bLj2Gc+3eJXyUKWfSmgsmAZPudpQNa/8VbiVujpm7UaX0cyM3FdeCaxWFeBgg==
+  dependencies:
+    "@graphql-tools/utils" "6.2.2"
+    tslib "~2.0.1"
+
+"@graphql-tools/stitch@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/stitch/-/stitch-6.2.2.tgz#b3436d1146d53f1b05e903e0fccd19c1a24b216c"
+  integrity sha512-VysuOBik1ICqsgV3VGXysJfdUl4/ro95rsnREma9BJP3oNqriPd6v8JhrnZqP2LbfzF7G2xndRoSRAQgYOzsUQ==
+  dependencies:
+    "@graphql-tools/batch-delegate" "6.2.2"
+    "@graphql-tools/delegate" "6.2.2"
+    "@graphql-tools/merge" "6.2.2"
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    "@graphql-tools/wrap" "6.2.2"
+    is-promise "4.0.0"
+    tslib "~2.0.1"
+
+"@graphql-tools/url-loader@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-6.2.2.tgz#cd5e83f31abea8d7de40c7e569e0242f7ece5c50"
+  integrity sha512-vNDjhf7SJr9RnIDPBBEyTfKBb3aWRA3uy3jDkqQ/AFyh4hXRkg8xnECH7c6glRnWiZJeObMTxowZSUnDA68IyA==
+  dependencies:
+    "@graphql-tools/delegate" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    "@graphql-tools/wrap" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     "@types/websocket" "1.0.1"
     cross-fetch "3.0.6"
     subscriptions-transport-ws "0.9.18"
@@ -1753,15 +1963,23 @@
     valid-url "1.0.9"
     websocket "1.0.32"
 
+<<<<<<< main
 "@graphql-tools/utils@^6.2.4":
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.2.4.tgz#38a2314d2e5e229ad4f78cca44e1199e18d55856"
   integrity sha512-ybgZ9EIJE3JMOtTrTd2VcIpTXtDrn2q6eiYkeYMKRVh3K41+LZa6YnR2zKERTXqTWqhobROwLt4BZbw2O3Aeeg==
+=======
+"@graphql-tools/utils@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.2.2.tgz#490236f539754ec59cd0490919b00ed9e0dba604"
+  integrity sha512-a0SSYF76dnKHs8te4Igfnrrq1VOO4sFG8yx3ehO7464eGUfUUYo2QmNRjhxny2HRMvqzX40xuQikyg6LBXDNLQ==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     "@ardatan/aggregate-error" "0.0.6"
     camel-case "4.1.1"
     tslib "~2.0.1"
 
+<<<<<<< main
 "@graphql-tools/utils@^7.0.0", "@graphql-tools/utils@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-7.0.1.tgz#8bf54676de65878d2b1ba34fcd58ef4d8ae0b589"
@@ -1786,6 +2004,28 @@
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-7.0.1.tgz#a93e548439d19a1be6f7a032c7561059ea589b70"
   integrity sha512-0feqjgEJSRLm2V0kEUaV2dw7ukVPjRujYMqNdcqHsIyXmf0VO8PGF5hcva/+5U/9Yfbf3Fck+P5JTJ5MlXPlsQ==
+=======
+"@graphql-tools/wrap@6.2.2":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/wrap/-/wrap-6.2.2.tgz#034fb885ad0812a13db3db7eec37d9dd300c7145"
+  integrity sha512-FjCE+NvMwcCiAlt9EAw9uDi2zblE4Z5CEkY+z4NRO1AmCB5THoWJKG+csPh8tGuU80mAJI51Wy9FQGyUo/EU0g==
+  dependencies:
+    "@graphql-tools/delegate" "6.2.2"
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    is-promise "4.0.0"
+    tslib "~2.0.1"
+
+"@graphql-typed-document-node/core@^3.0.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.0.tgz#0eee6373e11418bfe0b5638f654df7a4ca6a3950"
+  integrity sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg==
+
+"@grpc/grpc-js@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-0.8.1.tgz#3003a422577da39e7113566f2fdd4872f31e6090"
+  integrity sha512-e8gSjRZnOUefsR3obOgxG9RtYW2Mw83hh7ogE2ByCdgRhoX0mdnJwBcZOami3E0l643KCTZvORFwfSEi48KFIQ==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     "@graphql-tools/delegate" "^7.0.0"
     "@graphql-tools/schema" "^7.0.0"
@@ -2292,6 +2532,7 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+<<<<<<< main
 "@redwoodjs/api@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/api/-/api-0.20.0.tgz#1737a21c2cd3219760d29d3516bb479fd610d0c4"
@@ -2304,12 +2545,27 @@
     graphql "^15.3.0"
     graphql-scalars "^1.2.7"
     graphql-tools "6.2.4"
+=======
+"@redwoodjs/api@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/api/-/api-0.19.3.tgz#0d213ba8caa2b0718373f7946d5cbd617d8562b0"
+  integrity sha512-whNmCmSRq27IX3GHLvMIvgFFi+S/QMs3+19gvDkrMp9oSFeqKwEDWlT/pnkP2DLCYW/0pCy5deKgXqAP8sPAOQ==
+  dependencies:
+    "@prisma/client" "2.6.2"
+    "@redwoodjs/internal" "^0.19.3"
+    apollo-server-lambda "2.17.0"
+    core-js "3.6.5"
+    graphql "^15.3.0"
+    graphql-scalars "^1.2.7"
+    graphql-tools "6.2.2"
+>>>>>>> feat/auth-azure-ad
     jsonwebtoken "^8.5.1"
     jwks-rsa "^1.8.1"
     lodash.merge "^4.6.2"
     lodash.omitby "^4.6.0"
     merge-graphql-schemas "^1.7.6"
 
+<<<<<<< main
 "@redwoodjs/auth@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-0.20.0.tgz#c08c0b735a0b09ef84dc6d357fa2803d61f1d389"
@@ -2323,6 +2579,21 @@
     "@prisma/sdk" "2.9.0"
     "@redwoodjs/internal" "^0.20.0"
     "@redwoodjs/structure" "^0.20.0"
+=======
+"@redwoodjs/auth@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-0.19.3.tgz#8a4f136d46e92ec58d85751c403a49647f653901"
+  integrity sha512-3yD2gyDZ9MuoAAWKI8BbvSy19LVZErystmW72jV+xk4bzwIuD6z1VtYdET5sTMK8t0RFaplHH1b1OD/He/BfuA==
+
+"@redwoodjs/cli@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/cli/-/cli-0.19.3.tgz#ffabfb73c73a9fe971a566cad041ea7acef08348"
+  integrity sha512-/UVUZM6N1dvDcYGtgwXzrAX5fa536qGK18uZRlRmDi9X2Vu4CF1CyS6vDLlfBOAjviqHZ/gxJDKueJlFom+Ftg==
+  dependencies:
+    "@prisma/sdk" "2.6.2"
+    "@redwoodjs/internal" "^0.19.3"
+    "@redwoodjs/structure" "^0.19.3"
+>>>>>>> feat/auth-azure-ad
     boxen "^4.2.0"
     camelcase "^6.0.0"
     chalk "^4.1.0"
@@ -2345,10 +2616,17 @@
     terminal-link "^2.1.1"
     yargs "^16.0.3"
 
+<<<<<<< main
 "@redwoodjs/core@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/core/-/core-0.20.0.tgz#6a85a7744b818437f1b22bba148a0638ed1752e7"
   integrity sha512-jqf9swnK/juyHdDX/8Hi01/0UHd3VcVmxnn7azQ3j+xwHz8c1OcqdmPe8IODhnJPd9Ra+NZSqQDNSYFeV1nmCA==
+=======
+"@redwoodjs/core@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/core/-/core-0.19.3.tgz#e77a07c268fe2bac7aee800d81af55f3e7ceb7bd"
+  integrity sha512-Zrmc1JqBa7XBLJCJlXKw4emD4WWuUOE5SwFRoPKi4yXtbanShg1r1VHFZ5LnyQ5c+FFQDvyS8uSthfOtvr5TZw==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     "@babel/cli" "^7.11.6"
     "@babel/core" "^7.11.6"
@@ -2359,12 +2637,21 @@
     "@babel/preset-react" "^7.10.4"
     "@babel/preset-typescript" "^7.10.4"
     "@babel/runtime-corejs3" "^7.11.2"
+<<<<<<< main
     "@prisma/cli" "2.9.0"
     "@redwoodjs/cli" "^0.20.0"
     "@redwoodjs/dev-server" "^0.20.0"
     "@redwoodjs/eslint-config" "^0.20.0"
     "@redwoodjs/internal" "^0.20.0"
     "@redwoodjs/testing" "^0.20.0"
+=======
+    "@prisma/cli" "2.6.1"
+    "@redwoodjs/cli" "^0.19.3"
+    "@redwoodjs/dev-server" "^0.19.3"
+    "@redwoodjs/eslint-config" "^0.19.3"
+    "@redwoodjs/internal" "^0.19.3"
+    "@redwoodjs/testing" "^0.19.3"
+>>>>>>> feat/auth-azure-ad
     "@storybook/react" "^5.3.19"
     "@testing-library/jest-dom" "^5.8.0"
     "@types/jest" "^26.0.10"
@@ -2391,7 +2678,11 @@
     jest-watch-typeahead "^0.6.1"
     lodash.escaperegexp "^4.1.2"
     mini-css-extract-plugin "^0.11.0"
+<<<<<<< main
     null-loader "^4.0.1"
+=======
+    null-loader "^4.0.0"
+>>>>>>> feat/auth-azure-ad
     style-loader "^1.1.3"
     svg-react-loader "^0.4.6"
     typescript "^4.0.2"
@@ -2403,6 +2694,7 @@
     webpack-merge "^5.1.2"
     webpack-retry-chunk-load-plugin "^1.4.0"
 
+<<<<<<< main
 "@redwoodjs/dev-server@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/dev-server/-/dev-server-0.20.0.tgz#2f117b863f374a568f0c67e342ac50b3c1e5b9d8"
@@ -2410,6 +2702,15 @@
   dependencies:
     "@babel/register" "^7.9.0"
     "@redwoodjs/internal" "^0.20.0"
+=======
+"@redwoodjs/dev-server@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/dev-server/-/dev-server-0.19.3.tgz#266a0822938826899815f3cc7f448e8a759bad02"
+  integrity sha512-fL53f15lvmTC8ShPZPdmBC0g9cw3+nTBLNR5LC5Fr3iaf1PQtJG1E+hIrvLYvFnlCllOSM8xK1VCU8ljv2ZhrA==
+  dependencies:
+    "@babel/register" "^7.9.0"
+    "@redwoodjs/internal" "^0.19.3"
+>>>>>>> feat/auth-azure-ad
     body-parser "^1.19.0"
     chokidar "^3.4.3"
     express "^4.17.1"
@@ -2417,6 +2718,7 @@
     qs "^6.9.3"
     require-dir "^1.2.0"
     yargs "^16.0.3"
+<<<<<<< main
     youch "^2.1.1"
     youch-terminal "^1.0.1"
 
@@ -2426,6 +2728,17 @@
   integrity sha512-5bdY637n1YWrokG5A7bZ/u37Y841esQx6VDTMfy/P24ZahtYCOfadzgb3sPuvSaUDJMNUSR8rXrQhqvsDYg9tw==
   dependencies:
     "@redwoodjs/eslint-plugin-redwood" "^0.20.0"
+=======
+    youch "^2.0.10"
+    youch-terminal "^1.0.0"
+
+"@redwoodjs/eslint-config@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/eslint-config/-/eslint-config-0.19.3.tgz#9a841679e4f6e3e73fa7d9bcb82ab5a6f027f4a2"
+  integrity sha512-ozwndZ0CN1NC1NLskeKaK6hDDcnI42XvdNLw3NStLe/fW84deFK+qBH72Ygo5ijFojA40XYTbAX9buaKv0baRw==
+  dependencies:
+    "@redwoodjs/eslint-plugin-redwood" "^0.19.3"
+>>>>>>> feat/auth-azure-ad
     "@typescript-eslint/eslint-plugin" "^4.0.1"
     "@typescript-eslint/parser" "^4.0.1"
     babel-eslint "^10.1.0"
@@ -2441,6 +2754,7 @@
     eslint-plugin-react-hooks "^4.1.0"
     prettier "^2.1.1"
 
+<<<<<<< main
 "@redwoodjs/eslint-plugin-redwood@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/eslint-plugin-redwood/-/eslint-plugin-redwood-0.20.0.tgz#6b6122ca58307535b6790ab5c9833be53151659e"
@@ -2450,20 +2764,39 @@
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/internal/-/internal-0.20.0.tgz#237123301cb83d41d964ab875f89f6766e195127"
   integrity sha512-bix0BLKE/JtWyY+aUd9MPm+YNWLVCrzjqzd9wfnL9gW9+GPpbGXcvYHuATKgiJnSnN2GRhpwq2WqquXwfJoN/A==
+=======
+"@redwoodjs/eslint-plugin-redwood@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/eslint-plugin-redwood/-/eslint-plugin-redwood-0.19.3.tgz#f3d0ed32c477c64efb297a46b01ae8664e982db6"
+  integrity sha512-Y+LBaEWLGFTmuYDvxvzQxmv3guTbnYY9//BKTNzvtHn2ecg5Ni9o/CC2bsjQYJkNVhIt7TPKqHyNrh+8Rd0c9A==
+
+"@redwoodjs/internal@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/internal/-/internal-0.19.3.tgz#7831a5926449f7dc61be43436d9537d0f5ad6859"
+  integrity sha512-pJHTM3HUqUnMThr7OdVOVnKVx7nBKcoGbKyfqjnWhaCb+HPmEpVZhLLWC2NdyzwAJDFUTC/p1VOekQLy7QUQLQ==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     deepmerge "^4.2.2"
     findup-sync "^4.0.0"
     kill-port "^1.6.1"
     toml "^3.0.0"
 
+<<<<<<< main
 "@redwoodjs/router@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/router/-/router-0.20.0.tgz#399f976e7842050a6802211cffdb45f5282c9ba2"
   integrity sha512-cOXLh2djzO/jplYn+pwtVIhSGaI5A5w3Bnev4xrdumRqWHnLNKXSInAuejT0j8DxPVxkCCPq1tIozz7GRlSvRg==
+=======
+"@redwoodjs/router@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/router/-/router-0.19.3.tgz#2907573eaa2f2c2928c4976f40c1cf93958967fe"
+  integrity sha512-dXi/Mr3EgR6Z6NpNWOM/lLkhbL5AwbZYbVS0ngkqZ/Red7p1nU673U4rhu9sgkjYUWe1va9zcFOZtjdARXCAbg==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     core-js "3.6.5"
     lodash.isequal "^4.5.0"
 
+<<<<<<< main
 "@redwoodjs/structure@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/structure/-/structure-0.20.0.tgz#7509777c960e1ab11ac7d4de591058510d43f95d"
@@ -2471,6 +2804,15 @@
   dependencies:
     "@prisma/sdk" "2.9.0"
     "@redwoodjs/internal" "^0.20.0"
+=======
+"@redwoodjs/structure@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/structure/-/structure-0.19.3.tgz#da201ddba6ea84c7bb73beb9ec7e50ddfa657f2c"
+  integrity sha512-qyo9ZXI1RFUs/6bjH9O827XJyB9R4IVspNFWfTCbsoyING90BND3zhCxpRVq0hzhzikjHuomiqtg1lLijPegNg==
+  dependencies:
+    "@prisma/sdk" "2.6.2"
+    "@redwoodjs/internal" "^0.19.3"
+>>>>>>> feat/auth-azure-ad
     "@types/line-column" "^1.0.0"
     camelcase "^6.0.0"
     deepmerge "^4.2.2"
@@ -2491,6 +2833,7 @@
     vscode-languageserver-types "^3.15.1"
     yargs-parser "^18.1.3"
 
+<<<<<<< main
 "@redwoodjs/testing@^0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@redwoodjs/testing/-/testing-0.20.0.tgz#368698f8264344b89044b0243ce88a7127ca5550"
@@ -2509,6 +2852,26 @@
   dependencies:
     "@apollo/client" "^3.2.4"
     "@types/react" "16.9.53"
+=======
+"@redwoodjs/testing@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/testing/-/testing-0.19.3.tgz#dfb6f3785ab9765f1b2b57d01a9e4d1e3757f277"
+  integrity sha512-rexgaEHKy15NzjP2LGhgG/V2zsth0N+JiinZbONTAPSIK+t2QRrh8Pct3CHU66/V6HDWRH3UE16z5gwV4Mx/tQ==
+  dependencies:
+    "@redwoodjs/internal" "^0.19.3"
+    "@redwoodjs/web" "^0.19.3"
+    "@testing-library/react" "^11.0.2"
+    "@types/react" "16.9.38"
+    msw "^0.20.0"
+
+"@redwoodjs/web@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/web/-/web-0.19.3.tgz#eb5fd4b2528bfc696f6c0f5d65607cffc360b53f"
+  integrity sha512-MJ20DWw+SrL+lJfpu3LmBZ1OXurWw+cVtZB8Hygio9bqWZQXn75+mT1hvX6zOpvqm1/iryzDnt6F+idJPe4E3w==
+  dependencies:
+    "@apollo/client" "^3.1.5"
+    "@types/react" "16.9.49"
+>>>>>>> feat/auth-azure-ad
     core-js "3.6.5"
     graphql "^15.3.0"
     proptypes "^1.1.0"
@@ -3264,7 +3627,16 @@
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
 
+<<<<<<< main
 "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
+=======
+"@types/json-schema@^7.0.3", "@types/json-schema@^7.0.4":
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
+  integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
+
+"@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
+>>>>>>> feat/auth-azure-ad
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.6.tgz#f4c7ec43e81b319a9815115031709f26987891f0"
   integrity sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
@@ -3328,10 +3700,17 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
+<<<<<<< main
 "@types/node@*", "@types/node@^14.6.0":
   version "14.14.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.5.tgz#e92d3b8f76583efa26c1a63a21c9d3c1143daa29"
   integrity sha512-H5Wn24s/ZOukBmDn03nnGTp18A60ny9AmCwnEcgJiTgSGsCO7k+NWP7zjCCbhlcnVCoI+co52dUAt9GMhOSULw==
+=======
+"@types/node@*":
+  version "14.0.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.6.tgz#f9e178b2da31a4b0ec60b64649e244c31ce18daf"
+  integrity sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
+>>>>>>> feat/auth-azure-ad
 
 "@types/node@^10.1.0":
   version "10.17.43"
@@ -3429,6 +3808,14 @@
   version "16.9.53"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.53.tgz#40cd4f8b8d6b9528aedd1fff8fcffe7a112a3d23"
   integrity sha512-4nW60Sd4L7+WMXH1D6jCdVftuW7j4Za6zdp6tJ33Rqv0nk1ZAmQKML9ZLD4H0dehA3FZxXR/GM8gXplf82oNGw==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
+
+"@types/react@16.9.49":
+  version "16.9.49"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.49.tgz#09db021cf8089aba0cdb12a49f8021a69cce4872"
+  integrity sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -3864,6 +4251,7 @@ aggregate-error@3.0.1:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
+<<<<<<< main
 aggregate-error@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/aggregate-error/-/aggregate-error-3.1.0.tgz#92670ff50f5359bdb7a3e0d40d0ec30c5737687a"
@@ -3872,6 +4260,8 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
+=======
+>>>>>>> feat/auth-azure-ad
 airbnb-js-shims@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/airbnb-js-shims/-/airbnb-js-shims-2.2.1.tgz#db481102d682b98ed1daa4c5baa697a05ce5c040"
@@ -3906,6 +4296,16 @@ ajv-keywords@^3.1.0, ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
 
 ajv@^6.1.0, ajv@^6.10.0, ajv@^6.10.2, ajv@^6.12.3, ajv@^6.12.4, ajv@^6.12.5:
+  version "6.12.6"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
+  integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@^6.12.5:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -4032,6 +4432,16 @@ apollo-datasource@^0.7.2:
     apollo-server-caching "^0.5.2"
     apollo-server-env "^2.4.5"
 
+<<<<<<< main
+=======
+apollo-engine-reporting-protobuf@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/apollo-engine-reporting-protobuf/-/apollo-engine-reporting-protobuf-0.5.2.tgz#b01812508a1c583328a8dc603769bc63b8895e7e"
+  integrity sha512-4wm9FR3B7UvJxcK/69rOiS5CAJPEYKufeRWb257ZLfX7NGFTMqvbc1hu4q8Ch7swB26rTpkzfsftLED9DqH9qg==
+  dependencies:
+    "@apollo/protobufjs" "^1.0.3"
+
+>>>>>>> feat/auth-azure-ad
 apollo-env@^0.6.5:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/apollo-env/-/apollo-env-0.6.5.tgz#5a36e699d39e2356381f7203493187260fded9f3"
@@ -4083,7 +4493,11 @@ apollo-server-caching@^0.5.2:
   dependencies:
     lru-cache "^5.0.0"
 
+<<<<<<< main
 apollo-server-core@^2.18.2:
+=======
+apollo-server-core@^2.17.0:
+>>>>>>> feat/auth-azure-ad
   version "2.18.2"
   resolved "https://registry.yarnpkg.com/apollo-server-core/-/apollo-server-core-2.18.2.tgz#1b8a625531a92e137f68c730bc42b9e3f7d7fcbb"
   integrity sha512-phz57BFBukMa3Ta7ZVW7pj1pdUne9KYLbcBdEcITr+I0+nbhy+YM8gcgpOnjrokWYiEZgIe52XeM3m4BMLw5dg==
@@ -4128,6 +4542,7 @@ apollo-server-errors@^2.4.2:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.4.2.tgz#1128738a1d14da989f58420896d70524784eabe5"
   integrity sha512-FeGxW3Batn6sUtX3OVVUm7o56EgjxDlmgpTLNyWcLb0j6P8mw9oLNyAm3B+deHA4KNdNHO5BmHS2g1SJYjqPCQ==
 
+<<<<<<< main
 apollo-server-lambda@2.18.2:
   version "2.18.2"
   resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-2.18.2.tgz#3d89afd49ac617b44b141949d9acae6d77d671e6"
@@ -4136,6 +4551,16 @@ apollo-server-lambda@2.18.2:
     "@apollographql/graphql-playground-html" "1.6.26"
     "@types/aws-lambda" "^8.10.31"
     apollo-server-core "^2.18.2"
+=======
+apollo-server-lambda@2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-2.17.0.tgz#2e3e432f818abc30c77b6ce823471cee4e4b8526"
+  integrity sha512-kOTrlUjmpWhKTOarTkwRdWjU9vnp4niV+743iIrlbqxZ4XWENK1lD9Mbvp2kb//zE1mZy/EF4/+dga1DZjBqjA==
+  dependencies:
+    "@apollographql/graphql-playground-html" "1.6.26"
+    "@types/aws-lambda" "^8.10.31"
+    apollo-server-core "^2.17.0"
+>>>>>>> feat/auth-azure-ad
     apollo-server-env "^2.4.5"
     apollo-server-types "^0.6.0"
     graphql-tools "^4.0.0"
@@ -4156,6 +4581,18 @@ apollo-server-types@^0.6.0:
     apollo-server-caching "^0.5.2"
     apollo-server-env "^2.4.5"
 
+<<<<<<< main
+=======
+apollo-server-types@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-types/-/apollo-server-types-0.6.0.tgz#6085f8389881b79911384dab6c0e8a8b91c0e1a2"
+  integrity sha512-usqXaz81bHxD2IZvKEQNnLpSbf2Z/BmobXZAjEefJEQv1ItNn+lJNUmSSEfGejHvHlg2A7WuAJKJWyDWcJrNnA==
+  dependencies:
+    apollo-reporting-protobuf "^0.6.0"
+    apollo-server-caching "^0.5.2"
+    apollo-server-env "^2.4.5"
+
+>>>>>>> feat/auth-azure-ad
 apollo-tracing@^0.11.4:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/apollo-tracing/-/apollo-tracing-0.11.4.tgz#e953547064bc50dfa337cbe56836271bfd2d2efc"
@@ -6347,9 +6784,15 @@ csstype@^2.5.7:
   integrity sha512-ul26pfSQTZW8dcOnD2iiJssfXw0gdNVX9IJDH/X3K5DGPfj+fUYe3kB+swUY6BF3oZDxaID3AJt+9/ojSAE05A==
 
 csstype@^3.0.2:
+<<<<<<< main
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.4.tgz#b156d7be03b84ff425c9a0a4b1e5f4da9c5ca888"
   integrity sha512-xc8DUsCLmjvCfoD7LTGE0ou2MIWLx0K9RCZwSHMOdynqRsP4MtUcLeqh1HcQ2dInwDTqn+3CE0/FZh1et+p4jA==
+=======
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.3.tgz#2b410bbeba38ba9633353aff34b05d9755d065f8"
+  integrity sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
+>>>>>>> feat/auth-azure-ad
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -7207,7 +7650,11 @@ es6-symbol@^3.1.1, es6-symbol@~3.1.3:
     d "^1.0.1"
     ext "^1.1.2"
 
+<<<<<<< main
 escalade@^3.1.0, escalade@^3.1.1:
+=======
+escalade@^3.1.1:
+>>>>>>> feat/auth-azure-ad
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
   integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
@@ -8567,11 +9014,24 @@ graphql-extensions@^0.12.5:
     "@apollographql/apollo-tools" "^0.4.3"
     apollo-server-env "^2.4.5"
     apollo-server-types "^0.6.0"
+<<<<<<< main
 
 graphql-scalars@^1.2.7:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.4.1.tgz#d4179af696c8d1420da5e7a14c5e033f434a71a4"
   integrity sha512-QCT9sHYkEns9jp3fYqzmoUtS7GiWn+IKrWvSKYDrGOEqlUVP66DDtR0HQmebIbnaSuww239drYnq6JNP0VIDTg==
+=======
+
+graphql-scalars@^1.2.7:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/graphql-scalars/-/graphql-scalars-1.4.0.tgz#6753ee66f8060cdf42dd75119702430959308049"
+  integrity sha512-Owm8vcbPFJnYhHAyLP/M5WX1CGZD1rW/sImDkI/+zgU+l6nGK8V27R1c0DiY4WgXaIYWxndqkDY3pZIisn7YHA==
+
+graphql-tag@^2.10.3, graphql-tag@^2.9.2:
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.3.tgz#ea1baba5eb8fc6339e4c4cf049dabe522b0edf03"
+  integrity sha512-4FOv3ZKfA4WdOKJeHdz6B3F/vxBLSgmBcGeAFPf4n1F64ltJUvOOerNj0rsJxONQGdhUMynQIvd6LzB+1J5oKA==
+>>>>>>> feat/auth-azure-ad
 
 graphql-tag@^2.10.3, graphql-tag@^2.11.0, graphql-tag@^2.9.2:
   version "2.11.0"
@@ -8592,6 +9052,7 @@ graphql-tools@5.0.0:
     tslib "^1.11.1"
     uuid "^7.0.3"
 
+<<<<<<< main
 graphql-tools@6.2.4:
   version "6.2.4"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-6.2.4.tgz#e4573ab65ea53a1e64dbe1fd4ccb483b59946fd2"
@@ -8619,6 +9080,35 @@ graphql-tools@6.2.4:
     "@graphql-tools/url-loader" "^6.2.4"
     "@graphql-tools/utils" "^6.2.4"
     "@graphql-tools/wrap" "^6.2.4"
+=======
+graphql-tools@6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-6.2.2.tgz#7cfd6ee6ec66d6ee3847c31129a02cf2bd162eff"
+  integrity sha512-bCAKS/VnlhUCC/dLIl2U1LuUaujCts66lPP8KP6QhHsQSLQd8xeCQcqGsPk7M1yYkbSODlrCAhQQOvKN2hVaHg==
+  dependencies:
+    "@graphql-tools/batch-delegate" "6.2.2"
+    "@graphql-tools/code-file-loader" "6.2.2"
+    "@graphql-tools/delegate" "6.2.2"
+    "@graphql-tools/git-loader" "6.2.2"
+    "@graphql-tools/github-loader" "6.2.2"
+    "@graphql-tools/graphql-file-loader" "6.2.2"
+    "@graphql-tools/graphql-tag-pluck" "6.2.2"
+    "@graphql-tools/import" "6.2.2"
+    "@graphql-tools/json-file-loader" "6.2.2"
+    "@graphql-tools/links" "6.2.2"
+    "@graphql-tools/load" "6.2.2"
+    "@graphql-tools/load-files" "6.2.2"
+    "@graphql-tools/merge" "6.2.2"
+    "@graphql-tools/mock" "6.2.2"
+    "@graphql-tools/module-loader" "6.2.2"
+    "@graphql-tools/relay-operation-optimizer" "6.2.2"
+    "@graphql-tools/resolvers-composition" "6.2.2"
+    "@graphql-tools/schema" "6.2.2"
+    "@graphql-tools/stitch" "6.2.2"
+    "@graphql-tools/url-loader" "6.2.2"
+    "@graphql-tools/utils" "6.2.2"
+    "@graphql-tools/wrap" "6.2.2"
+>>>>>>> feat/auth-azure-ad
     tslib "~2.0.1"
 
 graphql-tools@^4.0.0:
@@ -8642,10 +9132,24 @@ graphql-upload@^8.0.2:
     http-errors "^1.7.3"
     object-path "^0.11.4"
 
+<<<<<<< main
 graphql@^15.3.0:
   version "15.4.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.4.0.tgz#e459dea1150da5a106486ba7276518b5295a4347"
   integrity sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==
+=======
+graphql@^14.5.3:
+  version "14.6.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.6.0.tgz#57822297111e874ea12f5cd4419616930cd83e49"
+  integrity sha512-VKzfvHEKybTKjQVpTFrA5yUq2S9ihcZvfJAtsDBBCuV6wauPu1xl/f9ehgVf0FcEJJs4vz6ysb/ZMkGigQZseg==
+  dependencies:
+    iterall "^1.2.2"
+
+graphql@^15.3.0:
+  version "15.3.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.3.0.tgz#3ad2b0caab0d110e3be4a5a9b2aa281e362b5278"
+  integrity sha512-GTCJtzJmkFLWRfFJuoo9RWWa/FfamUHgiFosxi/X1Ani4AVWbeyBenZTNX6dM+7WSbbFfTo/25eh0LLkwHMw2w==
+>>>>>>> feat/auth-azure-ad
 
 growly@^1.3.0:
   version "1.3.0"
@@ -11334,10 +11838,24 @@ ms@2.1.2, ms@^2.1.1, ms@^2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+<<<<<<< main
 msw@^0.21.2:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/msw/-/msw-0.21.3.tgz#d073842f9570a08f4041806a2c7303a9b8494602"
   integrity sha512-voPc/EJsjarvi454vSEuozZQQqLG4AUHT6qQL5Ah47lq7sGCpc7icByeUlfvEj5+MvaugN0c7JwXyCa2rxu8cA==
+=======
+msal@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/msal/-/msal-1.4.1.tgz#06dfad9e413ccc7ceaaf3b4378814e00425e7c2a"
+  integrity sha512-FnRHbE7U7MoG5BAupupRP/0Zurvzc9OnZFiH6n9YeM9anRPYhur/gX87Gxw+DpM46kSoLHyKNtEN3U46fQw/8w==
+  dependencies:
+    tslib "^1.9.3"
+
+msw@^0.20.0:
+  version "0.20.5"
+  resolved "https://registry.yarnpkg.com/msw/-/msw-0.20.5.tgz#b6141080c0d8b17c451d9ca36c28cc47b4ac487a"
+  integrity sha512-hmEsey5BbVicMGt7aOh/GZ9ltga5N3tK6NiJXnbfCkAGKgnAVnjASr3i7Z+sWlZyY5uuMUFyLCEcqrlXxC6qIA==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     "@open-draft/until" "^1.0.3"
     "@types/cookie" "^0.4.0"
@@ -11644,7 +12162,11 @@ nth-check@^1.0.2, nth-check@~1.0.1:
   dependencies:
     boolbase "~1.0.0"
 
+<<<<<<< main
 null-loader@^4.0.1:
+=======
+null-loader@^4.0.0:
+>>>>>>> feat/auth-azure-ad
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-4.0.1.tgz#8e63bd3a2dd3c64236a4679428632edd0a6dbc6a"
   integrity sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==
@@ -11839,6 +12361,20 @@ opn@^5.5.0:
   integrity sha512-PqHpggC9bLV0VeWcdKhkpxY+3JTzetLSqTCWL/z/tFIbI6G8JCjondXklT1JinczLz2Xib62sSp0T/gKT4KksA==
   dependencies:
     is-wsl "^1.1.0"
+
+<<<<<<< main
+optimism@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.13.0.tgz#c08904e1439a0eb9e7f86183dafa06cc715ff351"
+  integrity sha512-6JAh3dH+YUE4QUdsgUw8nUQyrNeBKfAEKOHMlLkQ168KhIYFIxzPsHakWrRXDnTO+x61RJrS3/2uEt6W0xlocA==
+=======
+optimism@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.12.1.tgz#933f9467b9aef0e601655adb9638f893e486ad02"
+  integrity sha512-t8I7HM1dw0SECitBYAqFOVHoBAHEQBTeKjIL9y9ImHzAVkdyPK4ifTgM4VJRDtTUY4r/u5Eqxs4XcGPHaoPkeQ==
+>>>>>>> feat/auth-azure-ad
+  dependencies:
+    "@wry/context" "^0.5.2"
 
 optimism@^0.13.0:
   version "0.13.0"
@@ -13556,6 +14092,15 @@ schema-utils@^3.0.0:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+schema-utils@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-3.0.0.tgz#67502f6aa2b66a2d4032b4279a2944978a0913ef"
+  integrity sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==
+  dependencies:
+    "@types/json-schema" "^7.0.6"
+    ajv "^6.12.5"
+    ajv-keywords "^3.5.2"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -14453,7 +14998,11 @@ svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+<<<<<<< main
 symbol-observable@^1.0.4, symbol-observable@^1.1.0:
+=======
+symbol-observable@^1.0.4, symbol-observable@^1.1.0, symbol-observable@^1.2.0:
+>>>>>>> feat/auth-azure-ad
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
@@ -15765,9 +16314,15 @@ y18n@^4.0.0:
   integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
 
 y18n@^5.0.2:
+<<<<<<< main
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.5.tgz#8769ec08d03b1ea2df2500acef561743bbb9ab18"
   integrity sha512-hsRUr4FFrvhhRH12wOdfs38Gy7k2FFzB9qgN9v3aLykRq0dRcdcpz5C9FxdS2NuhOrI/628b/KSTJ3rwHysYSg==
+=======
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-5.0.4.tgz#0ab2db89dd5873b5ec4682d8e703e833373ea897"
+  integrity sha512-deLOfD+RvFgrpAmSZgfGdWYE+OKyHcVHaRQ7NphG/63scpRvTHHeQMAxGGvaLVGJ+HYVcCXlzcTK0ZehFf+eHQ==
+>>>>>>> feat/auth-azure-ad
 
 yaeti@^0.0.6:
   version "0.0.6"
@@ -15814,6 +16369,26 @@ yargs-parser@^20.2.2:
   version "20.2.3"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.3.tgz#92419ba867b858c868acf8bae9bf74af0dd0ce26"
   integrity sha512-emOFRT9WVHw03QSvN5qor9QQT9+sw5vwxfYweivSMHTcAXPefwVae2FjO7JJjj8hCE4CzPOPeFM83VwT29HCww==
+<<<<<<< main
+=======
+
+yargs@13.2.4:
+  version "13.2.4"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-13.2.4.tgz#0b562b794016eb9651b98bd37acf364aa5d6dc83"
+  integrity sha512-HG/DWAJa1PAnHT9JAhNa8AbAv3FPaiLzioSjCcmuXXhP8MlpHO5vwls4g4j6n30Z74GVQj8Xa62dWVx1QCGklg==
+  dependencies:
+    cliui "^5.0.0"
+    find-up "^3.0.0"
+    get-caller-file "^2.0.1"
+    os-locale "^3.1.0"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^3.0.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^13.1.0"
+>>>>>>> feat/auth-azure-ad
 
 yargs@^13.3.0, yargs@^13.3.2:
   version "13.3.2"
@@ -15861,10 +16436,17 @@ yargs@^16.0.3:
     y18n "^5.0.2"
     yargs-parser "^20.2.2"
 
+<<<<<<< main
 youch-terminal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/youch-terminal/-/youch-terminal-1.0.1.tgz#09f9d7f9f4fb8d309463ed708a5ade552e0bab75"
   integrity sha512-ich0hA83ZqotuckziwNzaLgCqQMb1WjoWzfO6gZquGHv9WuuGvjF246HvLt6Eeax7EQdv8jFXxJKxKF34m5m+A==
+=======
+youch-terminal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/youch-terminal/-/youch-terminal-1.0.0.tgz#03e2096ee360ef915816e62ea9ec94a6ff094d9e"
+  integrity sha512-rOVcJi5juKSUI3/mwAKOP+gjrUWUgb5AUTe2LZlfLBgLdfgnYtBKCrWc02GgRozDf/i6uXBu9/y3Vf6db+7k1A==
+>>>>>>> feat/auth-azure-ad
   dependencies:
     kleur "^4.1.3"
 

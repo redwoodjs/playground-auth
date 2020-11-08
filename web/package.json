@@ -14,6 +14,7 @@
     "@supabase/supabase-js": "^0.36.5",
     "firebase": "^7.15.1",
     "magic-sdk": "^2.0.0",
+    "msal": "^1.4.1",
     "netlify-identity-widget": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
