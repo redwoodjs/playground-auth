@@ -10,19 +10,23 @@ In order to support several Auth Providers, you may want to set customer values 
 
 If you want to use the useAuth hook `Sign Up` to default the UI to the sign up "tab", you need to be using the ["New Universal Login Experience"](https://auth0.com/docs/universal-login/new-experience). The "Classic Universal Experience" does not support the `screen_hint` to set the tab.
 
-AUTH0_DOMAIN =
-AUTH0_AUDIENCE =
+```
+AUTH0_DOMAIN=""
+AUTH0_AUDIENCE=""
 AUTH0_CLIENT_ID=""
 AUTH0_CLIENT_SECRET=""
 AUTH0_REDIRECT_URI=""
 AUTH0_AUDIENCE=""
+```
 
 ### Azure Active Directory
 
+```
 AZURE_ACTIVE_DIRECTORY_CLIENT_ID=""
 AZURE_ACTIVE_DIRECTORY_AUTHORITY=""
 AZURE_ACTIVE_DIRECTORY_REDIRECT_URI=""
 AZURE_ACTIVE_DIRECTORY_LOGOUT_REDIRECT_URI=""
+```
 
 ### Netlify Identity
 
@@ -36,6 +40,7 @@ MAGIC_SECRET_KEY=""
 
 ### Firebase
 
+```
 FIREBASE_API_KEY=""
 FIREBASE_AUTH_DOMAIN=""
 FIREBASE_DATABASE_URL=""
@@ -43,8 +48,11 @@ FIREBASE_PROJECT_ID=""
 FIREBASE_STORAGE_BUCKET=""
 FIREBASE_MESSAGING_SENDER_ID=""
 FIREBASE_APP_ID=""
+```
 
 ### Supabase
 
+```
 SUPABASE_KEY=""
 SUPABASE_URL=""
+```
