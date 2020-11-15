@@ -4,7 +4,7 @@ This repo demonstrates all the Authentication Providers that Redwood supports. [
 
 ## Setup
 
-In order to support several Auth Providers, you may want to set customer values for the default provider settings:
+In order to support several Auth Providers, you may want to set custom values for the default provider settings:
 
 ### Auth0
 
