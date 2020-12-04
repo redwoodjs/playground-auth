@@ -27,9 +27,7 @@ const HomePage = () => {
       <Firebase>
         <UserTools />
       </Firebase>
-      <Supabase>
-        <UserTools />
-      </Supabase>
+      <Supabase />
     </div>
   )
 }
