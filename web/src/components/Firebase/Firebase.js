@@ -28,7 +28,7 @@ const FirebaseUserTools = () => {
   return (
     <div>
       <h2>firebase</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
+      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
       <h3>Google Login (default)</h3>
       <LogInOutButtons />
       {/* Other providers require setup in Firebase account */}
