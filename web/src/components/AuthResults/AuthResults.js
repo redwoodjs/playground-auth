@@ -1,7 +1,7 @@
 import { useAuth } from '@redwoodjs/auth'
 
 export default () => {
-  const { type, userMetadata, currentUser } = useAuth()
+  const { type, userMetadata, currentUser, isAuthenticated } = useAuth()
   const typeOk = type && type === currentUser?.type
   const emailOk = /^\w+@\w+.*\.\w\w+$/.test(userMetadata?.email)
   const tokenOk = currentUser?.token && currentUser?.token !== 'null'
@@ -18,7 +18,7 @@ export default () => {
         <pre style={{ margin: 0 }}>{JSON.stringify(currentUser, null, 2)}</pre>
       </code>
 
-      {userMetadata ? (
+      {isAuthenticated ? (
         <>
           <h3>Basic sanity checks</h3>
           <ul>
