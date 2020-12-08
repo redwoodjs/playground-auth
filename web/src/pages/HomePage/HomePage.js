@@ -24,9 +24,7 @@ const HomePage = () => {
         <UserTools />
       </Netlify>
       <MagicLink />
-      <Firebase>
-        <UserTools />
-      </Firebase>
+      <Firebase />
       <Supabase />
     </div>
   )

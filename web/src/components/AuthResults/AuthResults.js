@@ -17,13 +17,16 @@ export default () => {
         currentUser:
         <pre style={{ margin: 0 }}>{JSON.stringify(currentUser, null, 2)}</pre>
       </code>
-      <h3>Basic sanity checks</h3>
+
       {userMetadata ? (
-        <ul>
-          <li style={{ color: typeOk ? 'green' : 'red' }}>Correct type</li>
-          <li style={{ color: emailOk ? 'green' : 'red' }}>Valid email</li>
-          <li style={{ color: tokenOk ? 'green' : 'red' }}>Token !== null</li>
-        </ul>
+        <>
+          <h3>Basic sanity checks</h3>
+          <ul>
+            <li style={{ color: typeOk ? 'green' : 'red' }}>Correct type</li>
+            <li style={{ color: emailOk ? 'green' : 'red' }}>Valid email</li>
+            <li style={{ color: tokenOk ? 'green' : 'red' }}>Token !== null</li>
+          </ul>
+        </>
       ) : (
         <p>Login first</p>
       )}
