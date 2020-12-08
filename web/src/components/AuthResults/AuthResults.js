@@ -27,9 +27,7 @@ export default () => {
             <li style={{ color: tokenOk ? 'green' : 'red' }}>Token !== null</li>
           </ul>
         </>
-      ) : (
-        <p>Login first</p>
-      )}
+      ) : null}
     </>
   )
 }
