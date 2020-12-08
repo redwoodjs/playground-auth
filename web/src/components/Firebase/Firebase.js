@@ -23,60 +23,72 @@ const firebaseClient = ((config) => {
 const FirebaseUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [provider, setProvider] = useState('google.com')
+
   const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   return (
     <div>
       <h2>firebase</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
-      <h3>Google Login (default)</h3>
-      <LogInOutButtons />
       {/* Other providers require setup in Firebase account */}
-      <h3>Apple Login</h3>
-      <LogInOutButtons logInOptions="apple.com" signUpOptions="apple.com" />
-      <h3>Facebook Login</h3>
-      <LogInOutButtons
-        logInOptions="facebook.com"
-        signUpOptions="facebook.com"
-      />
-      <h3>Github Login</h3>
-      <LogInOutButtons logInOptions="github.com" signUpOptions="github.com" />
-      <h3>Microsoft Login</h3>
-      <LogInOutButtons
-        logInOptions="microsoft.com"
-        signUpOptions="microsoft.com"
-      />
-      <h3>Twitter Login</h3>
-      <LogInOutButtons logInOptions="twitter.com" signUpOptions="twitter.com" />
-      <h3>Password Login</h3>
-      {isAuthenticated ? (
-        <button onClick={() => logOut()}>Log Out</button>
+      <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
+        Provider
+      </label>
+      <select
+        value={provider}
+        onChange={(event) => setProvider(event.target.value)}
+      >
+        <option value="google.com">Google (default)</option>
+        <option value="apple.com">Apple</option>
+        <option value="facebook.com">Facebook</option>
+        <option value="github.com">Github</option>
+        <option value="microsoft.com">Microsoft</option>
+        <option value="twitter.com">Twitter</option>
+        <option value="password">Password</option>
+      </select>
+
+      {provider !== 'password' ? (
+        <LogInOutButtons logInOptions={provider} signUpOptions={provider} />
       ) : (
         <>
-          <input
-            type="email"
-            placeholder="email address"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button
-            disabled={(!email.length || !password.length) && !isAuthenticated}
-            onClick={() => logIn({ email, password })}
-          >
-            Log In
-          </button>
-          <button
-            disabled={(!email.length || !password.length) && !isAuthenticated}
-            onClick={() => signUp({ email, password })}
-          >
-            Sign Up
-          </button>
+          {isAuthenticated ? (
+            <button onClick={() => logOut()}>Log Out</button>
+          ) : (
+            <div style={{ marginTop: 10 }}>
+              <input
+                type="email"
+                placeholder="email address"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <br />
+              <input
+                type="password"
+                placeholder="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+              <br />
+              <button
+                disabled={
+                  (!email.length || !password.length) && !isAuthenticated
+                }
+                onClick={() => logIn({ email, password })}
+              >
+                Log In
+              </button>
+              <button
+                disabled={
+                  (!email.length || !password.length) && !isAuthenticated
+                }
+                onClick={() => signUp({ email, password })}
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
         </>
       )}
       <br />
