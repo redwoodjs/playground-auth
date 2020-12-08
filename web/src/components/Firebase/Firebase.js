@@ -31,6 +31,7 @@ const FirebaseUserTools = () => {
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
       <h3>Google Login (default)</h3>
       <LogInOutButtons />
+      {/* Other providers require setup in Firebase account */}
       <h3>Apple Login</h3>
       <LogInOutButtons logInOptions="apple.com" signUpOptions="apple.com" />
       <h3>Facebook Login</h3>
