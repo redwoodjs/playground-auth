@@ -8,13 +8,12 @@ const UserTools = ({
   signUpOptions = {},
 }) => {
   const {
+    // prettier-ignore
     loading,
     logIn,
     logOut,
     signUp,
     isAuthenticated,
-    userMetadata,
-    currentUser,
     type,
   } = useAuth()
 

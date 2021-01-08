@@ -14,12 +14,11 @@ const SupabaseUserTools = () => {
   const [password, setPassword] = useState('')
 
   const {
+    // prettier-ignore
     logIn,
     logOut,
     signUp,
     isAuthenticated,
-    currentUser,
-    userMetadata,
     type,
   } = useAuth()
 

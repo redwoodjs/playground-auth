@@ -10,12 +10,11 @@ const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
 
   const {
+    // prettier-ignore
     logIn,
     logOut,
     signUp,
     isAuthenticated,
-    currentUser,
-    userMetadata,
     type,
   } = useAuth()
 
