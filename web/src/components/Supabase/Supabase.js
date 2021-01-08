@@ -2,6 +2,8 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
 
+import AuthResults from 'src/components/AuthResults'
+
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_KEY
@@ -88,17 +90,7 @@ const SupabaseUserTools = () => {
         </button>
       )}
       <br />
-      <code>
-        userMetaData:
-        <br />
-        {JSON.stringify(userMetadata, 2)}
-      </code>
-      <br />
-      <code>
-        currentUser:
-        <br />
-        {JSON.stringify(currentUser, 2)}
-      </code>
+      <AuthResults />
     </div>
   )
 }

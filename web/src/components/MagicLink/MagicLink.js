@@ -2,6 +2,8 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
+import AuthResults from 'src/components/AuthResults'
+
 const m = new Magic(process.env.MAGIC_SECRET_KEY)
 
 const MagicLinkUserTools = () => {
@@ -55,17 +57,7 @@ const MagicLinkUserTools = () => {
         )}
       </form>
       <br />
-      <code>
-        userMetaData:
-        <br />
-        {JSON.stringify(userMetadata, 2)}
-      </code>
-      <br />
-      <code>
-        currentUser:
-        <br />
-        {JSON.stringify(currentUser, 2)}
-      </code>
+      <AuthResults />
     </div>
   )
 }

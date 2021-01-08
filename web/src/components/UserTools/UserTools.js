@@ -1,5 +1,7 @@
 import { useAuth } from '@redwoodjs/auth'
 
+import AuthResults from 'src/components/AuthResults'
+
 const UserTools = ({
   logInOptions = {},
   logOutOptions = {},
@@ -41,17 +43,7 @@ const UserTools = ({
         </button>
       )}
       <br />
-      <code>
-        userMetaData:
-        <br />
-        {JSON.stringify(userMetadata, 2)}
-      </code>
-      <br />
-      <code>
-        currentUser:
-        <br />
-        {JSON.stringify(currentUser, 2)}
-      </code>
+      <AuthResults />
     </div>
   )
 }
