@@ -6,6 +6,8 @@ import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
 
+import Wrapper from 'src/components/Wrapper'
+
 const HomePage = () => {
   return (
     <div>
@@ -14,24 +16,42 @@ const HomePage = () => {
         This page demonstrates the authentication providers that redwood
         supports.
       </p>
-      <Auth0>
-        <UserTools
-          logOutOptions={{
-            returnTo: process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
-          }}
-        />
-      </Auth0>
-      <AzureActiveDirectory>
-        <UserTools />
-      </AzureActiveDirectory>
-      <Netlify>
-        <UserTools />
-      </Netlify>
-      <MagicLink />
-      <Firebase>
-        <UserTools />
-      </Firebase>
-      <Supabase />
+      <Wrapper>
+        <Auth0>
+          <UserTools
+            logOutOptions={{
+              returnTo:
+                process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
+            }}
+          />
+        </Auth0>
+      </Wrapper>
+
+      <Wrapper>
+        <AzureActiveDirectory>
+          <UserTools />
+        </AzureActiveDirectory>
+      </Wrapper>
+
+      <Wrapper>
+        <Netlify>
+          <UserTools />
+        </Netlify>
+      </Wrapper>
+
+      <Wrapper>
+        <MagicLink />
+      </Wrapper>
+
+      <Wrapper>
+        <Firebase>
+          <UserTools />
+        </Firebase>
+      </Wrapper>
+
+      <Wrapper>
+        <Supabase />
+      </Wrapper>
     </div>
   )
 }
