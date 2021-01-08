@@ -7,7 +7,7 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.21.1-canary.15",
+    "@redwoodjs/core": "^0.22.1",
     "lodash-decorators": "^6.0.1"
   },
   "eslintConfig": {

@@ -3,15 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "browserslist": {
-    "development": [ "last 1 version" ],
-    "production": ["defaults", "not IE 11", "not IE_Mob 11"]
+    "development": [
+      "last 1 version"
+    ],
+    "production": [
+      "defaults",
+      "not IE 11",
+      "not IE_Mob 11"
+    ]
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.9.0",
-    "@redwoodjs/auth": "^0.21.1-canary.15",
-    "@redwoodjs/forms": "^0.21.1-canary.15",
-    "@redwoodjs/router": "^0.21.1-canary.15",
-    "@redwoodjs/web": "^0.21.1-canary.15",
+    "@redwoodjs/auth": "^0.22.1",
+    "@redwoodjs/forms": "^0.22.1",
+    "@redwoodjs/router": "^0.22.1",
+    "@redwoodjs/web": "^0.22.1",
     "@supabase/supabase-js": "^0.36.5",
     "firebase": "^7.15.1",
     "magic-sdk": "^2.0.0",
