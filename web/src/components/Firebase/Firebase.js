@@ -31,19 +31,25 @@ const FirebaseUserTools = () => {
     <div>
       <h2>firebase</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
-      {/* Other providers require setup in Firebase account */}
       <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
         Provider
       </label>
+      {/* Disabled are not setup in linked Firebase account */}
       <select
         value={provider}
         onChange={(event) => setProvider(event.target.value)}
       >
         <option value="google.com">Google (default)</option>
-        <option value="apple.com">Apple</option>
-        <option value="facebook.com">Facebook</option>
+        <option disabled value="apple.com">
+          Apple
+        </option>
+        <option disabled value="facebook.com">
+          Facebook
+        </option>
         <option value="github.com">Github</option>
-        <option value="microsoft.com">Microsoft</option>
+        <option disabled value="microsoft.com">
+          Microsoft
+        </option>
         <option value="twitter.com">Twitter</option>
         <option value="password">Password</option>
       </select>
