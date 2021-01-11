@@ -1,22 +1,14 @@
 import { useAuth } from '@redwoodjs/auth'
 
 import AuthResults from 'src/components/AuthResults'
+import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
 
 const UserTools = ({
   logInOptions = {},
   logOutOptions = {},
   signUpOptions = {},
 }) => {
-  const {
-    loading,
-    logIn,
-    logOut,
-    signUp,
-    isAuthenticated,
-    userMetadata,
-    currentUser,
-    type,
-  } = useAuth()
+  const { isAuthenticated, loading, type } = useAuth()
 
   if (loading) {
     return 'Loading...'
@@ -26,22 +18,11 @@ const UserTools = ({
     <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
-      <button
-        onClick={() => {
-          isAuthenticated ? logOut(logOutOptions) : logIn(logInOptions)
-        }}
-      >
-        {isAuthenticated ? 'Log Out' : 'Log In'}
-      </button>
-      {!isAuthenticated && (
-        <button
-          onClick={() => {
-            signUp(signUpOptions)
-          }}
-        >
-          Sign Up
-        </button>
-      )}
+      <LogInOutButtons
+        logInOptions={logInOptions}
+        logOutOptions={logOutOptions}
+        signUpOptions={signUpOptions}
+      />
       <br />
       <AuthResults />
     </div>
