@@ -51,11 +51,13 @@ const SupabaseUserTools = () => {
       </form>
       <br />
       <button
-        disabled={(!email.length || !password.length) && !isAuthenticated}
+        disabled={!email.length && !isAuthenticated}
         onClick={async () => {
           if (!isAuthenticated && email.length) {
+            console.log(email)
+
             try {
-              await logIn({ email, password })
+              await logIn({ email: undefined, password, provider: 'github' })
               resetForm()
             } catch (e) {
               console.log(e)
