@@ -9,60 +9,90 @@ const supabase = createClient(
   process.env.SUPABASE_KEY
 )
 
-const SupabaseUserTools = () => {
+const SupabaseUserTools = ({ scheme }) => {
+  const [authScheme] = useState(scheme)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const {
-    logIn,
-    logOut,
-    signUp,
-    isAuthenticated,
-    currentUser,
-    userMetadata,
-    type,
-  } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated, type } = useAuth()
 
   const resetForm = () => {
     setEmail('')
     setPassword('')
   }
 
+  // const disableLogin = () => {
+  //   if (authScheme === 'email' || authScheme === 'magiclink') {
+
+  //   }
+  //      !email.length && !isAuthenticated
+  //     : !isAuthenticated
+  // }
+
+  const showEmail = () => {
+    return (
+      (authScheme === 'email' || authScheme === 'magiclink') && !isAuthenticated
+    )
+  }
+
+  const showSignUp = () => {
+    return authScheme === 'email' && !isAuthenticated
+  }
+
   return (
     <div>
-      <h2>{type}</h2>
+      <h2>
+        {type} {authScheme} authentication
+      </h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
       <form>
-        <input
-          type="email"
-          placeholder="email address"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        {showEmail() && (
+          <input
+            type="email"
+            placeholder="email address"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        )}
+
         <br />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-        />
+
+        {showSignUp() && (
+          <input
+            type="password"
+            placeholder="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        )}
       </form>
       <br />
       <button
-        disabled={!email.length && !isAuthenticated}
+        // disabled={disableLogin()}
         onClick={async () => {
-          if (!isAuthenticated && email.length) {
-            console.log(email)
-
+          if (!isAuthenticated) {
             try {
-              await logIn({ email: undefined, password, provider: 'github' })
-              resetForm()
-            } catch (e) {
-              console.log(e)
-              const supabaseError = JSON.parse(e.message)
-              alert(supabaseError.error_description)
+              const { user, error } = await logIn({
+                email,
+                password,
+                provider:
+                  authScheme === 'email' || authScheme === 'magiclink'
+                    ? null
+                    : authScheme,
+              })
+
+              if (error) {
+                console.debug(error)
+                alert(error)
+              } else {
+                console.debug(user)
+                resetForm()
+              }
+            } catch (error) {
+              console.error(error)
+              alert(error)
             }
           } else {
             await logOut()
@@ -71,20 +101,21 @@ const SupabaseUserTools = () => {
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
-      {!isAuthenticated && (
+      {showSignUp() && (
         <button
-          disabled={(!email.length || !password.length) && !isAuthenticated}
+          disabled={isAuthenticated || email.length == 0}
           onClick={async () => {
-            if (!isAuthenticated && email.length && password.length) {
-              try {
-                await signUp({ email, password })
-
-                resetForm()
-              } catch (e) {
-                const supabaseError = JSON.parse(e.message)
-                alert(supabaseError.msg)
-                console.log(e)
-              }
+            try {
+              const { user, error } = await signUp({
+                email,
+                password,
+              })
+              console.debug(user)
+              console.debug(error)
+              resetForm()
+            } catch (error) {
+              console.error(error)
+              alert(error)
             }
           }}
         >
@@ -92,15 +123,15 @@ const SupabaseUserTools = () => {
         </button>
       )}
       <br />
-      <AuthResults />
+      <AuthResults scheme={scheme} />
     </div>
   )
 }
 
-export default () => {
+export default ({ scheme }) => {
   return (
     <AuthProvider client={supabase} type="supabase">
-      <SupabaseUserTools />
+      <SupabaseUserTools scheme={scheme} />
     </AuthProvider>
   )
 }

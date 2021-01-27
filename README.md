@@ -1,6 +1,6 @@
 # Redwood's Auth Playground
 
-This repo demonstrates all the Authentication Providers that Redwood supports. [Read more](https://redwoodjs.com/docs/authentication) about our authentication providers in our docs, or [preview the deploy](https://redwood-playground-auth.netlify.app/) of this site on Netlify!
+This repo demonstrates all the Authentication Providers that RedwoodJS supports. [Read more](https://redwoodjs.com/docs/authentication) about our authentication providers in our docs, or [preview the deploy](https://redwood-playground-auth.netlify.app/) of this site on Netlify!
 
 ## Setup
 
@@ -30,7 +30,9 @@ AZURE_ACTIVE_DIRECTORY_LOGOUT_REDIRECT_URI=""
 
 ### Netlify Identity
 
-Set site
+* Set site url when prompted by the Netlify Identity widget in local dev to:
+
+`https://redwood-playground-auth.netlify.app`
 
 ### Magic.link
 
@@ -55,4 +57,22 @@ FIREBASE_APP_ID=""
 ```
 SUPABASE_KEY=""
 SUPABASE_URL=""
+SUPABASE_JWT_SECRET=""
 ```
+
+You will need to get the `SUPABASE_JWT_SECRET` from a RedwoodJS Core Team member.
+
+If you intend to test OAuth, you will also have to:
+
+* Setup OAuth apps with credentials in GitHiub, GitLab, etc.
+* Configure those credentials in Supabase Auth admin including callback urls
+
+Changing those settings, however, will change the calbacks in the deployed app as well as there aren't environment specific settings in Supabase Auth admin.
+
+### Tunnelling
+
+When testing OAuth or magiclink callbacks, you may want to tunnel you local dev using a serice like `ngrok`.
+
+`ngrok http -subdomain=your_domain --host-header=rewrite 8910`
+
+* Note: The `host-header` is important otherwise it won't handle the OAuth callbacks properly,
