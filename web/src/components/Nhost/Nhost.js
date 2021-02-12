@@ -23,7 +23,6 @@ const NhostUserTools = () => {
   }
 
   const isOAuth = () => {
-    console.log('isOAuth: ', method !== 'password')
     return method !== 'password'
   }
 
