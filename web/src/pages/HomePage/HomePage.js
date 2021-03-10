@@ -30,7 +30,7 @@ const HomePage = () => {
       </Netlify>
       <MagicLink />
       <Firebase />
-      <Supabase />
+      {/* <Supabase /> */}
       <SuperTokens>
         <UserTools />
       </SuperTokens>
