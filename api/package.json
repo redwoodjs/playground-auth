@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "@prisma/client": "^2.12.1",
-    "@redwoodjs/api": "^0.22.1"
+    "@redwoodjs/api": "^0.26.2",
+    "serverless-http": "^2.7.0",
+    "supertokens-node": "github:supertokens/supertokens-node#4.2"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.12.1"
+    "prisma": "^2.12.1"
   }
 }

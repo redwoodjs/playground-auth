@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom'
-import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
+import { FatalErrorBoundary } from '@redwoodjs/web'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import supertokens from "supertokens-auth-react";
 import sessions from "supertokens-auth-react/recipe/session";
@@ -18,15 +18,20 @@ supertokens.init({
   },
   recipeList: [
     sessions.init(),
-    emailpassword.init()
+    emailpassword.init({
+      onHandleEvent(context) {
+          console.log(context);
+      }
+    })
   ]
 });
 
-ReactDOM.render(
+const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider>
+    <RedwoodApolloProvider>
       <Routes />
-    </RedwoodProvider>
-  </FatalErrorBoundary>,
-  document.getElementById('redwood-app')
+    </RedwoodApolloProvider>
+  </FatalErrorBoundary>
 )
+
+export default App
