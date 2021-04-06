@@ -5,8 +5,7 @@ export const config = {
   appInfo: {
     apiDomain: "http://localhost:8910/",
     appName: "SuperTokens RedwoodJS",
-    websiteDomain: "http://localhost:8910/",
-    // apiBasePath: "/.netlify/functions/"
+    websiteDomain: "http://localhost:8910/"
   },
   supertokens: {
     connectionURI: "try.supertokens.io"

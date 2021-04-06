@@ -3,7 +3,6 @@ import express from "express";
 import { middleware, errorHandler, init } from "supertokens-node";
 import serverless from "serverless-http"
 import bodyParser from "body-parser";
-// TODO: test for other providers once everything is done
 
 export function authHandler() {
   let app = express();
