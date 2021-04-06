@@ -15,5 +15,6 @@ export const config = {
     emailpassword.init(),
     sessions.init()
   ],
-  apiWebProxyPath: "/.netlify/functions"
+  apiWebProxyPath: "/.netlify/functions",
+  isInServerlessEnv: true
 }

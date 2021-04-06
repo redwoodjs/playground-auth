@@ -18,11 +18,7 @@ supertokens.init({
   },
   recipeList: [
     sessions.init(),
-    emailpassword.init({
-      onHandleEvent(context) {
-          console.log(context);
-      }
-    })
+    emailpassword.init()
   ]
 });
 
