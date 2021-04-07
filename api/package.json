@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "^0.22.1"
+    "@redwoodjs/api": "^0.28.0",
+    "serverless-http": "^2.7.0",
+    "supertokens-node": "^4.2.0"
   }
 }

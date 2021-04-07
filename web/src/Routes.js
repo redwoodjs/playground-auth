@@ -8,8 +8,12 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route } from '@redwoodjs/router'
+import supertokens from "supertokens-auth-react";
 
 const Routes = () => {
+  if (supertokens.canHandleRoute()) {
+    return supertokens.getRoutingComponent();
+  }
   return (
     <Router>
       <Route path="/" page={HomePage} name="home" />

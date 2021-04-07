@@ -5,6 +5,7 @@ import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
+import SuperTokens from "src/components/SuperTokens"
 
 const HomePage = () => {
   return (
@@ -30,6 +31,9 @@ const HomePage = () => {
       <MagicLink />
       <Firebase />
       <Supabase />
+      <SuperTokens>
+        <UserTools />
+      </SuperTokens>
     </div>
   )
 }

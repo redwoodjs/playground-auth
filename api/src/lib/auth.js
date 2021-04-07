@@ -6,8 +6,18 @@
 //   }
 
 import { AuthenticationError } from '@redwoodjs/api'
+import * as emailpassword from "supertokens-node/recipe/emailpassword";
 
 export const getCurrentUser = async (_decoded, { type, token }) => {
+  if (type === "supertokens") {
+    return {
+      type,
+      userId: _decoded.getUserId(),
+      jwtPayload: _decoded.getJWTPayload(),
+      sessionHandle: _decoded.getHandle(),
+      email: (await emailpassword.getUserById(_decoded.getUserId())).email
+    }
+  }
   return {
     hello: 'I come from the `getCurrentUser` function on the api side.',
     type,
