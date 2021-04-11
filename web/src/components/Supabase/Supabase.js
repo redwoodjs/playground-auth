@@ -3,6 +3,8 @@ import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -32,6 +34,7 @@ const SupabaseUserTools = () => {
     <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <form>
         <input
           type="email"
@@ -98,7 +101,10 @@ const SupabaseUserTools = () => {
 export default () => {
   return (
     <AuthProvider client={supabase} type="supabase">
-      <SupabaseUserTools />
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <SupabaseUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }

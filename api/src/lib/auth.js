@@ -11,17 +11,14 @@ import { AuthenticationError } from '@redwoodjs/api'
 import { logger } from './logger'
 
 export const getCurrentUser = async (decoded, { type, token }) => {
-  logger.debug({
-    decoded,
-    type,
-    token,
-  })
+  logger.debug(
+    {
+      payload: { decoded, type, token },
+    },
+    'Current User'
+  )
 
-  return {
-    hello: 'I come from the `getCurrentUser` function on the api side.',
-    type,
-    token: token.replace(/\w/g, '*'),
-  }
+  return { decoded, type, token }
 }
 
 // Use this function in your services to check that a user is logged in, and
