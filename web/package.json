@@ -14,17 +14,17 @@
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.9.0",
-    "@redwoodjs/auth": "^0.22.1",
-    "@redwoodjs/forms": "^0.22.1",
-    "@redwoodjs/router": "^0.22.1",
-    "@redwoodjs/web": "^0.22.1",
-    "@supabase/supabase-js": "^0.36.5",
-    "firebase": "^7.15.1",
-    "magic-sdk": "^2.0.0",
-    "msal": "^1.4.1",
-    "netlify-identity-widget": "^1.6.0",
+    "@redwoodjs/auth": "^0.29.0",
+    "@redwoodjs/forms": "^0.29.0",
+    "@redwoodjs/router": "^0.29.0",
+    "@redwoodjs/web": "^0.29.0",
+    "@supabase/supabase-js": "^1.9.0",
+    "firebase": "^8.3.3",
+    "magic-sdk": "^4.2.1",
+    "msal": "^1.4.9",
+    "netlify-identity-widget": "^1.9.1",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
