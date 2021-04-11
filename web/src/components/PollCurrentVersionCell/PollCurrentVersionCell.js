@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 export const QUERY = gql`
   query PollCurrentVersionQuery {
     redwood {
@@ -10,7 +12,7 @@ export const QUERY = gql`
 
 export const beforeQuery = () => {
   return {
-    pollInterval: 10000,
+    pollInterval: 20000,
   }
 }
 
@@ -18,13 +20,22 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>Empty</div>
 
-export const Failure = ({ error }) => <div>Error: {error.message}</div>
+export const Failure = ({ error }) => (
+  <div style={{ color: 'red' }}>Error: {error.message}</div>
+)
 
 export const Success = ({ redwood }) => {
+  const [lastUpdate, setLastUpdate] = useState('lastUpdate')
+
+  useEffect(() => {
+    setLastUpdate(new Date().toLocaleTimeString())
+  }, [redwood])
+
   return (
     <>
       <h3>Polling output</h3>
-      {JSON.stringify(redwood)}
+      <p>Last Changed {lastUpdate}</p>
+      <pre style={{ color: 'green' }}>{JSON.stringify(redwood)}</pre>
     </>
   )
 }

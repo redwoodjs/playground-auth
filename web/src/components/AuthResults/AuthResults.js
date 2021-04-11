@@ -1,4 +1,5 @@
 import { useAuth } from '@redwoodjs/auth'
+import { useEffect, useState } from 'react'
 
 export default () => {
   const { type, userMetadata, currentUser, isAuthenticated } = useAuth()
@@ -6,8 +7,15 @@ export default () => {
   const emailOk = /^\w+@\w+.*\.\w\w+$/.test(userMetadata?.email)
   const tokenOk = currentUser?.token && currentUser?.token !== 'null'
 
+  const [lastUpdate, setLastUpdate] = useState('lastUpdate')
+
+  useEffect(() => {
+    setLastUpdate(new Date().toLocaleTimeString())
+  }, [currentUser, userMetadata, isAuthenticated])
+
   return (
     <>
+      <p>Last update {lastUpdate}</p>
       <code>
         userMetaData:
         <pre style={{ margin: 0 }}>{JSON.stringify(userMetadata, null, 2)}</pre>
