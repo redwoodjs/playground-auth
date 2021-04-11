@@ -5,15 +5,18 @@
 //     return await db.user.findOne({ where: { email } })
 //   }
 
+// @ts-check
+
 import { AuthenticationError } from '@redwoodjs/api'
 import { logger } from './logger'
 
 export const getCurrentUser = async (decoded, { type, token }) => {
-  logger.log({
+  logger.debug({
     decoded,
     type,
     token,
   })
+
   return {
     hello: 'I come from the `getCurrentUser` function on the api side.',
     type,
