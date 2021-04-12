@@ -1,6 +1,7 @@
 import { useAuth } from '@redwoodjs/auth'
 
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
 
 const UserTools = ({
@@ -18,6 +19,7 @@ const UserTools = ({
     <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
+      {isAuthenticated && <PollCurrentVersionCell />}
       <LogInOutButtons
         logInOptions={logInOptions}
         logOutOptions={logOutOptions}

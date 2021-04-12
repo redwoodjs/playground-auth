@@ -1,8 +1,10 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
 const m = new Magic(process.env.MAGIC_SECRET_KEY)
 
@@ -23,6 +25,7 @@ const MagicLinkUserTools = () => {
     <div>
       <h2>{type}</h2>
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <form action="#">
         <input
           type="email"
@@ -65,7 +68,10 @@ const MagicLinkUserTools = () => {
 export default () => {
   return (
     <AuthProvider client={m} type="magicLink">
-      <MagicLinkUserTools />
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <MagicLinkUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }

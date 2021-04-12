@@ -14,19 +14,9 @@ const HomePage = () => {
         This page demonstrates the authentication providers that redwood
         supports.
       </p>
-      <Auth0>
-        <UserTools
-          logOutOptions={{
-            returnTo: process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
-          }}
-        />
-      </Auth0>
-      <AzureActiveDirectory>
-        <UserTools />
-      </AzureActiveDirectory>
-      <Netlify>
-        <UserTools />
-      </Netlify>
+      <Auth0 />
+      <AzureActiveDirectory />
+      <Netlify />
       <MagicLink />
       <Firebase />
       <Supabase />
