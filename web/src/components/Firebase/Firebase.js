@@ -27,7 +27,7 @@ const FirebaseUserTools = () => {
   return (
     <div>
       <h2>firebase</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
+      <p>{isAuthenticated ? 'Authenticated' : 'Not Authenticated'}</p>
       <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
         Provider
       </label>
@@ -58,22 +58,19 @@ const FirebaseUserTools = () => {
           {isAuthenticated ? (
             <button onClick={() => logOut()}>Log Out</button>
           ) : (
-            <div style={{ marginTop: 10 }}>
+            <>
               <input
                 type="email"
                 placeholder="email address"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <br />
               <input
                 type="password"
                 placeholder="password"
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <br />
-              <br />
               <button
                 disabled={
                   (!email.length || !password.length) && !isAuthenticated
@@ -90,11 +87,11 @@ const FirebaseUserTools = () => {
               >
                 Sign Up
               </button>
-            </div>
+            </>
           )}
         </>
       )}
-      <br />
+      <hr />
       <AuthResults />
     </div>
   )

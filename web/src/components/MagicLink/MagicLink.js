@@ -22,7 +22,7 @@ const MagicLinkUserTools = () => {
   return (
     <div>
       <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      <p>{isAuthenticated ? 'Authenticated' : 'Not Authenticated'}</p>
       <form action="#">
         <input
           type="email"
@@ -45,6 +45,7 @@ const MagicLinkUserTools = () => {
 
         {!isAuthenticated && (
           <button
+            className="button-alt"
             disabled={!email.length && !isAuthenticated}
             onClick={async () => {
               if (!isAuthenticated && email.length) {
@@ -56,7 +57,7 @@ const MagicLinkUserTools = () => {
           </button>
         )}
       </form>
-      <br />
+      <hr />
       <AuthResults />
     </div>
   )

@@ -1,3 +1,58 @@
 @import "tailwindcss/base";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold mb-2;
+}
+
+h1 {
+  @apply text-xl;
+}
+
+h2 {
+  @apply text-lg;
+}
+
+p {
+  @apply mb-2;
+}
+
+a {
+  @apply text-red-900;
+}
+
+hr {
+  @apply border-red-300 my-6;
+}
+
+button {
+  @apply bg-red-700 block border border-red-700 duration-200 font-semibold mb-2 px-4 py-3 rounded-lg text-white transition w-full hover:bg-red-600 hover:border-red-600;
+}
+
+button:disabled {
+  @apply bg-red-200 border border-red-200 text-red-500;
+}
+
+label {
+  @apply font-semibold;
+}
+
+input,
+select {
+  @apply block border border-red-300 mb-2 px-4 py-2 rounded-lg w-full;
+}
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.button-alt:not(:disabled) {
+  @apply bg-white border border-red-300 text-red-700 hover:bg-red-200;
+}
+
+.container > div {
+  @apply bg-red-100 border border-red-300 p-4 rounded-lg;
+}

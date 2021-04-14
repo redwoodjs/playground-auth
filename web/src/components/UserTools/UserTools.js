@@ -17,13 +17,13 @@ const UserTools = ({
   return (
     <div>
       <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
+      <p>{isAuthenticated ? 'Authenticated' : 'Not Authenticated'}</p>
       <LogInOutButtons
         logInOptions={logInOptions}
         logOutOptions={logOutOptions}
         signUpOptions={signUpOptions}
       />
-      <br />
+      <hr />
       <AuthResults />
     </div>
   )

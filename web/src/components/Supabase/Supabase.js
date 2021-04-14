@@ -31,8 +31,8 @@ const SupabaseUserTools = () => {
   return (
     <div>
       <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
-      <form>
+      <p>{isAuthenticated ? 'Authenticated' : 'Not Authenticated'}</p>
+      <form autoComplete="off">
         <input
           type="email"
           placeholder="email address"
@@ -40,7 +40,6 @@ const SupabaseUserTools = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <br />
         <input
           type="password"
           placeholder="password"
@@ -49,7 +48,6 @@ const SupabaseUserTools = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </form>
-      <br />
       <button
         disabled={(!email.length || !password.length) && !isAuthenticated}
         onClick={async () => {
@@ -71,6 +69,7 @@ const SupabaseUserTools = () => {
       </button>
       {!isAuthenticated && (
         <button
+          className="button-alt"
           disabled={(!email.length || !password.length) && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length && password.length) {
@@ -89,7 +88,7 @@ const SupabaseUserTools = () => {
           Sign Up
         </button>
       )}
-      <br />
+      <hr />
       <AuthResults />
     </div>
   )
