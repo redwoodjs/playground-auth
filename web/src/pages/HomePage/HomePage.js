@@ -1,4 +1,3 @@
-import UserTools from 'src/components/UserTools'
 import Auth0 from 'src/components/Auth0'
 import AzureActiveDirectory from 'src/components/AzureActiveDirectory'
 import Netlify from 'src/components/Netlify'
