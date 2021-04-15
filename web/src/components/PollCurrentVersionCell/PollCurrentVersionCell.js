@@ -21,7 +21,7 @@ export const Loading = () => <div>Loading...</div>
 export const Empty = () => <div>Empty</div>
 
 export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
+  <pre className="text-red-700">Error: {error.message}</pre>
 )
 
 export const Success = ({ redwood }) => {
@@ -35,7 +35,9 @@ export const Success = ({ redwood }) => {
     <>
       <h3>Polling output</h3>
       <p>Last Changed {lastUpdate}</p>
-      <pre style={{ color: 'green' }}>{JSON.stringify(redwood)}</pre>
+      <pre className="text-green-700 w-1/2">
+        {JSON.stringify(redwood, null, 2)}
+      </pre>
     </>
   )
 }
