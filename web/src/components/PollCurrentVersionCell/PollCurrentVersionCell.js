@@ -21,7 +21,9 @@ export const Loading = () => <div>Loading...</div>
 export const Empty = () => <div>Empty</div>
 
 export const Failure = ({ error }) => (
-  <pre className="text-red-700">Error: {error.message}</pre>
+  <pre className="text-red-700 bg-red-200 p-5 rounded-lg">
+    Error: {error.message}
+  </pre>
 )
 
 export const Success = ({ redwood }) => {

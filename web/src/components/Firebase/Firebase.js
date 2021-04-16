@@ -35,8 +35,9 @@ const FirebaseUserTools = () => {
       </label>
       {/* Disabled are not setup in linked Firebase account */}
       <select
+        className="my-4"
         value={provider}
-        onChange={(event) => setProvider(event.target.value)}
+        onBlur={(event) => setProvider(event.target.value)}
       >
         <option value="google.com">Google (default)</option>
         <option disabled value="apple.com">

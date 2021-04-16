@@ -4,6 +4,7 @@ import Netlify from 'src/components/Netlify'
 import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
+import Card from 'src/components/Card/Card'
 
 const HomePage = () => {
   return (
@@ -23,24 +24,24 @@ const HomePage = () => {
         .
       </p>
       <ul className="space-y-3">
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        <Card>
           <Auth0 />
-        </li>
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        </Card>
+        <Card>
           <AzureActiveDirectory />
-        </li>
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        </Card>
+        <Card>
           <Netlify />
-        </li>
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        </Card>
+        <Card>
           <MagicLink />
-        </li>
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        </Card>
+        <Card>
           <Firebase />
-        </li>
-        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+        </Card>
+        <Card>
           <Supabase />
-        </li>
+        </Card>
       </ul>
     </div>
   )

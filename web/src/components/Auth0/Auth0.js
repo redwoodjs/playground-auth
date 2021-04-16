@@ -14,6 +14,9 @@ const auth0 = new Auth0Client({
   // https://auth0.com/docs/libraries/auth0-spa-js#change-storage-options
   cacheLocation: 'localstorage',
   audience: process.env.AUTH0_AUDIENCE,
+
+  // @MARK: required for automatically extending sessions
+  useRefreshTokens: true,
 })
 
 export default (props) => {
