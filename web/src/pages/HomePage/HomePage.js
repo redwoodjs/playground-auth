@@ -7,18 +7,41 @@ import Supabase from 'src/components/Supabase'
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>@redwoodjs/auth in action</h1>
-      <p>
-        This page demonstrates the authentication providers that redwood
-        supports.
+    <div className="max-w-7xl py-5 mx-auto sm:px-6 lg:px-8">
+      <h1 className="text-lg pb-5 leading-6 font-medium text-gray-900 capitalize">
+        @redwoodjs/auth in action
+      </h1>
+      <p className="text-md pb-5">
+        This page demonstrates authentication providers supported by{' '}
+        <a
+          className="underline"
+          href="https://www.redwoodjs.com/authentication"
+          targer="_blank"
+        >
+          RedwoodJS
+        </a>
+        .
       </p>
-      <Auth0 />
-      <AzureActiveDirectory />
-      <Netlify />
-      <MagicLink />
-      <Firebase />
-      <Supabase />
+      <ul className="space-y-3">
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <Auth0 />
+        </li>
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <AzureActiveDirectory />
+        </li>
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <Netlify />
+        </li>
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <MagicLink />
+        </li>
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <Firebase />
+        </li>
+        <li className="bg-white shadow overflow-hidden rounded-md px-6 py-4">
+          <Supabase />
+        </li>
+      </ul>
     </div>
   )
 }

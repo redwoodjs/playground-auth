@@ -19,6 +19,7 @@
     "@redwoodjs/router": "^0.29.0",
     "@redwoodjs/web": "^0.29.0",
     "@supabase/supabase-js": "^1.11.2",
+    "@tailwindcss/forms": "^0.3.2",
     "firebase": "^8.3.3",
     "magic-sdk": "^4.2.1",
     "msal": "^1.4.9",
@@ -26,5 +27,10 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "postcss-loader": "4.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

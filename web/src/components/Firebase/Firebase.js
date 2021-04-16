@@ -2,8 +2,9 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { useState } from 'react'
-import AuthResults from '../AuthResults'
-import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
+import AuthResults from 'src/components/AuthResults'
+import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
+import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 
 const firebaseClientConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -22,11 +23,12 @@ const FirebaseUserTools = () => {
   const [password, setPassword] = useState('')
   const [provider, setProvider] = useState('google.com')
 
-  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated, type } = useAuth()
 
   return (
     <div>
-      <h2>firebase</h2>
+      <AuthProviderCardHeading type={type} />
+
       {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
       <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
         Provider

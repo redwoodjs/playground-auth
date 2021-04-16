@@ -1,8 +1,11 @@
-import { AuthProvider } from '@redwoodjs/auth'
-import { UserAgentApplication } from 'msal'
+import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { UserAgentApplication } from 'msal'
+import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
+import AuthResults from 'src/components/AuthResults'
+import UserTools from '../UserTools/UserTools'
 
-import UserTools from 'src/components/UserTools'
+//import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
 const azureActiveDirectoryClient = new UserAgentApplication({
   auth: {
@@ -14,17 +17,28 @@ const azureActiveDirectoryClient = new UserAgentApplication({
   },
 })
 
+const AzureUserTools = () => {
+  const { type } = useAuth()
+
+  return (
+    <div>
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <UserTools />
+        <AuthResults />
+      </RedwoodApolloProvider>
+    </div>
+  )
+}
+
 export default ({ children }) => {
   return (
     <AuthProvider
       client={azureActiveDirectoryClient}
       type="azureActiveDirectory"
     >
-      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
-      <RedwoodApolloProvider>
-        <UserTools />
-        {children}
-      </RedwoodApolloProvider>
+      <AzureUserTools />
+      {children}
     </AuthProvider>
   )
 }
