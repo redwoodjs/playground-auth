@@ -3,6 +3,7 @@ import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
+import Badge from 'src/components/Badge'
 
 const UserTools = ({
   logInOptions = {},
@@ -17,10 +18,7 @@ const UserTools = ({
 
   return (
     <div>
-      <AuthProviderCardHeading type={type} />
-      <h3 className="py-5 text-md ">
-        {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}
-      </h3>{' '}
+      <Badge />
       {isAuthenticated && <PollCurrentVersionCell />}
       <LogInOutButtons
         logInOptions={logInOptions}
