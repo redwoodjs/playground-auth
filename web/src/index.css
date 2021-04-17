@@ -11,6 +11,10 @@ a {
   @apply text-red-700;
 }
 
+code {
+  @apply text-xs;
+}
+
 label {
   @apply font-medium text-xs text-gray-600;
 }

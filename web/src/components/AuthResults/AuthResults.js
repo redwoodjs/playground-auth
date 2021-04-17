@@ -14,7 +14,7 @@ export default () => {
   }, [currentUser, userMetadata, isAuthenticated])
 
   return (
-    <>
+    <div className="w-full overflow-x-auto overflow-y-auto text-sm max-h-80">
       <p>Last update {lastUpdate}</p>
       <code>
         userMetaData:
@@ -36,6 +36,6 @@ export default () => {
           </ul>
         </>
       ) : null}
-    </>
+    </div>
   )
 }
