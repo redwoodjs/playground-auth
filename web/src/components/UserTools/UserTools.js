@@ -1,5 +1,4 @@
 import { useAuth } from '@redwoodjs/auth'
-import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
@@ -10,7 +9,7 @@ const UserTools = ({
   logOutOptions = {},
   signUpOptions = {},
 }) => {
-  const { isAuthenticated, loading, type } = useAuth()
+  const { isAuthenticated, loading } = useAuth()
 
   if (loading) {
     return 'Loading...'

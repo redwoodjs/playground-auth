@@ -3,7 +3,6 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
-import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
@@ -13,7 +12,7 @@ const m = new Magic(process.env.MAGICLINK_PUBLIC)
 const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
 
-  const { logIn, logOut, signUp, isAuthenticated, type } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   return (
     <div>

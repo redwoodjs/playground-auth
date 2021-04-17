@@ -2,7 +2,6 @@ import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
 
-import AuthProviderCardHeading from 'src/components/AuthProviderCardHeading'
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
@@ -17,7 +16,7 @@ const SupabaseUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { logIn, logOut, signUp, isAuthenticated, type } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   const resetForm = () => {
     setEmail('')
