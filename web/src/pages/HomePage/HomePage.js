@@ -5,6 +5,8 @@ import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
 import Card from 'src/components/Card/Card'
+import { Tabs, Tab, Row, Col, Nav } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
   return (
@@ -23,26 +25,39 @@ const HomePage = () => {
         </a>
         .
       </p>
-      <ul className="space-y-3">
+
+      <Tabs defaultActiveKey="Auth0" id="tabs-example">
+        <Tab eventKey="Auth0" title="Auth0">
         <Card>
-          <Auth0 />
+            <Auth0 />
+          </Card>
+        </Tab>
+        <Tab eventKey="AzureActiveDirectory" title="AzureActiveDirectory">
+          <Card>
+            <AzureActiveDirectory />
+          </Card>
+        </Tab>
+        <Tab eventKey="Netlify " title="Netlify">
+          <Card>
+            <Netlify />
+          </Card>
+        </Tab>
+        <Tab eventKey="MagicLink" title="MagicLink">
+          <Card>
+           <MagicLink />
+          </Card>
+        </Tab>
+        <Tab eventKey="Firebase" title="Firebase">
+         <Card>
+            <Firebase />
         </Card>
-        <Card>
-          <AzureActiveDirectory />
-        </Card>
-        <Card>
-          <Netlify />
-        </Card>
-        <Card>
-          <MagicLink />
-        </Card>
-        <Card>
-          <Firebase />
-        </Card>
-        <Card>
-          <Supabase />
-        </Card>
-      </ul>
+        </Tab>
+        <Tab eventKey="Supabase" title="Supabase">
+          <Card>
+            <Supabase />
+          </Card>
+        </Tab>
+      </Tabs>
     </div>
   )
 }
