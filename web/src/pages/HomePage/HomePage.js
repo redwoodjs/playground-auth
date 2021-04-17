@@ -5,13 +5,14 @@ import MagicLink from 'src/components/MagicLink'
 import Firebase from 'src/components/Firebase'
 import Supabase from 'src/components/Supabase'
 import Card from 'src/components/Card/Card'
-import { Tabs, Tab, Row, Col, Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Tabs, Tab, Row, Col, Nav } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const HomePage = () => {
   return (
     <div className="max-w-7xl py-5 mx-auto sm:px-6 lg:px-8">
       <h1 className="text-lg pb-5 leading-6 font-medium text-gray-900 capitalize">
+
         @redwoodjs/auth in action
       </h1>
       <p className="text-md pb-5">

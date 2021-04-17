@@ -15,7 +15,8 @@ export default () => {
 
   return (
     <>
-      <p>Last update {lastUpdate}</p>
+      <p className="color: grey">Last update {lastUpdate}</p>
+      <hr/>
       <code>
         userMetaData:
         <pre style={{ margin: 0 }}>{JSON.stringify(userMetadata, null, 2)}</pre>

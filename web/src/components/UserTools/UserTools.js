@@ -4,6 +4,7 @@ import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
 
+
 const UserTools = ({
   logInOptions = {},
   logOutOptions = {},

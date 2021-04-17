@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.0.0",
+    "@heroicons/react": "^1.0.1",
     "bootstrap": "^4.6.0",
     "react-bootstrap": "^1.5.2"
   }
