@@ -5,7 +5,7 @@ import UserTools from '../UserTools/UserTools'
 
 //import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
-const azureActiveDirectoryClient = new UserAgentApplication({
+export const azureActiveDirectoryClient = new UserAgentApplication({
   auth: {
     clientId: process.env.AZURE_ACTIVE_DIRECTORY_CLIENT_ID,
     authority: process.env.AZURE_ACTIVE_DIRECTORY_AUTHORITY,

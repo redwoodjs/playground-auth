@@ -9,5 +9,6 @@ Interested in adding a brand new provider to Redwood? Head to the [main Redwood 
 Adding a provider example is a simple three step process:
 
 1. Create a provider component in `web/src/components`
+  - Make sure to export the client as well
 2. Add the provider logo to `web/src/lib/images`
-3. Add the provider name, slug, photo, and component to `web/src/lib/providers.js`
+3. Add the provider name, slug, photo, client, and component to `web/src/lib/providers.js`
