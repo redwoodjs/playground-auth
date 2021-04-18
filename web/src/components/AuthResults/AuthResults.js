@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react'
 
 // https://codemirror.net/doc/manual.html
 import 'codemirror/keymap/sublime';
-import './CodemirrorCSS/duotone-light.css';
+import 'codemirror/theme/duotone-light.css';
 import { Codemirror } from 'react-codemirror-ts';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/edit/matchbrackets';
-import './CodemirrorCSS/codemirror.css';
+import 'codemirror/lib/codemirror.css';
+
 
 
 export default () => {
