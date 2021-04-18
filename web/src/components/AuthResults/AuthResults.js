@@ -1,13 +1,13 @@
 import { useAuth } from '@redwoodjs/auth'
 import { useEffect, useState } from 'react'
 
-// https://codemirror.net/doc/manual.html  additional package:(npm install @uiw/react-codemirror --save )
+// https://codemirror.net/doc/manual.html
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/duotone-light.css';
+import './CodemirrorCSS/duotone-light.css';
 import { Codemirror } from 'react-codemirror-ts';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/edit/matchbrackets';
-import 'codemirror/lib/codemirror.css';
+import './CodemirrorCSS/codemirror.css';
 
 
 export default () => {
