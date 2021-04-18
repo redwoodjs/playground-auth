@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import Footer from 'src/components/Footer'
 
 const AppLayout = ({ children }) => {
   return (
@@ -13,7 +14,7 @@ const AppLayout = ({ children }) => {
             />
           </Link>
           <h1 className="mt-4 text-3xl font-extrabold text-gray-900">
-            @Redwoodjs/Auth In Action
+            @RedwoodJS/Auth In Action
           </h1>
           <p className="mt-2 text-sm text-gray-600 max-w">
             This page demonstrates authentication providers supported by{' '}
@@ -25,7 +26,8 @@ const AppLayout = ({ children }) => {
             </a>
           </p>
         </div>
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </div>
     </>
   )
