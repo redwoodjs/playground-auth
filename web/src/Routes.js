@@ -6,7 +6,7 @@ const Routes = () => {
     <Router>
       <Set wrap={AppLayout}>
         <Route path="/{provider}" page={ProviderPage} name="provider" />
-        <Route path="/" page={HomePage} name="home" prerender />
+        <Route path="/" page={HomePage} name="home" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
