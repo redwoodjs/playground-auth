@@ -4,7 +4,7 @@ import AppLayout from 'src/layouts/AppLayout'
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={[AppLayout]}>
+      <Set wrap={AppLayout}>
         <Route path="/{provider}" page={ProviderPage} name="provider" />
         <Route path="/" page={HomePage} name="home" />
       </Set>
