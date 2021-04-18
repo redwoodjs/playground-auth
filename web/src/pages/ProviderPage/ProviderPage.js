@@ -47,18 +47,24 @@ const ProviderPage = ({ provider }) => {
             currentProvider.component
           ) : (
             <div className="text-center">
-              <h3 className="text-xl font-medium mt-6 mb-2">
-                Example coming soon!
-              </h3>
+              <h3 className="text-xl font-medium mt-6 mb-2">Help Wanted</h3>
               <p className="text-sm text-gray-600">
-                Read the{' '}
+                Want to add the example for {currentProvider.name}? Learn how to{' '}
+                <a
+                  href="https://github.com/redwoodjs/playground-auth/blob/main/CONTRIBUTING.md"
+                  className="font-medium"
+                >
+                  contribute an Authentication Provider
+                </a>
+                . Read the{' '}
                 <a
                   href={`https://redwoodjs.com/docs/authentication#${currentProvider.slug}`}
                   className="font-medium"
                 >
                   Redwood Authentication docs
                 </a>{' '}
-                for more information
+                for more information on how to implement {currentProvider.name}{' '}
+                into your app.
               </p>
             </div>
           )}
