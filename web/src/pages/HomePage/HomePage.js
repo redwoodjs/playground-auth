@@ -1,7 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { AuthProvider } from '@redwoodjs/auth'
 import { providers } from 'src/lib/providers'
-import Badge from 'src/components/Badge'
+import AuthPing from 'src/components/AuthPing'
 
 const HomePage = () => {
   return (
@@ -11,13 +11,11 @@ const HomePage = () => {
           <Link
             key={i}
             to={routes.provider({ provider: provider.slug })}
-            className="relative col-span-1 flex items-center justify-center py-12 px-8 bg-white border border-red-300 rounded-md transition-colors duration-200 hover:bg-red-100"
+            className="relative col-span-1 flex items-center justify-center py-8 px-8 bg-white border border-red-300 rounded-md transition-colors duration-200 hover:bg-red-100"
           >
             {provider.client && (
               <AuthProvider client={provider.client} type={provider.slug}>
-                <div className="absolute top-0 right-0 mt-2 mr-2">
-                  <Badge />
-                </div>
+                <AuthPing />
               </AuthProvider>
             )}
             <img
