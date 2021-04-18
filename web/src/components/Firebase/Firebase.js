@@ -13,7 +13,7 @@ const firebaseClientConfig = {
   appId: process.env.FIREBASE_APP_ID,
 }
 
-const firebaseClient = ((config) => {
+export const firebaseClient = ((config) => {
   firebase.initializeApp(config)
   return firebase
 })(firebaseClientConfig)

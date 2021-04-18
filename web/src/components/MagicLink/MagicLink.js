@@ -7,7 +7,7 @@ import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
 
-const m = new Magic(process.env.MAGICLINK_PUBLIC)
+export const magicLinkClient = new Magic(process.env.MAGICLINK_PUBLIC)
 
 const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
@@ -61,7 +61,7 @@ const MagicLinkUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={m} type="magicLink">
+    <AuthProvider client={magicLinkClient} type="magicLink">
       {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
       <RedwoodApolloProvider>
         <MagicLinkUserTools />
