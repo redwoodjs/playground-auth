@@ -34,12 +34,12 @@ export const Success = ({ redwood }) => {
   }, [redwood])
 
   return (
-    <>
+    <div className="w-full overflow-x-auto overflow-y-auto text-sm max-h-80">
       <h3>Polling output</h3>
       <p>Last Changed {lastUpdate}</p>
       <pre className="text-green-700 w-1/2">
         {JSON.stringify(redwood, null, 2)}
       </pre>
-    </>
+    </div>
   )
 }
