@@ -1,7 +1,6 @@
 import { navigate, routes } from '@redwoodjs/router'
 import { providers } from 'src/lib/providers'
-import { useState, Fragment } from 'react'
-import { Listbox } from '@headlessui/react'
+import { Helmet } from 'react-helmet'
 
 const ProviderPage = ({ provider }) => {
   const currentIndex = providers.findIndex((e) => e.slug == provider)
@@ -13,6 +12,9 @@ const ProviderPage = ({ provider }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{currentProvider.name}</title>
+      </Helmet>
       <div className="max-w-md mx-auto w-full">
         <label
           htmlFor="providers"

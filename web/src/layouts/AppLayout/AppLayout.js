@@ -1,9 +1,14 @@
 import { Link, routes } from '@redwoodjs/router'
 import Footer from 'src/components/Footer'
+import { Helmet } from 'react-helmet'
 
 const AppLayout = ({ children }) => {
   return (
     <>
+      <Helmet
+        titleTemplate="%s - RedwoodJS Auth Playground"
+        defaultTitle="RedwoodJS Auth Playground"
+      />
       <div className="min-h-screen bg-red-100 flex flex-col justify-center py-12 px-6 lg:px-8">
         <div className="mb-6 text-center sm:mx-auto sm:w-full sm:max-w-md">
           <Link to={routes.home()}>
