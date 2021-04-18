@@ -23,6 +23,35 @@ const SupabaseUserTools = () => {
     setPassword('')
   }
 
+  const handleExistingUser = async () => {
+    if (!isAuthenticated && email.length) {
+      try {
+        await logIn({ email, password })
+        resetForm()
+      } catch (e) {
+        console.log(e)
+        const supabaseError = JSON.parse(e.message)
+        alert(supabaseError.error_description)
+      }
+    } else {
+      await logOut()
+    }
+  }
+
+  const handleSignup = async () => {
+    if (!isAuthenticated && email.length && password.length) {
+      try {
+        await signUp({ email, password })
+
+        resetForm()
+      } catch (e) {
+        const supabaseError = JSON.parse(e.message)
+        alert(supabaseError.msg)
+        console.log(e)
+      }
+    }
+  }
+
   return (
     <div>
       <Badge />
@@ -44,22 +73,10 @@ const SupabaseUserTools = () => {
         />
       </form>
       <button
+        type="submit"
         className="btn"
         disabled={(!email.length || !password.length) && !isAuthenticated}
-        onClick={async () => {
-          if (!isAuthenticated && email.length) {
-            try {
-              await logIn({ email, password })
-              resetForm()
-            } catch (e) {
-              console.log(e)
-              const supabaseError = JSON.parse(e.message)
-              alert(supabaseError.error_description)
-            }
-          } else {
-            await logOut()
-          }
-        }}
+        onClick={handleExistingUser}
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
@@ -67,19 +84,7 @@ const SupabaseUserTools = () => {
         <button
           className="btn btn-alt"
           disabled={(!email.length || !password.length) && !isAuthenticated}
-          onClick={async () => {
-            if (!isAuthenticated && email.length && password.length) {
-              try {
-                await signUp({ email, password })
-
-                resetForm()
-              } catch (e) {
-                const supabaseError = JSON.parse(e.message)
-                alert(supabaseError.msg)
-                console.log(e)
-              }
-            }
-          }}
+          onClick={handleSignup}
         >
           Sign Up
         </button>
