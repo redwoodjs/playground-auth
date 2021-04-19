@@ -29,7 +29,7 @@ button {
 
 .markdown pre {
   background-color: #1a202c;
-  @apply overflow-x-auto text-white text-sm rounded-lg p-2;
+  @apply overflow-x-auto text-white text-sm rounded-lg p-3;
 }
 
 @import "tailwindcss/components";

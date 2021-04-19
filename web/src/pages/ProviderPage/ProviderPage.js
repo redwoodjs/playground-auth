@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
 
 const tabs = [
-  { name: 'Try', slug: 'try', icon: <EyeIcon /> },
+  { name: 'Demo', slug: 'demo', icon: <EyeIcon /> },
   { name: 'Code', slug: 'code', icon: <CodeIcon /> },
 ]
 
@@ -45,14 +45,14 @@ const ProviderPage = ({ provider }) => {
           ))}
         </select>
       </div>
-      <div className="flex justify-end mt-6 -mb-4 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="flex justify-center mt-6 -mb-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex items-center rounded-md bg-red-200 hover:bg-red-300">
           {tabs.map((tab) => (
             <button
               key={tab.slug}
               className={`${
                 tab.slug === viewTab ? 'shadow bg-white' : 'group'
-              } flex items-center rounded-md p-1.5 lg:pl-2.5 lg:pr-3.5`}
+              } flex items-center rounded-md p-1.5 sm:pl-2.5 sm:pr-3.5`}
               onClick={() => setViewTab(tab.slug)}
             >
               {tab.icon && (
@@ -61,7 +61,7 @@ const ProviderPage = ({ provider }) => {
                     tab.slug === viewTab
                       ? 'text-red-700'
                       : 'text-red-600 group-hover:text-gray-800'
-                  } h-5 w-5 lg:h-4 lg:w-4 lg:mr-2`}
+                  } h-5 w-5 sm:h-4 sm:w-4 sm:mr-2`}
                 >
                   {tab.icon}
                 </span>
@@ -71,7 +71,7 @@ const ProviderPage = ({ provider }) => {
                   tab.slug === viewTab
                     ? ''
                     : 'text-red-600 group-hover:text-black'
-                } sr-only lg:not-sr-only font-medium text-sm`}
+                } sr-only sm:not-sr-only font-medium text-sm`}
               >
                 {tab.name}
               </span>
@@ -79,7 +79,11 @@ const ProviderPage = ({ provider }) => {
           ))}
         </div>
       </div>
-      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+      <div
+        className={`${
+          viewTab === 'code' ? 'max-w-2xl' : 'max-w-md'
+        } transition-all duration-300 mt-6 mx-auto w-full`}
+      >
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <h2 className="mb-3">
             <img
@@ -88,8 +92,9 @@ const ProviderPage = ({ provider }) => {
               className="max-h-8 mx-auto"
             />
           </h2>
-          {viewTab === 'try' ? (
-            currentProvider.component ? (
+
+          {viewTab === 'demo' &&
+            (currentProvider.component ? (
               currentProvider.component
             ) : (
               <div className="text-center">
@@ -114,10 +119,9 @@ const ProviderPage = ({ provider }) => {
                   {currentProvider.name} into your app.
                 </p>
               </div>
-            )
-          ) : (
-            <CodeSample provider={currentProvider} />
-          )}
+            ))}
+
+          {viewTab === 'code' && <CodeSample provider={currentProvider} />}
         </div>
       </div>
     </>
