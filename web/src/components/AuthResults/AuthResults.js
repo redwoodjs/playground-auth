@@ -24,9 +24,9 @@ export default () => {
   }, [currentUser, userMetadata, isAuthenticated])
 
   const authData = (userMetadata, currentUser) => {
-    let Metadata = 'userMetadata: ' + JSON.stringify(userMetadata, null, 2) + '\n'
-    let User = 'currentUser: ' + JSON.stringify(currentUser, null, 2)
-    return Metadata + User
+    const metadata = 'userMetadata: ' + JSON.stringify(userMetadata, null, 2) + '\n'
+    const user = 'currentUser: ' + JSON.stringify(currentUser, null, 2)
+    return metadata + user
   }
 
   return (
