@@ -1,6 +1,16 @@
 import { useAuth } from '@redwoodjs/auth'
 import { useEffect, useState } from 'react'
 
+// https://codemirror.net/doc/manual.html
+import 'codemirror/theme/duotone-light.css';
+import { Codemirror } from 'react-codemirror-ts';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/addon/edit/matchbrackets';
+import 'codemirror/lib/codemirror.css';
+import './codemirror.css';
+
+
+
 export default () => {
   const { type, userMetadata, currentUser, isAuthenticated } = useAuth()
   const typeOk = type && type === currentUser?.type
@@ -13,22 +23,28 @@ export default () => {
     setLastUpdate(new Date().toLocaleTimeString())
   }, [currentUser, userMetadata, isAuthenticated])
 
-  return (
-    <div className="w-full overflow-x-auto overflow-y-auto text-sm max-h-80">
-      <p>Last update {lastUpdate}</p>
-      <code>
-        userMetaData:
-        <pre style={{ margin: 0 }}>{JSON.stringify(userMetadata, null, 2)}</pre>
-      </code>
-      <br />
-      <code>
-        currentUser:
-        <pre style={{ margin: 0 }}>{JSON.stringify(currentUser, null, 2)}</pre>
-      </code>
+  const authData = (userMetadata, currentUser) => {
+    let Metadata = 'userMetadata: ' + JSON.stringify(userMetadata, null, 2) + '\n'
+    let User = 'currentUser: ' + JSON.stringify(currentUser, null, 2)
+    return Metadata + User
+  }
 
+  return (
+    <div className="w-full text-sm">
+      <p className="mt-2 text-sm text-gray-600 max-w"> Last update {lastUpdate}</p>
+      <Codemirror
+        value={authData(userMetadata, currentUser)}
+        options={{
+          theme: 'duotone-light',
+          mode: 'javascript',
+          lineNumbers: true,
+          lineWrapping: true,
+          matchBrackets: true,
+        }}
+      />
       {isAuthenticated ? (
         <>
-          <h3>Basic sanity checks</h3>
+          <h3 className="mt-2 text-sm text-gray-600 max-w">Basic sanity checks</h3>
           <ul>
             <li style={{ color: typeOk ? 'green' : 'red' }}>Correct type</li>
             <li style={{ color: emailOk ? 'green' : 'red' }}>Valid email</li>
