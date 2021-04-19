@@ -29,7 +29,7 @@ const CodeSample = ({ provider }) => {
       }
     }
     getMarkdown()
-  })
+  }, [provider.slug])
 
   return (
     <>
