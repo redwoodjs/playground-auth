@@ -19,6 +19,11 @@ label {
   @apply font-medium text-xs text-gray-600;
 }
 
+/* Prevent propogation of button child elements*/
+button > * {
+  pointer-events: none;
+}
+
 [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
   @apply appearance-none block border border-gray-300 mb-2 placeholder-gray-400 px-3 py-2 rounded-md shadow-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700;
 }
