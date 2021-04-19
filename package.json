@@ -20,5 +20,9 @@
   "resolutions": {
     "react-dom": "17.0.1",
     "react": "17.0.1"
+  },
+  "dependencies": {
+    "codemirror": "^5.60.0",
+    "react-codemirror-ts": "^0.0.2"
   }
 }

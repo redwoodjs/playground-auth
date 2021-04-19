@@ -23,6 +23,7 @@ const ProviderPage = ({ provider }) => {
           Switch providers
         </label>
         <select
+          className="btn btn-alt"
           id="providers"
           defaultValue={provider}
           onChange={changeProvider}
