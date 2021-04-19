@@ -20,6 +20,9 @@ module.exports = {
           900: '#341309',
         },
       },
+      fontSize: {
+        '2xs': '.625rem',
+      },
     },
   },
   variants: {
