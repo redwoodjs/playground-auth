@@ -26,7 +26,7 @@ const thirdPartyProviders = [
   // Below are available but not configured in Supabase yet
   { value: 'gitlab', label: 'Gitlab', logo: logoGitlab, disabled: true },
   { value: 'azure', label: 'Azure', logo: logoAzure, disabled: true },
-  { value: 'facebook', label: 'Facbeook', logo: logoFacebook, disabled: true },
+  { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },
   {
     value: 'bitbucket',
     label: 'Bitbucket',
@@ -78,22 +78,26 @@ const SupabaseUserTools = () => {
     <div>
       <Badge />
       {isAuthenticated && <PollCurrentVersionCell />}
-      <form>
-        <input
-          type="email"
-          placeholder="email address"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </form>
+      {!isAuthenticated && (
+        <>
+          <form>
+            <input
+              type="email"
+              placeholder="email address"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="password"
+              value={password}
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </form>
+        </>
+      )}
       <button
         type="submit"
         className="btn"
@@ -103,25 +107,28 @@ const SupabaseUserTools = () => {
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
       {!isAuthenticated && (
-        <button
-          className="btn btn-alt"
-          disabled={(!email.length || !password.length) && !isAuthenticated}
-          onClick={handleSignup}
-        >
-          Sign Up
-        </button>
-      )}
-      <br />
+        <>
+          <button
+            className="btn btn-alt"
+            disabled={(!email.length || !password.length) && !isAuthenticated}
+            onClick={handleSignup}
+          >
+            Sign Up
+          </button>
 
-      <ThirdPartyProviderContainer
-        providers={thirdPartyProviders}
-        onProviderClick={
-          (e) =>
-            logIn({
-              provider: e.target.value,
-            }) // login works for login/signup
-        }
-      />
+          <br />
+
+          <ThirdPartyProviderContainer
+            providers={thirdPartyProviders}
+            onProviderClick={
+              async (e) =>
+                await logIn({
+                  provider: e.target.value,
+                }) // login works for login/signup
+            }
+          />
+        </>
+      )}
       <AuthResults />
     </div>
   )

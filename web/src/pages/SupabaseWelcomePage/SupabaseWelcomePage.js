@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, routes, navigate } from '@redwoodjs/router'
 import { AuthProvider } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { supabaseClient } from 'src/components/Supabase'
 
 const supabaseProviderPagePath = routes.provider({ provider: 'supabase' })
