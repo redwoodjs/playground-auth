@@ -4,7 +4,7 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 
 import UserTools from '../UserTools/UserTools'
 
-const auth0 = new Auth0Client({
+export const auth0Client = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN,
   client_id: process.env.AUTH0_CLIENT_ID,
   redirect_uri: window.location.href,
@@ -21,7 +21,7 @@ const auth0 = new Auth0Client({
 
 export default (props) => {
   return (
-    <AuthProvider client={auth0} type="auth0" {...props}>
+    <AuthProvider client={auth0Client} type="auth0" {...props}>
       {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
       <RedwoodApolloProvider>
         <UserTools

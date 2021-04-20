@@ -15,7 +15,7 @@ import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
 import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
 import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
-const supabase = createClient(
+const supabaseClient = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_KEY
 )
@@ -129,7 +129,7 @@ const SupabaseUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={supabase} type="supabase">
+    <AuthProvider client={supabaseClient} type="supabase">
       {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
       <RedwoodApolloProvider>
         <SupabaseUserTools />

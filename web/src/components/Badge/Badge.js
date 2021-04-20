@@ -2,15 +2,20 @@ import { useAuth } from '@redwoodjs/auth'
 
 const Badge = () => {
   const { isAuthenticated } = useAuth()
-  const color = isAuthenticated ? 'green' : 'red'
 
   return (
     <div className="flex justify-center mb-4">
       <span
-        className={`inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-${color}-100 text-${color}-800`}
+        className={`${
+          isAuthenticated
+            ? 'bg-green-100 text-green-800'
+            : 'bg-red-100 text-red-800'
+        } inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium`}
       >
         <svg
-          className={`-ml-1 mr-1.5 h-2 w-2 text-${color}-400`}
+          className={`${
+            isAuthenticated ? 'text-green-400' : 'text-red-400'
+          } -ml-1 mr-1.5 h-2 w-2`}
           fill="currentColor"
           viewBox="0 0 8 8"
         >

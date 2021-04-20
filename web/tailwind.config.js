@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './src/components/**/*.js',
+    './src/layouts/**/*.js',
+    './src/pages/**/*.js',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -15,6 +19,9 @@ module.exports = {
           800: '#682712',
           900: '#341309',
         },
+      },
+      fontSize: {
+        '2xs': '.625rem',
       },
     },
   },
