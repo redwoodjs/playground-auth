@@ -15,7 +15,7 @@ import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
 import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
 import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
-const supabaseClient = createClient(
+export const supabaseClient = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_KEY
 )

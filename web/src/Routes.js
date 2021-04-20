@@ -5,6 +5,11 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={AppLayout}>
+        <Route
+          path="/supabase/welcome"
+          page={SupabaseWelcomePage}
+          name="supabaseWelcome"
+        />
         <Route path="/{provider}" page={ProviderPage} name="provider" />
         <Route path="/" page={HomePage} name="home" />
       </Set>
