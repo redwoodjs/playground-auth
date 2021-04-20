@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { navigate, routes } from '@redwoodjs/router'
 import { providers } from 'src/lib/providers'
 import CodeSample from 'src/components/CodeSample'
+import ProviderImage from 'src/components/ProviderImage'
 import { Helmet } from 'react-helmet'
 import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
 
@@ -85,13 +86,9 @@ const ProviderPage = ({ provider }) => {
         } transition-all duration-300 mt-6 mx-auto w-full`}
       >
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <h2 className="mb-3">
-            <img
-              src={currentProvider.image}
-              alt={currentProvider.name}
-              className="max-h-8 mx-auto"
-            />
-          </h2>
+          <div className="flex justify-center text-2xl font-medium max-h-8 max-w-sm mx-auto w-full h-full mb-3">
+            <ProviderImage provider={currentProvider} />
+          </div>
 
           {viewTab === 'demo' &&
             (currentProvider.component ? (
