@@ -23,6 +23,23 @@ label {
   @apply appearance-none block border border-gray-300 mb-2 placeholder-gray-400 px-3 py-2 rounded-md shadow-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700;
 }
 
+button {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700;
+}
+
+.markdown pre {
+  background-color: #1a202c;
+  @apply overflow-x-auto text-white text-sm rounded-lg p-3;
+}
+
+.markdown > * {
+  @apply mb-4;
+}
+
+.markdown > *:last-child {
+  @apply mb-0;
+}
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
