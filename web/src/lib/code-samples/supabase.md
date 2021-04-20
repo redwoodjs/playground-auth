@@ -52,7 +52,6 @@ const Supabase = () => {
       </button>
       {!isAuthenticated && (
         <button
-          className="btn btn-alt"
           disabled={(!email.length || !password.length) && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length && password.length) {

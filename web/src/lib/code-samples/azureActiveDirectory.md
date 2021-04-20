@@ -7,17 +7,13 @@ const AzureActiveDirectory = () => {
   return (
     <>
       <button
-        onClick={() => {
-          isAuthenticated ? logOut() : logIn()
-        }}
+        onClick={isAuthenticated ? logOut : logIn}
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
       {!isAuthenticated && (
         <button
-          onClick={() => {
-            signUp()
-          }}
+          onClick={signUp}
         >
           Sign Up
         </button>
