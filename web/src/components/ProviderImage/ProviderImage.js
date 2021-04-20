@@ -6,7 +6,9 @@ const ProviderImage = ({ provider }) => {
   useEffect(() => {
     async function getMarkdown() {
       try {
-        const file = await import(`../../lib/images/${provider.slug}.png`)
+        const file = await import(
+          `../../lib/images/${provider.slug.toLowerCase()}.png`
+        )
         setImage(file.default)
       } catch {
         setImage(null)
