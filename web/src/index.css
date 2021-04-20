@@ -32,6 +32,14 @@ button {
   @apply overflow-x-auto text-white text-sm rounded-lg p-3;
 }
 
+.markdown > * {
+  @apply mb-4;
+}
+
+.markdown > *:last-child {
+  @apply mb-0;
+}
+
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 

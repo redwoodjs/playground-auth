@@ -105,16 +105,22 @@ const ProviderPage = ({ provider }) => {
                   >
                     contribute an Authentication Provider
                   </a>
-                  . Read the{' '}
-                  <a
-                    href={`https://redwoodjs.com/docs/authentication#${currentProvider.slug}`}
-                    className="font-medium"
-                  >
-                    Redwood Authentication docs
-                  </a>{' '}
-                  for more information on how to implement{' '}
-                  {currentProvider.name} into your app.
+                  .
                 </p>
+
+                {currentProvider.docsUrl && (
+                  <p className="text-sm text-gray-600 mt-4">
+                    Read the{' '}
+                    <a
+                      href={`https://redwoodjs.com/docs/authentication#${currentProvider.slug}`}
+                      className="font-medium"
+                    >
+                      Redwood Authentication docs
+                    </a>{' '}
+                    for more information on how to implement{' '}
+                    {currentProvider.name} into your app.
+                  </p>
+                )}
               </div>
             ))}
 

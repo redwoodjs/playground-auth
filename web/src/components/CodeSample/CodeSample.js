@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ExternalLinkIcon } from '@heroicons/react/outline'
 import hljs from 'highlight.js'
 import hljsDefineGraphQL from 'highlightjs-graphql'
 hljsDefineGraphQL(hljs)
@@ -33,6 +34,19 @@ const CodeSample = ({ provider }) => {
 
   return (
     <>
+      {provider.docsUrl && (
+        <p className="text-center mt-6">
+          <a
+            href={provider.docsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center flex-wrap font-medium"
+          >
+            How to set up {provider.name} with Redwood{' '}
+            <ExternalLinkIcon className="h-3 w-3 ml-1" />
+          </a>
+        </p>
+      )}
       {markdownCode ? (
         <div
           className="markdown mt-6"
