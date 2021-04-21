@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Modal from 'src/components/Modal'
 
 export const QUERY = gql`
   query PollCurrentVersionQuery {
@@ -28,18 +29,30 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ redwood }) => {
   const [lastUpdate, setLastUpdate] = useState('lastUpdate')
+  const [modalOpen, setModalOpen] = useState(false)
 
   useEffect(() => {
     setLastUpdate(new Date().toLocaleTimeString())
   }, [redwood])
 
   return (
-    <div className="w-full overflow-x-auto overflow-y-auto text-sm max-h-80">
-      <h3>Polling output</h3>
-      <p>Last Changed {lastUpdate}</p>
-      <pre className="text-green-700 w-1/2">
-        {JSON.stringify(redwood, null, 2)}
-      </pre>
-    </div>
+    <>
+      <button className="btn btn-alt" onClick={() => setModalOpen(true)}>
+        Refresh Token Status
+      </button>
+      <Modal
+        title={'Refresh Token Status'}
+        open={modalOpen}
+        setOpen={setModalOpen}
+      >
+        <div className="w-full overflow-x-auto overflow-y-auto text-sm max-h-80">
+          <h3>Polling output</h3>
+          <p>Last Changed {lastUpdate}</p>
+          <pre className="text-green-700 w-1/2">
+            {JSON.stringify(redwood, null, 2)}
+          </pre>
+        </div>
+      </Modal>
+    </>
   )
 }

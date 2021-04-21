@@ -3,9 +3,8 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
-import AuthResults from 'src/components/AuthResults'
-import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
+import ProviderData from 'src/components/ProviderData'
 
 export const magicLinkClient = new Magic(process.env.MAGICLINK_PUBLIC)
 
@@ -17,7 +16,6 @@ const MagicLinkUserTools = () => {
   return (
     <div>
       <Badge />
-      {isAuthenticated && <PollCurrentVersionCell />}
       <form action="#">
         <input
           type="email"
@@ -53,8 +51,7 @@ const MagicLinkUserTools = () => {
           </button>
         )}
       </form>
-      <br />
-      <AuthResults />
+      <ProviderData />
     </div>
   )
 }

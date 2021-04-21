@@ -5,6 +5,7 @@ import { useState } from 'react'
 import AuthResults from 'src/components/AuthResults'
 import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import Badge from 'src/components/Badge'
+import ProviderData from 'src/components/ProviderData'
 
 const firebaseClientConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -95,8 +96,7 @@ const FirebaseUserTools = () => {
           )}
         </>
       )}
-      <br />
-      <AuthResults />
+      <ProviderData />
     </div>
   )
 }
