@@ -1,14 +1,15 @@
 import { useAuth } from '@redwoodjs/auth'
-
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
+import Badge from 'src/components/Badge'
 
 const UserTools = ({
   logInOptions = {},
   logOutOptions = {},
   signUpOptions = {},
 }) => {
-  const { isAuthenticated, loading, type } = useAuth()
+  const { isAuthenticated, loading } = useAuth()
 
   if (loading) {
     return 'Loading...'
@@ -16,8 +17,8 @@ const UserTools = ({
 
   return (
     <div>
-      <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'}{' '}
+      <Badge />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <LogInOutButtons
         logInOptions={logInOptions}
         logOutOptions={logOutOptions}

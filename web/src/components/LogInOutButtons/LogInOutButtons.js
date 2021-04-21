@@ -6,6 +6,7 @@ const LogInOutButtons = ({ logInOptions, logOutOptions, signUpOptions }) => {
   return (
     <>
       <button
+        className="btn"
         onClick={() => {
           isAuthenticated ? logOut(logOutOptions) : logIn(logInOptions)
         }}
@@ -14,6 +15,7 @@ const LogInOutButtons = ({ logInOptions, logOutOptions, signUpOptions }) => {
       </button>
       {!isAuthenticated && (
         <button
+          className="btn btn-alt"
           onClick={() => {
             signUp(signUpOptions)
           }}

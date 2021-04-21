@@ -3,8 +3,11 @@ import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import Badge from 'src/components/Badge'
 
-const supabase = createClient(
+export const supabaseClient = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_KEY
 )
@@ -13,15 +16,7 @@ const SupabaseUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const {
-    logIn,
-    logOut,
-    signUp,
-    isAuthenticated,
-    currentUser,
-    userMetadata,
-    type,
-  } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   const resetForm = () => {
     setEmail('')
@@ -30,8 +25,8 @@ const SupabaseUserTools = () => {
 
   return (
     <div>
-      <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      <Badge />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <form>
         <input
           type="email"
@@ -40,7 +35,6 @@ const SupabaseUserTools = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <br />
         <input
           type="password"
           placeholder="password"
@@ -49,8 +43,8 @@ const SupabaseUserTools = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </form>
-      <br />
       <button
+        className="btn"
         disabled={(!email.length || !password.length) && !isAuthenticated}
         onClick={async () => {
           if (!isAuthenticated && email.length) {
@@ -71,6 +65,7 @@ const SupabaseUserTools = () => {
       </button>
       {!isAuthenticated && (
         <button
+          className="btn btn-alt"
           disabled={(!email.length || !password.length) && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length && password.length) {
@@ -97,8 +92,11 @@ const SupabaseUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={supabase} type="supabase">
-      <SupabaseUserTools />
+    <AuthProvider client={supabaseClient} type="supabase">
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <SupabaseUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }

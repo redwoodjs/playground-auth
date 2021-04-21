@@ -1,18 +1,38 @@
 import { AuthProvider } from '@redwoodjs/auth'
-import { UserAgentApplication } from "msal";
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { UserAgentApplication } from 'msal'
+import UserTools from '../UserTools/UserTools'
 
-const azureActiveDirectoryClient = new UserAgentApplication({
+//import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+
+export const azureActiveDirectoryClient = new UserAgentApplication({
   auth: {
     clientId: process.env.AZURE_ACTIVE_DIRECTORY_CLIENT_ID,
     authority: process.env.AZURE_ACTIVE_DIRECTORY_AUTHORITY,
     redirectUri: process.env.AZURE_ACTIVE_DIRECTORY_REDIRECT_URI,
-    postLogoutRedirectUri: process.env.AZURE_ACTIVE_DIRECTORY_LOGOUT_REDIRECT_URI,
+    postLogoutRedirectUri:
+      process.env.AZURE_ACTIVE_DIRECTORY_LOGOUT_REDIRECT_URI,
   },
-});
+})
 
-export default ({children}) => {
+const AzureUserTools = () => {
   return (
-    <AuthProvider client={azureActiveDirectoryClient} type="azureActiveDirectory">
+    <div>
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <UserTools />
+      </RedwoodApolloProvider>
+    </div>
+  )
+}
+
+export default ({ children }) => {
+  return (
+    <AuthProvider
+      client={azureActiveDirectoryClient}
+      type="azureActiveDirectory"
+    >
+      <AzureUserTools />
       {children}
     </AuthProvider>
   )
