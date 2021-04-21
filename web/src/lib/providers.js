@@ -7,6 +7,7 @@ import netlifyIdentity from 'netlify-identity-widget'
 import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Firebase, { firebaseClient } from 'src/components/Firebase'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
+import Nhost, { nhostClient } from 'src/components/Nhost'
 
 export const providers = [
   {
@@ -60,6 +61,8 @@ export const providers = [
   {
     name: 'Nhost',
     slug: 'nhost',
+    client: nhostClient,
+    component: <Nhost />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#nhost',
   },
 ]

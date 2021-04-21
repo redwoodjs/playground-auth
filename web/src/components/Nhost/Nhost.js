@@ -1,9 +1,13 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { createClient } from 'nhost-js-sdk'
 import { useState } from 'react'
-import AuthResults from '../AuthResults'
 
-const nhost = createClient({
+import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+import Badge from 'src/components/Badge'
+
+export const nhostClient = createClient({
   baseURL: process.env.NHOST_BACKEND_URL,
   autoLogin: false,
 })
@@ -57,8 +61,8 @@ const NhostUserTools = () => {
 
   return (
     <div>
-      <h2>Nhost</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      <Badge />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
         Provider
       </label>
@@ -70,7 +74,7 @@ const NhostUserTools = () => {
         <option value="github">GitHub</option>
       </select>
       {error && <p>{error}</p>}
-      {method === 'password' && (
+      {!isAuthenticated && method === 'password' && (
         <div style={{ marginTop: 10 }}>
           <input
             type="email"
@@ -79,7 +83,6 @@ const NhostUserTools = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br />
           <input
             type="password"
             placeholder="password"
@@ -87,11 +90,10 @@ const NhostUserTools = () => {
             required
             onChange={(e) => setPassword(e.target.value)}
           />
-          <br />
-          <br />
         </div>
       )}
       <button
+        className="btn"
         disabled={
           !isAuthenticated && !isOAuth() && (!email.length || !password.length)
         }
@@ -99,12 +101,15 @@ const NhostUserTools = () => {
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
       </button>
-      <button
-        disabled={isOAuth() || !email.length || !password.length}
-        onClick={handleSignUp}
-      >
-        Sign Up
-      </button>
+      {!isAuthenticated && (
+        <button
+          className="btn btn-alt"
+          disabled={isOAuth() || !email.length || !password.length}
+          onClick={handleSignUp}
+        >
+          Sign Up
+        </button>
+      )}
       <br />
       <AuthResults />
     </div>
@@ -113,8 +118,10 @@ const NhostUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={nhost} type="nhost">
-      <NhostUserTools />
+    <AuthProvider client={nhostClient} type="nhost">
+      <RedwoodApolloProvider>
+        <NhostUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }
