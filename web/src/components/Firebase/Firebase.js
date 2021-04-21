@@ -1,4 +1,5 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { useState } from 'react'
@@ -104,7 +105,9 @@ const FirebaseUserTools = () => {
 export default (props) => {
   return (
     <AuthProvider client={firebaseClient} type="firebase" {...props}>
-      <FirebaseUserTools />
+      <RedwoodApolloProvider>
+        <FirebaseUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }
