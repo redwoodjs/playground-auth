@@ -1,10 +1,12 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { useState } from 'react'
 import AuthResults from 'src/components/AuthResults'
 import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import Badge from 'src/components/Badge'
+import ProviderData from 'src/components/ProviderData'
 
 const firebaseClientConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -95,8 +97,7 @@ const FirebaseUserTools = () => {
           )}
         </>
       )}
-      <br />
-      <AuthResults />
+      <ProviderData />
     </div>
   )
 }
@@ -104,7 +105,9 @@ const FirebaseUserTools = () => {
 export default (props) => {
   return (
     <AuthProvider client={firebaseClient} type="firebase" {...props}>
-      <FirebaseUserTools />
+      <RedwoodApolloProvider>
+        <FirebaseUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }
