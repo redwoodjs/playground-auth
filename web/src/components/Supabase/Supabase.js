@@ -1,6 +1,7 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
+import { toast } from '@redwoodjs/web/toast'
 
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
@@ -35,6 +36,12 @@ const thirdPartyProviders = [
   },
 ]
 
+const handleSbError = (error) => {
+  console.log(error)
+  const supabaseError = JSON.parse(error.message)
+  toast.error(supabaseError.error_description)
+}
+
 const SupabaseUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -52,9 +59,7 @@ const SupabaseUserTools = () => {
         await logIn({ email, password })
         resetForm()
       } catch (e) {
-        console.log(e)
-        const supabaseError = JSON.parse(e.message)
-        alert(supabaseError.error_description)
+        handleSbError(e)
       }
     } else {
       await logOut()
@@ -67,9 +72,7 @@ const SupabaseUserTools = () => {
         await signUp({ email, password })
         resetForm()
       } catch (e) {
-        const supabaseError = JSON.parse(e.message)
-        alert(supabaseError.msg)
-        console.log(e)
+        handleSbError(e)
       }
     }
   }
