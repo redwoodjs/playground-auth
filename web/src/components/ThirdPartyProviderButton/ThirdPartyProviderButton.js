@@ -6,7 +6,7 @@ export default ({ provider, ...rest }) => {
   const buttonClasses = classNames(
     'p-2 border border-red-300 rounded-md flex justify-center items-center',
     {
-      ['bg-gray-200 opacity-75 cursor-not-allowed']: disabled,
+      ['bg-gray-200 opacity-75 cursor-not-allowed filter grayscale']: disabled,
     }
   )
 
@@ -22,7 +22,6 @@ export default ({ provider, ...rest }) => {
         src={logo}
         style={{
           maxWidth: '25px',
-          filter: disabled ? 'grayscale(1)' : 'grayscale(0)',
         }}
         alt={label}
       />
