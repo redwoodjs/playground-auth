@@ -1,5 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
+import ProviderImage from 'src/components/ProviderImage'
 import { LockOpenIcon, LockClosedIcon } from '@heroicons/react/outline'
 
 const ProviderCard = ({ provider }) => {
@@ -38,11 +39,9 @@ const ProviderCard = ({ provider }) => {
             </>
           ))}
       </div>
-      <img
-        className="max-h-10 max-w-24 h-auto w-auto"
-        src={provider.image}
-        alt={provider.name}
-      />
+      <div className="flex items-center justify-center text-xl font-semibold max-h-10 max-w-xl w-full h-full">
+        <ProviderImage provider={provider} />
+      </div>
     </Link>
   )
 }
