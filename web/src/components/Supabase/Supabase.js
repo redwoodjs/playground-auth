@@ -1,6 +1,6 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { createClient } from '@supabase/supabase-js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { toast } from '@redwoodjs/web/toast'
 
 import AuthResults from 'src/components/AuthResults'
@@ -45,8 +45,15 @@ const handleSbError = (error) => {
 const SupabaseUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const { logIn, logOut, signUp, isAuthenticated } = useAuth()
+
+  useEffect(() => {
+    if (loading && isAuthenticated) {
+      setLoading(false)
+    }
+  }, [isAuthenticated, loading])
 
   const resetForm = () => {
     setEmail('')
@@ -80,7 +87,6 @@ const SupabaseUserTools = () => {
   return (
     <div>
       <Badge />
-      {isAuthenticated && <PollCurrentVersionCell />}
       {!isAuthenticated && (
         <>
           <form>
@@ -123,15 +129,17 @@ const SupabaseUserTools = () => {
 
           <ThirdPartyProviderContainer
             providers={thirdPartyProviders}
-            onProviderClick={
-              async (e) =>
-                await logIn({
-                  provider: e.target.value,
-                }) // login works for login/signup
-            }
+            loading={loading}
+            onProviderClick={async (e) => {
+              setLoading(true)
+              await logIn({
+                provider: e.target.value,
+              })
+            }}
           />
         </>
       )}
+      {isAuthenticated && <PollCurrentVersionCell />}
       <AuthResults />
     </div>
   )

@@ -1,6 +1,14 @@
 import ThirdPartyProviderButton from 'src/components/ThirdPartyProviderButton'
+import Spinner from '../Spinner'
 
-export default ({ providers, onProviderClick, ...rest }) => {
+export default ({ providers, onProviderClick, loading, ...rest }) => {
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <Spinner />
+      </div>
+    )
+  }
   return (
     <>
       <p className="text-center">Or continue with</p>
