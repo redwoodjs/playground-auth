@@ -9,7 +9,7 @@ const supabaseProviderPagePath = routes.provider({ provider: 'supabase' })
 /** Supabase thirdparty auth confirmation collides with Netlify/Firebase providers, so must confirm in a separate page. */
 /** This page is set to redirect back to Supabase Provider Page after 3 seconds */
 const SupabaseWelcome = () => {
-  const [seconds, setSeconds] = useState(3)
+  const [seconds, setSeconds] = useState(5)
 
   const tick = useCallback(() => {
     setSeconds(seconds - 1)
