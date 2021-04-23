@@ -58,4 +58,5 @@ FIREBASE_APP_ID=""
 ```
 SUPABASE_KEY=""
 SUPABASE_URL=""
+SUPABASE_JWT_SECTRET="" # Found in Supabase dashboard > Settings > API
 ```
