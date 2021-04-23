@@ -1,6 +1,7 @@
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
-import Loader from 'react-loader-spinner'
+import { ViewGridIcon } from '@heroicons/react/outline'
 
 export default () => {
-  return <Loader type="TailSpin" color="#BF4722" height={50} width={50} />
+  return (
+    <ViewGridIcon className="h-6 w-6 animate-spin text-red-700 stroke-current fill-current" />
+  )
 }

@@ -4,7 +4,7 @@ import Spinner from '../Spinner'
 export default ({ providers, onProviderClick, loading, ...rest }) => {
   if (loading) {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center my-6">
         <Spinner />
       </div>
     )
