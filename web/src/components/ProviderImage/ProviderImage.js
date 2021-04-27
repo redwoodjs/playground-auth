@@ -23,7 +23,7 @@ const ProviderImage = ({ provider }) => {
         <img
           src={image}
           alt={provider.name}
-          className="object-contain max-w-full max-h-full w-auto h-auto mx-auto"
+          className="object-scale-down max-w-full max-h-full w-auto h-10 mx-auto"
         />
       ) : (
         <h2>{provider.name}</h2>
