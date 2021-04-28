@@ -23,8 +23,8 @@
     'SUPABASE_JWT_SECRET',
     'NHOST_BACKEND_URL'
   ]
-
 [api]
   port = 8911
+  schemaPath = "./api/db/schema.prisma"
 [browser]
   open = true
