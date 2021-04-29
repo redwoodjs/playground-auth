@@ -1,7 +1,10 @@
-import { AuthProvider } from '@redwoodjs/auth'
 import { Auth0Client } from '@auth0/auth0-spa-js'
+import { AuthProvider } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 
-const auth0 = new Auth0Client({
+import UserTools from '../UserTools/UserTools'
+
+export const auth0Client = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN,
   client_id: process.env.AUTH0_CLIENT_ID,
   redirect_uri: window.location.href,
@@ -11,8 +14,22 @@ const auth0 = new Auth0Client({
   // https://auth0.com/docs/libraries/auth0-spa-js#change-storage-options
   cacheLocation: 'localstorage',
   audience: process.env.AUTH0_AUDIENCE,
+
+  // @MARK: required for automatically extending sessions
+  useRefreshTokens: true,
 })
 
 export default (props) => {
-  return <AuthProvider client={auth0} type="auth0" {...props} />
+  return (
+    <AuthProvider client={auth0Client} type="auth0" {...props}>
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <UserTools
+          logOutOptions={{
+            returnTo: process.env.AUTH0_REDIRECT_URI || process.env.DEPLOY_URL,
+          }}
+        />
+      </RedwoodApolloProvider>
+    </AuthProvider>
+  )
 }

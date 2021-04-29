@@ -5,24 +5,30 @@
 //     return await db.user.findOne({ where: { email } })
 //   }
 
+// @ts-check
+
 import { AuthenticationError } from '@redwoodjs/api'
 import * as emailpassword from "supertokens-node/recipe/emailpassword";
+import { logger } from './logger'
 
-export const getCurrentUser = async (_decoded, { type, token }) => {
+export const getCurrentUser = async (decoded, { type, token }) => {
   if (type === "supertokens") {
     return {
       type,
-      userId: _decoded.getUserId(),
-      jwtPayload: _decoded.getJWTPayload(),
-      sessionHandle: _decoded.getHandle(),
-      email: (await emailpassword.getUserById(_decoded.getUserId())).email
+      userId: decoded.getUserId(),
+      jwtPayload: decoded.getJWTPayload(),
+      sessionHandle: decoded.getHandle(),
+      email: (await emailpassword.getUserById(decoded.getUserId())).email
     }
   }
-  return {
-    hello: 'I come from the `getCurrentUser` function on the api side.',
-    type,
-    token: token.replace(/\w/g, '*'),
-  }
+  logger.debug(
+    {
+      payload: { decoded, type, token },
+    },
+    'Current User'
+  )
+
+  return { decoded, type, token }
 }
 
 // Use this function in your services to check that a user is logged in, and

@@ -5,7 +5,8 @@ export const config = {
   appInfo: {
     apiDomain: "http://localhost:8910/",
     appName: "SuperTokens RedwoodJS",
-    websiteDomain: "http://localhost:8910/"
+    websiteDomain: "http://localhost:8910/",
+    apiGatewayPath: "/.netlify/functions"
   },
   supertokens: {
     connectionURI: "try.supertokens.io"
@@ -14,6 +15,5 @@ export const config = {
     emailpassword.init(),
     sessions.init()
   ],
-  apiWebProxyPath: "/.netlify/functions",
   isInServerlessEnv: true
 }

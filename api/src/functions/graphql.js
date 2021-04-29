@@ -10,6 +10,7 @@ import { init } from "supertokens-node";
 
 import { getCurrentUser } from 'src/lib/auth.js'
 import { supertokensGraphQLHandler } from "supertokens-node/redwood";
+import { db } from 'src/lib/db'
 
 // Upgrade notes as of RedwoodJS 0.19.0, but this project does not use a db so we comment it out for now
 //import { db } from 'src/lib/db'
@@ -26,6 +27,6 @@ export const handler = supertokensGraphQLHandler(createGraphQLHandler, {
     // Disconnect from your database with an unhandled exception.
 
     // Upgrade notes as of RedwoodJS 0.19.0, but this project does not use a db so we comment it out for now
-    // db.$disconnect()
-  }
-});
+    db.$disconnect()
+  },
+})
