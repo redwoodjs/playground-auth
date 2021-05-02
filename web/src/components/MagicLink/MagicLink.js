@@ -1,28 +1,23 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+import Badge from 'src/components/Badge'
 
-const m = new Magic(process.env.MAGIC_SECRET_KEY)
+export const magicLinkClient = new Magic(process.env.MAGICLINK_PUBLIC)
 
 const MagicLinkUserTools = () => {
   const [email, setEmail] = useState('')
 
-  const {
-    logIn,
-    logOut,
-    signUp,
-    isAuthenticated,
-    currentUser,
-    userMetadata,
-    type,
-  } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   return (
     <div>
-      <h2>{type}</h2>
-      {isAuthenticated ? 'Authenticated' : 'Not Authenticated'} <br />
+      <Badge />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <form action="#">
         <input
           type="email"
@@ -31,6 +26,7 @@ const MagicLinkUserTools = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
+          className="btn"
           disabled={!email.length && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length) {
@@ -45,6 +41,7 @@ const MagicLinkUserTools = () => {
 
         {!isAuthenticated && (
           <button
+            className="btn btn-alt"
             disabled={!email.length && !isAuthenticated}
             onClick={async () => {
               if (!isAuthenticated && email.length) {
@@ -64,8 +61,11 @@ const MagicLinkUserTools = () => {
 
 export default () => {
   return (
-    <AuthProvider client={m} type="magicLink">
-      <MagicLinkUserTools />
+    <AuthProvider client={magicLinkClient} type="magicLink">
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <MagicLinkUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }
