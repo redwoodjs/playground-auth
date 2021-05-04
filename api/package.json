@@ -6,6 +6,6 @@
     "@redwoodjs/api": "^0.31.0",
     "@redwoodjs/api-server": "^0.31.0",
     "serverless-http": "^2.7.0",
-    "supertokens-node": "^4.4.1"
+    "supertokens-node": "^5.0.0"
   }
 }

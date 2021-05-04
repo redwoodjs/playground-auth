@@ -15513,10 +15513,10 @@ subscriptions-transport-ws@^0.9.11:
     symbol-observable "^1.0.4"
     ws "^5.2.0"
 
-supertokens-auth-react@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.10.0.tgz#45af282232ed560cea5c41b9758f0657d9e4cc58"
-  integrity sha512-Wt+hLyip+4RbH4uZ8XbW5J5ORs0jdR5dG2IkyxXc44kHCiZvTFOVttFzk/JUCtcyc3GXnr3yZBH5dMuxxCvmEw==
+supertokens-auth-react@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.11.0.tgz#8a8fe54a062b5e58caa124a322445ead350155bb"
+  integrity sha512-fDF6bOn8Ns3jyPy/5l4UrGcsISVv1/Y5/Qr0ZZwZhBqeO1H5QGLsHF4emGCl/1T4XYxmINydOdkTVof6l+KMmA==
   dependencies:
     "@emotion/babel-plugin" "11.1.2"
     "@emotion/cache" "11.1.3"
@@ -15525,12 +15525,12 @@ supertokens-auth-react@^0.10.0:
     chroma-js "2.1.0"
     emotion "11.0.0"
     react-shadow "19.0.1"
-    supertokens-website "^6.0.0"
+    supertokens-website "^7.0.0"
 
-supertokens-node@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/supertokens-node/-/supertokens-node-4.4.1.tgz#273e64d3701c3dabe591933a3b04f763d4065921"
-  integrity sha512-7fDbQIhI43wbqMabLreQyanhYJvKtJnmB4aPGMxxuFqOt4824Rg66qgE2uRgfJ2WIpApnZaLh47i47VshrVVVg==
+supertokens-node@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/supertokens-node/-/supertokens-node-5.0.0.tgz#da6737a648e0aed864f84a8b35507d382b121059"
+  integrity sha512-Lbt55eEp5RHEPiJpL2mvZTE8ljAcmZKtTetYpo/s3u39R7LfF38EBv/2KuxdbwKDWyh0BDD+1LEwhTX/peHPQw==
   dependencies:
     axios "0.21.1"
     body-parser "1.19.0"
@@ -15539,10 +15539,10 @@ supertokens-node@^4.4.1:
     jsonwebtoken "8.5.1"
     psl "1.8.0"
 
-supertokens-website@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-6.0.1.tgz#fdbec18b41c0de46fef0251dde355625dcc5f0ec"
-  integrity sha512-9sdloTjO7BZHkMWg1TK0IFVUPJAe3oZtx/DQiToGes9jN4jdFb82cCGY0d21DHNuc96s/XwmAKFAaYwyc4AaKA==
+supertokens-website@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-7.0.0.tgz#7f19de7939ca831f6bda92acace3b1c873f9ff00"
+  integrity sha512-KQwPuMkdglLmy2hzI+ujXYg/HV3YaAYuqfX8317+PkJO5QGBmKAAkBA9MBAW8vA7WylfbqMD0BnFSppbOMcxFw==
   dependencies:
     browser-tabs-lock "^1.2.14"
 
