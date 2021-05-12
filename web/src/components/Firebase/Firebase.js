@@ -1,9 +1,12 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { useState } from 'react'
+
 import AuthResults from 'src/components/AuthResults'
 import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
 
 const firebaseClientConfig = {
@@ -96,6 +99,8 @@ const FirebaseUserTools = () => {
         </>
       )}
       <br />
+      {isAuthenticated && <PollCurrentVersionCell />}
+
       <AuthResults />
     </div>
   )
@@ -104,7 +109,9 @@ const FirebaseUserTools = () => {
 export default (props) => {
   return (
     <AuthProvider client={firebaseClient} type="firebase" {...props}>
-      <FirebaseUserTools />
+      <RedwoodApolloProvider>
+        <FirebaseUserTools />
+      </RedwoodApolloProvider>
     </AuthProvider>
   )
 }
