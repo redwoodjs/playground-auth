@@ -7,7 +7,7 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.31.0",
+    "@redwoodjs/core": "^0.32.2",
     "lodash-decorators": "^6.0.1"
   },
   "eslintConfig": {
@@ -16,9 +16,5 @@
   "engines": {
     "node": ">=14",
     "yarn": ">=1.15"
-  },
-  "resolutions": {
-    "react-dom": "17.0.1",
-    "react": "17.0.1"
   }
 }
