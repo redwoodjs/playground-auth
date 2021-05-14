@@ -21,7 +21,8 @@
     'SUPABASE_KEY',
     'SUPABASE_URL',
     'SUPABASE_JWT_SECRET',
-    'NHOST_BACKEND_URL'
+    'NHOST_BACKEND_URL',
+    'NHOST_JWT_SECRET',
   ]
 [api]
   port = 8911

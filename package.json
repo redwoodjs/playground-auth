@@ -7,7 +7,7 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^0.31.0",
+    "@redwoodjs/core": "^0.32.2",
     "lodash-decorators": "^6.0.1"
   },
   "eslintConfig": {
