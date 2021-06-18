@@ -8,3 +8,5 @@ dist-babel
 node_modules
 yarn-error.log
 redwood/*
+web/types/graphql.d.ts
+api/types/graphql.d.ts
