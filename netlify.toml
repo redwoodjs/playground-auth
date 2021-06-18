@@ -11,7 +11,7 @@
   # then run netlify dev and our app will be accessible on the port specified below
   framework = "redwoodjs"
   # Set targetPort to the [web] side port as defined in redwood.toml
-  targetPort = ${config.web.port}
+  targetPort = 8910
   # Point your browser to this port to access your RedwoodJS app
   port = 8888
 
