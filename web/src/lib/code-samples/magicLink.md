@@ -19,7 +19,7 @@ const MagicLink = () => {
         disabled={!email.length && !isAuthenticated}
         onClick={async () => {
           if (!isAuthenticated && email.length) {
-            await logIn({ email, showUI: true })
+            await logIn({ email })
           } else {
             await logOut()
           }
@@ -33,7 +33,7 @@ const MagicLink = () => {
           disabled={!email.length && !isAuthenticated}
           onClick={async () => {
             if (!isAuthenticated && email.length) {
-              await signUp({ email, showUI: true })
+              await signUp({ email })
             }
           }}
         >
