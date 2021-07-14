@@ -31,3 +31,4 @@
   open = true
 [experimental]
   esbuild = false
+  useEnvelop = true

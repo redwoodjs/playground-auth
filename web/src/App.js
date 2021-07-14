@@ -1,4 +1,4 @@
-import { FatalErrorBoundary } from '@redwoodjs/web'
+import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { Toaster } from '@redwoodjs/web/toast'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -7,8 +7,10 @@ import 'highlight.js/styles/atom-one-dark.css'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <Toaster />
-    <Routes />
+    <RedwoodProvider>
+      <Toaster />
+      <Routes />
+    </RedwoodProvider>
   </FatalErrorBoundary>
 )
 

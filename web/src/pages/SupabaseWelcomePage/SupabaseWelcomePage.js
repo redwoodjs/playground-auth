@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import { Helmet } from 'react-helmet'
+import { MetaTags } from '@redwoodjs/web'
 import { Link, routes, navigate } from '@redwoodjs/router'
 import { AuthProvider } from '@redwoodjs/auth'
 import { supabaseClient } from 'src/components/Supabase'
@@ -28,9 +28,7 @@ const SupabaseWelcome = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Signed in to Supabase</title>
-      </Helmet>
+      <MetaTags title="Signed in to Supabase" />
       <AuthProvider client={supabaseClient} type="supabase">
         <div className="max-w-screen-sm bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 mx-auto grid grid-rows-3 gap-y-2 text-center">
           <span role="img" aria-label="hooray" className="text-5xl">
