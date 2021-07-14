@@ -10,6 +10,7 @@ import Badge from 'src/components/Badge'
 
 import logoApple from '../../lib/images/thirdparty-logos/apple.png'
 import logoAzure from '../../lib/images/thirdparty-logos/azure.png'
+import logoDiscord from '../../lib/images/thirdparty-logos/discord.png'
 import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
 import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
 import logoGithub from '../../lib/images/thirdparty-logos/github.png'
@@ -24,11 +25,12 @@ export const supabaseClient = createClient(
 )
 
 const thirdPartyProviders = [
-  { value: 'apple', label: 'Apple', logo: logoApple, disabled: true },
-  { value: 'twitter', label: 'Twitter', logo: logoTwitter, disabled: true },
   { value: 'github', label: 'Github', logo: logoGithub },
   { value: 'google', label: 'Google', logo: logoGoogle },
   // Below are available but not configured in Supabase yet
+  { value: 'apple', label: 'Apple', logo: logoApple, disabled: true },
+  { value: 'discord', label: 'Discord', logo: logoDiscord, disabled: true },
+  { value: 'twitter', label: 'Twitter', logo: logoTwitter, disabled: true },
   { value: 'gitlab', label: 'Gitlab', logo: logoGitlab, disabled: true },
   { value: 'azure', label: 'Azure', logo: logoAzure, disabled: true },
   { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },
