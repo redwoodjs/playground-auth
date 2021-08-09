@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^0.38.1-canary.17",
-    "@redwoodjs/graphql-server": "^0.38.1-canary.17"
+    "@redwoodjs/graphql-server": "^0.38.1-canary.17",
+    "@clerk/clerk-sdk-node": "^0.5.1",
   }
 }
