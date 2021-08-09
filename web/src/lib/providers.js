@@ -2,15 +2,13 @@ import Auth0, { auth0Client } from 'src/components/Auth0'
 import AzureActiveDirectory, {
   azureActiveDirectoryClient,
 } from 'src/components/AzureActiveDirectory'
-import Clerk from 'src/components/Clerk'
+import Clerk, { clerkClient } from 'src/components/Clerk'
 import Netlify from 'src/components/Netlify'
 import netlifyIdentity from 'netlify-identity-widget'
 import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Firebase, { firebaseClient } from 'src/components/Firebase'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
 import Nhost, { nhostClient } from 'src/components/Nhost'
-
-let clerk
 
 export const providers = [
   {
@@ -30,7 +28,7 @@ export const providers = [
   {
     name: 'Clerk',
     slug: 'clerk',
-    client: clerk,
+    client: clerkClient(),
     component: <Clerk />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#clerk',
   },

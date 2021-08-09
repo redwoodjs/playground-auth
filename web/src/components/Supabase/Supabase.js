@@ -17,6 +17,7 @@ import logoGithub from '../../lib/images/thirdparty-logos/github.png'
 import logoGitlab from '../../lib/images/thirdparty-logos/gitlab.png'
 import logoGoogle from '../../lib/images/thirdparty-logos/google.png'
 import logoTwitter from '../../lib/images/thirdparty-logos/twitter.png'
+import logoTwitch from '../../lib/images/thirdparty-logos/twitch.png'
 import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
 export const supabaseClient = createClient(
@@ -31,6 +32,7 @@ const thirdPartyProviders = [
   { value: 'apple', label: 'Apple', logo: logoApple, disabled: true },
   { value: 'discord', label: 'Discord', logo: logoDiscord, disabled: true },
   { value: 'twitter', label: 'Twitter', logo: logoTwitter, disabled: true },
+  { value: 'twitch', label: 'Twitch', logo: logoTwitch, disabled: true },
   { value: 'gitlab', label: 'Gitlab', logo: logoGitlab, disabled: true },
   { value: 'azure', label: 'Azure', logo: logoAzure, disabled: true },
   { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },

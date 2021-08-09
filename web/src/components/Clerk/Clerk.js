@@ -10,6 +10,8 @@ import UserTools from '../UserTools/UserTools'
 // CLERK_API_KEY for api, with the frontend api host and api key, respectively,
 // both from your Clerk.dev dashboard.
 let clerk
+export const clerkClient = () => clerk
+
 const ClerkAuthConsumer = ({ children }) => {
   clerk = useClerk()
   return React.cloneElement(children, { client: clerk })
@@ -34,7 +36,7 @@ export default (props) => {
   return (
     <>
       <ClerkAuthProvider>
-        <AuthProvider client={clerk} type="clerk" {...props}>
+        <AuthProvider client={clerkClient()} type="clerk" {...props}>
           {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
           <RedwoodApolloProvider>
             <UserTools />
