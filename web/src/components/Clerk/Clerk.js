@@ -1,48 +1,36 @@
+import Clerk from '@clerk/clerk-js'
 import { AuthProvider } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 
-import { ClerkProvider, ClerkLoaded, useClerk } from '@clerk/clerk-react'
-
 import UserTools from '../UserTools/UserTools'
 
-// You can set user roles in a "roles" array on the public metadata in Clerk.
-// Also, you need to add two env variables: CLERK_FRONTEND_API_URL for web and
-// CLERK_API_KEY for api, with the frontend api host and api key, respectively,
-// both from your Clerk.dev dashboard.
-let clerk
-export const clerkClient = () => clerk
-
-const ClerkAuthConsumer = ({ children }) => {
-  clerk = useClerk()
-  return React.cloneElement(children, { client: clerk })
+// The playground uses a modified setup because the provider can be loaded/unloaded
+// as the user views different playground auth setups.
+// This flow has the advantage that it doesn't break in that situation, but
+// the distinct DISadvantage over production that it doesn't support the React
+// components that use `useClerk`.
+const clerkFrontendApi = process.env.CLERK_FRONTEND_API_URL
+if (!clerkFrontendApi) {
+  throw new Error('Need to define env variable CLERK_FRONTEND_API_URL')
 }
 
-const ClerkAuthProvider = ({ children }) => {
-  const frontendApi = process.env.CLERK_FRONTEND_API_URL
-  if (!frontendApi) {
-    throw new Error('Need to define env variable CLERK_FRONTEND_API_URL')
-  }
-
-  return (
-    <ClerkProvider frontendApi={frontendApi}>
-      <ClerkLoaded>
-        <ClerkAuthConsumer>{children}</ClerkAuthConsumer>
-      </ClerkLoaded>
-    </ClerkProvider>
-  )
+export let clerkClient = window.Clerk || new Clerk(clerkFrontendApi)
+if (!window.Clerk) {
+  window.Clerk = clerkClient
 }
+clerkClient.load({})
 
 export default (props) => {
   return (
-    <>
-      <ClerkAuthProvider>
-        <AuthProvider client={clerkClient()} type="clerk" {...props}>
-          {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
-          <RedwoodApolloProvider>
-            <UserTools />
-          </RedwoodApolloProvider>
-        </AuthProvider>
-      </ClerkAuthProvider>
-    </>
+    <AuthProvider client={clerkClient} type="clerk" {...props}>
+      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
+      <RedwoodApolloProvider>
+        <UserTools
+          logOutOptions={{
+            returnTo: process.env.DEPLOY_URL,
+          }}
+        />
+      </RedwoodApolloProvider>
+    </AuthProvider>
   )
 }

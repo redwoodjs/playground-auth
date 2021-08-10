@@ -10,6 +10,11 @@ import Firebase, { firebaseClient } from 'src/components/Firebase'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
 import Nhost, { nhostClient } from 'src/components/Nhost'
 
+if (!window.Clerk) {
+  window.Clerk = clerkClient
+}
+clerkClient.load({})
+
 export const providers = [
   {
     name: 'Auth0',
@@ -28,7 +33,7 @@ export const providers = [
   {
     name: 'Clerk',
     slug: 'clerk',
-    client: clerkClient(),
+    client: clerkClient,
     component: <Clerk />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#clerk',
   },
