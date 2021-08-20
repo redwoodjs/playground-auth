@@ -7,7 +7,7 @@ import 'highlight.js/styles/atom-one-dark.css'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider>
+    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <Toaster />
       <Routes />
     </RedwoodProvider>
