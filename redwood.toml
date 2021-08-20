@@ -1,4 +1,5 @@
 [web]
+  title="RedwoodJS Auth Playground"
   port = 8910
   apiProxyPath = "/.netlify/functions"
   includeEnvironmentVariables = [
