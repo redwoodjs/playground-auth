@@ -5,7 +5,7 @@ import { MetaTags } from '@redwoodjs/web'
 const AppLayout = ({ children }) => {
   return (
     <>
-      <MetaTags title="RedwoodJS Auth Playground" />
+      <MetaTags />
       <div className="min-h-screen bg-red-100 flex flex-col justify-center py-12 px-6 lg:px-8">
         <div className="mb-6 text-center sm:mx-auto sm:w-full sm:max-w-md">
           <Link to={routes.home()}>

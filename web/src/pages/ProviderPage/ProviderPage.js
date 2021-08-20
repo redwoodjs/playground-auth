@@ -23,7 +23,7 @@ const ProviderPage = ({ provider }) => {
 
   return (
     <>
-      <MetaTags title={`${currentProvider.name} - RedwoodJS Auth Playground`} />
+      <MetaTags title={currentProvider.name} />
       <div className="max-w-md mx-auto w-full">
         <label
           htmlFor="providers"
