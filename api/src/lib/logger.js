@@ -1,4 +1,16 @@
 //@ts-check
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger, redactionsList } from '@redwoodjs/graphql-server/logger'
 
-export const logger = createLogger({})
+export const logger = createLogger({
+  options: {
+    redact: [
+      ...redactionsList,
+      'payload.email',
+      'payload.decoded.email',
+      'payload.token',
+      'data.email',
+      'data.redwood.currentUser.decoded.email',
+      'data.redwood.currentUser.token',
+    ],
+  },
+})

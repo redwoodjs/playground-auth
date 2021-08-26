@@ -8,12 +8,15 @@ import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import Badge from 'src/components/Badge'
 
-import logoGoogle from '../../lib/images/thirdparty-logos/google.png'
+import logoApple from '../../lib/images/thirdparty-logos/apple.png'
+import logoAzure from '../../lib/images/thirdparty-logos/azure.png'
+import logoDiscord from '../../lib/images/thirdparty-logos/discord.png'
+import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
+import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
 import logoGithub from '../../lib/images/thirdparty-logos/github.png'
 import logoGitlab from '../../lib/images/thirdparty-logos/gitlab.png'
-import logoAzure from '../../lib/images/thirdparty-logos/azure.png'
-import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
-import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
+import logoGoogle from '../../lib/images/thirdparty-logos/google.png'
+import logoTwitter from '../../lib/images/thirdparty-logos/twitter.png'
 import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
 export const supabaseClient = createClient(
@@ -25,6 +28,9 @@ const thirdPartyProviders = [
   { value: 'github', label: 'Github', logo: logoGithub },
   { value: 'google', label: 'Google', logo: logoGoogle },
   // Below are available but not configured in Supabase yet
+  { value: 'apple', label: 'Apple', logo: logoApple, disabled: true },
+  { value: 'discord', label: 'Discord', logo: logoDiscord, disabled: true },
+  { value: 'twitter', label: 'Twitter', logo: logoTwitter, disabled: true },
   { value: 'gitlab', label: 'Gitlab', logo: logoGitlab, disabled: true },
   { value: 'azure', label: 'Azure', logo: logoAzure, disabled: true },
   { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },

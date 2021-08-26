@@ -3,7 +3,7 @@ import { navigate, routes } from '@redwoodjs/router'
 import { providers } from 'src/lib/providers'
 import CodeSample from 'src/components/CodeSample'
 import ProviderImage from 'src/components/ProviderImage'
-import { Helmet } from 'react-helmet'
+import { MetaTags } from '@redwoodjs/web'
 import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
 
 const tabs = [
@@ -23,9 +23,7 @@ const ProviderPage = ({ provider }) => {
 
   return (
     <>
-      <Helmet>
-        <title>{currentProvider.name}</title>
-      </Helmet>
+      <MetaTags title={currentProvider.name} />
       <div className="max-w-md mx-auto w-full">
         <label
           htmlFor="providers"
