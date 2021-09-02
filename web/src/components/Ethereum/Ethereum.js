@@ -52,11 +52,11 @@ export default (props) => {
       <AuthProvider client={ethereum} type="ethereum" {...props}>
         {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
         <RedwoodApolloProvider>
-          <UserTools />
-          <p className="mt-4">
-            See a full demo app in the{' '}
-            <a href="https://redwood-ethereum-login-demo.vercel.app/">repo</a>
+          <p className="mt-4 mb-4">
+            Full example app in the 👉{' '}
+            <a href="https://github.com/oneclickdapp/ethereum-auth">repo</a>
           </p>
+          <UserTools />
         </RedwoodApolloProvider>
       </AuthProvider>
     </ApolloInjector>
