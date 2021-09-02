@@ -24,6 +24,8 @@
     'SUPABASE_JWT_SECRET',
     'NHOST_BACKEND_URL',
     'NHOST_JWT_SECRET',
+    'ETHEREUM_JWT_SECRET',
+    'DATABASE_URL'
   ]
 [api]
   port = 8911

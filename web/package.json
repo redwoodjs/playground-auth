@@ -16,6 +16,7 @@
     "@auth0/auth0-spa-js": "^1.9.0",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.1",
+    "@oneclickdapp/ethereum-auth": "^0.3.0",
     "@redwoodjs/auth": "^0.36.0",
     "@redwoodjs/forms": "^0.36.0",
     "@redwoodjs/router": "^0.36.0",
