@@ -1,5 +1,6 @@
 ```js
 import { useAuth } from '@redwoodjs/auth'
+import { routes } from '@redwoodjs/router'
 
 const Ethereum = () => {
   const { logIn, logOut, isAuthenticated } = useAuth()
@@ -7,7 +8,7 @@ const Ethereum = () => {
   const onLogin = async (walletType) => {
     try {
       await logIn(walletType)
-      navigate(redirectTo || routes.home())
+      navigate(routes.home())
     } catch (e) {
       console.log(e)
     }
