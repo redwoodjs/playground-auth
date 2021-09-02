@@ -2,7 +2,6 @@
 
 This repo demonstrates all the Authentication Providers that Redwood supports. [Read more](https://redwoodjs.com/docs/authentication) about our authentication providers in our docs, or [preview the deploy](https://redwood-playground-auth.netlify.app/) of this site on Netlify!
 
-
 ### 🔗 [Link](https://redwood-playground-auth.netlify.app/)
 
 ## Setup
@@ -59,4 +58,10 @@ FIREBASE_APP_ID=""
 SUPABASE_KEY=""
 SUPABASE_URL=""
 SUPABASE_JWT_SECTRET="" # Found in Supabase dashboard > Settings > API
+```
+
+### Etheruem
+
+```
+ETHEREUM_JWT_SECRET=""
 ```

@@ -15,4 +15,5 @@ model UserExample {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  address String? @unique
 }

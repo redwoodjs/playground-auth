@@ -8,6 +8,7 @@ import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Firebase, { firebaseClient } from 'src/components/Firebase'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
 import Nhost, { nhostClient } from 'src/components/Nhost'
+import Ethereum, { ethereumClient } from 'src/components/ethereum'
 
 export const providers = [
   {
@@ -56,6 +57,8 @@ export const providers = [
   {
     name: 'Ethereum',
     slug: 'ethereum',
+    client: etehreumClient,
+    component: <Ethereum />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#ethereum',
   },
   {
