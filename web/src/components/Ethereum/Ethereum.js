@@ -38,7 +38,7 @@ const ApolloInjector = ({ children }) => {
   } catch (e) {
     console.log(e)
   }
-  return React.cloneElement(children, { client: ethereumClient })
+  return React.cloneElement(children, { client: ethereum })
 }
 
 export const ethereumClient = new EthereumAuthClient({
@@ -53,6 +53,10 @@ export default (props) => {
         {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
         <RedwoodApolloProvider>
           <UserTools />
+          <p className="mt-4">
+            See a full demo app in the{' '}
+            <a href="https://redwood-ethereum-login-demo.vercel.app/">repo</a>
+          </p>
         </RedwoodApolloProvider>
       </AuthProvider>
     </ApolloInjector>

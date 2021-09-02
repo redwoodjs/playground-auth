@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE")
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -8,12 +8,16 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev` to create
-// migrations for them.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  address String? @unique
+model User {
+  id           String     @id @default(uuid())
+  address      String     @unique
+  authDetail   AuthDetail @relation(fields: [authDetailId], references: [id])
+  authDetailId String
+}
+
+model AuthDetail {
+  id        String   @id @default(uuid())
+  nonce     String
+  timestamp DateTime @default(now())
+  User      User?
 }
