@@ -1,7 +1,7 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import firebase from 'firebase/app'
-import 'firebase/auth'
+import { initializeApp, getApp, getApps } from 'firebase/app'
+import * as firebase from '@firebase/auth'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
@@ -16,10 +16,18 @@ const firebaseClientConfig = {
   appId: process.env.FIREBASE_APP_ID,
 }
 
-export const firebaseClient = ((config) => {
-  firebase.initializeApp(config)
-  return firebase
+// eslint-disable-next-line no-unused-vars
+const firebaseApp = ((config) => {
+  const apps = getApps()
+  if (!apps.length) {
+    initializeApp(config)
+  }
+  return getApp()
 })(firebaseClientConfig)
+
+export const firebaseClient = {
+  firebase,
+}
 
 const FirebaseUserTools = () => {
   const [email, setEmail] = useState('')
@@ -108,7 +116,12 @@ const FirebaseUserTools = () => {
 
 export default (props) => {
   return (
-    <AuthProvider client={firebaseClient} type="firebase" {...props}>
+    <AuthProvider
+      client={firebaseClient}
+      type="firebase"
+      {...props}
+      skipFetchCurrentUser
+    >
       <RedwoodApolloProvider>
         <FirebaseUserTools />
       </RedwoodApolloProvider>
