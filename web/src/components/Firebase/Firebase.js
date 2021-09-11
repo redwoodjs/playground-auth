@@ -16,7 +16,6 @@ const firebaseClientConfig = {
   appId: process.env.FIREBASE_APP_ID,
 }
 
-// eslint-disable-next-line no-unused-vars
 const firebaseApp = ((config) => {
   const apps = getApps()
   if (!apps.length) {
@@ -27,6 +26,7 @@ const firebaseApp = ((config) => {
 
 export const firebaseClient = {
   firebaseAuth,
+  firebaseApp,
 }
 
 const FirebaseUserTools = () => {
