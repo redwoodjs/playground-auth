@@ -9,7 +9,7 @@ import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
 
-const firebaseClientConfig = {
+const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_PROJECT_ID,
@@ -22,12 +22,7 @@ const firebaseApp = ((config) => {
     initializeApp(config)
   }
   return getApp()
-})(firebaseClientConfig)
-
-export const firebaseClient = {
-  firebaseAuth,
-  firebaseApp,
-}
+})(firebaseConfig)
 
 const FirebaseUserTools = () => {
   const [email, setEmail] = useState('')
@@ -116,8 +111,7 @@ const FirebaseUserTools = () => {
 
 export default (props) => {
   return (
-    // skipFetchCurrentUser since backend does not have firebase admin app setup
-    <AuthProvider client={firebaseClient} type="firebase" {...props}>
+    <AuthProvider client={firebaseApp} type="firebase" {...props}>
       <RedwoodApolloProvider>
         <FirebaseUserTools />
       </RedwoodApolloProvider>
