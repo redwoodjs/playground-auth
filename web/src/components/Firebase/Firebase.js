@@ -1,7 +1,6 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { initializeApp, getApp, getApps } from 'firebase/app'
-import * as firebaseAuth from '@firebase/auth'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
