@@ -1,5 +1,6 @@
 //@ts-check
 import { createLogger, redactionsList } from '@redwoodjs/api/logger'
+
 export const logger = createLogger({
   options: {
     redact: [
