@@ -117,7 +117,12 @@ const FirebaseUserTools = () => {
 export default (props) => {
   return (
     // skipFetchCurrentUser since backend does not have firebase admin app setup
-    <AuthProvider client={firebaseClient} type="firebase" {...props}>
+    <AuthProvider
+      client={firebaseClient}
+      type="firebase"
+      skipFetchCurrentUser
+      {...props}
+    >
       <RedwoodApolloProvider>
         <FirebaseUserTools />
       </RedwoodApolloProvider>
