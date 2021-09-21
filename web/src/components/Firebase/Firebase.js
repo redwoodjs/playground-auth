@@ -9,7 +9,7 @@ import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
 
-const firebaseClientConfig = {
+const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_PROJECT_ID,
@@ -22,7 +22,7 @@ const firebaseApp = ((config) => {
     initializeApp(config)
   }
   return getApp()
-})(firebaseClientConfig)
+})(firebaseConfig)
 
 export const firebaseClient = {
   firebaseAuth,
