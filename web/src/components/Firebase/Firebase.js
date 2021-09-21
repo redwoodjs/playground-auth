@@ -1,6 +1,7 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { initializeApp, getApp, getApps } from 'firebase/app'
+import * as firebaseAuth from '@firebase/auth'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
@@ -8,7 +9,7 @@ import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
 
-const firebaseConfig = {
+const firebaseClientConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_PROJECT_ID,
@@ -21,7 +22,12 @@ const firebaseApp = ((config) => {
     initializeApp(config)
   }
   return getApp()
-})(firebaseConfig)
+})(firebaseClientConfig)
+
+export const firebaseClient = {
+  firebaseAuth,
+  firebaseApp,
+}
 
 const FirebaseUserTools = () => {
   const [email, setEmail] = useState('')
@@ -110,7 +116,8 @@ const FirebaseUserTools = () => {
 
 export default (props) => {
   return (
-    <AuthProvider client={firebaseApp} type="firebase" {...props}>
+    // skipFetchCurrentUser since backend does not have firebase admin app setup
+    <AuthProvider client={firebaseClient} type="firebase" {...props}>
       <RedwoodApolloProvider>
         <FirebaseUserTools />
       </RedwoodApolloProvider>
