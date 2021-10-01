@@ -12,11 +12,7 @@ import { logger } from './logger'
 
 import admin from 'firebase-admin'
 
-const firebaseConfig = {
-  projectId: process.env.FIREBASE_PROJECT_ID,
-}
-
-admin.initializeApp(firebaseConfig)
+admin.initializeApp({ projectId: process.env.FIREBASE_PROJECT_ID })
 
 export const getCurrentUser = async (decoded, { type, token }) => {
   logger.debug(
