@@ -7,7 +7,7 @@
 
 // @ts-check
 
-import { AuthenticationError } from '@redwoodjs/api'
+import { AuthenticationError } from '@redwoodjs/graphql-server'
 import { logger } from './logger'
 
 export const getCurrentUser = async (decoded, { type, token }) => {

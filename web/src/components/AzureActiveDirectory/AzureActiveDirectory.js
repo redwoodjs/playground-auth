@@ -1,11 +1,11 @@
 import { AuthProvider } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
-import { UserAgentApplication } from 'msal'
+import { PublicClientApplication } from '@azure/msal-browser'
 import UserTools from '../UserTools/UserTools'
 
 //import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
-export const azureActiveDirectoryClient = new UserAgentApplication({
+export const azureActiveDirectoryClient = new PublicClientApplication({
   auth: {
     clientId: process.env.AZURE_ACTIVE_DIRECTORY_CLIENT_ID,
     authority: process.env.AZURE_ACTIVE_DIRECTORY_AUTHORITY,
