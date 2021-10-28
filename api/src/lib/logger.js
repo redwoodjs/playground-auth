@@ -1,5 +1,5 @@
 //@ts-check
-import { createLogger, redactionsList } from '@redwoodjs/graphql-server/logger'
+import { createLogger, redactionsList } from '@redwoodjs/api/logger'
 
 export const logger = createLogger({
   options: {
