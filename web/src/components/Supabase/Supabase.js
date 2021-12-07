@@ -137,9 +137,11 @@ const SupabaseUserTools = () => {
             providers={thirdPartyProviders}
             loading={loading}
             onProviderClick={async (e) => {
+              alert(`${process.env.URL}/supabase/welcome`)
               setLoading(true)
               await logIn({
                 provider: e.target.value,
+                redirectTo: `${process.env.URL}/supabase/welcome`,
               })
             }}
           />
