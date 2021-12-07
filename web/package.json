@@ -17,12 +17,12 @@
     "@azure/msal-browser": "^2.18.0",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.1",
-    "@redwoodjs/auth": "^0.38.1-canary.17",
-    "@redwoodjs/forms": "^0.38.1-canary.17",
-    "@redwoodjs/router": "^0.38.1-canary.17",
-    "@redwoodjs/web": "^0.38.1-canary.17",
+    "@redwoodjs/auth": "^0.39.3",
+    "@redwoodjs/forms": "^0.39.3",
+    "@redwoodjs/router": "^0.39.3",
+    "@redwoodjs/web": "^0.39.3",
     "@supabase/supabase-js": "^1.13.1",
-    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/forms": "^0.4.0-alpha.2",
     "classnames": "2.3.1",
     "firebase": "^9.0.2",
     "highlight.js": "^10.7.2",
@@ -40,9 +40,9 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "postcss": "^8.3.6",
-    "postcss-loader": "^6.1.1",
-    "tailwindcss": "^2.2.7"
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "postcss-loader": "^6.2.1",
+    "tailwindcss": "^3.0.0-alpha.2"
   }
 }
