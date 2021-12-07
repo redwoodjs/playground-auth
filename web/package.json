@@ -33,7 +33,7 @@
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-highlight-lines": "^1.0.2",
     "markdown-it-toc-and-anchor": "^4.2.0",
-    "netlify-identity-widget": "^1.9.1",
+    "netlify-identity-widget": "^1.9.2",
     "nhost-js-sdk": "^3.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
