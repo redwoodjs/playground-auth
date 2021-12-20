@@ -8,6 +8,7 @@ import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Firebase, { firebaseClient } from 'src/components/Firebase'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
 import Nhost, { nhostClient } from 'src/components/Nhost'
+import SuperTokens, {SuperTokensClient} from 'src/components/SuperTokens'
 
 export const providers = [
   {
@@ -65,4 +66,10 @@ export const providers = [
     component: <Nhost />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#nhost',
   },
+  {
+    name: 'SuperTokens',
+    slug: 'supertokens',
+    client: SuperTokensClient,
+    component: <SuperTokens />
+  }
 ]

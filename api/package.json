@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "^0.39.3",
-    "@redwoodjs/graphql-server": "^0.39.3"
+    "@middy/core": "^2.5.3",
+    "@redwoodjs/api": "^0.40.0",
+    "@redwoodjs/graphql-server": "^0.40.0",
+    "supertokens-node": "^8.3.0"
   }
 }
