@@ -1,11 +1,10 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import Sessions from "supertokens-auth-react/recipe/session";
 
 import ThirdPartyEmailPassword, {SignInAndUp} from "supertokens-auth-react/recipe/thirdpartyemailpassword";
 import UserTools from '../UserTools/UserTools';
 import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 
-export const SuperTokensClient = {sessions: Sessions, authRecipe: ThirdPartyEmailPassword};
+export const SuperTokensClient = {authRecipe: ThirdPartyEmailPassword};
 
 const Content = (props) => {
   const {isAuthenticated, loading} = useAuth();
