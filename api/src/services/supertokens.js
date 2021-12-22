@@ -4,33 +4,33 @@ import * as Sessions from "supertokens-node/recipe/session";
 export const config = {
   framework:"awsLambda",
   appInfo: {
-    apiDomain: "http://localhost:8910/",
+    apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
+    websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
+    apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
     appName: "SuperTokens RedwoodJS",
-    websiteDomain: "http://localhost:8910/",
+    websiteBasePath: "/supertokens",
     apiBasePath: "/auth",
-    apiGatewayPath: "/.netlify/functions",
   },
   supertokens: {
-    connectionURI: "try.supertokens.io"
+    connectionURI: process.env.SUPERTOKENS_CONNECTION_URI,
   },
   recipeList: [
     ThirdPartyEmailPassword.init({
       providers: [
         Google({
-          clientId: "1060725074195-kmeum4crr01uirfl2op9kd5acmi9jutn.apps.googleusercontent.com",
-          clientSecret: "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"
+          clientId: process.env.SUPERTOKENS_GOOGLE_CLIENT_ID,
+          clientSecret: process.env.SUPERTOKENS_GOOGLE_CLIENT_SECRET
         }),
         Github({
-            clientId: "467101b197249757c71f",
-            clientSecret: "e97051221f4b6426e8fe8d51486396703012f5bd"
+            clientId: process.env.SUPERTOKENS_GITHUB_CLIENT_ID,
+            clientSecret: process.env.SUPERTOKENS_GITHUB_CLIENT_SECRET
         }),
         Apple({
-            clientId: "4398792-io.supertokens.example.service",
+            clientId: process.env.SUPERTOKENS_APPLE_CLIENT_ID,
             clientSecret: {
-                keyId: "7M48Y4RYDL",
-                privateKey:
-                    "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgu8gXs+XYkqXD6Ala9Sf/iJXzhbwcoG5dMh1OonpdJUmgCgYIKoZIzj0DAQehRANCAASfrvlFbFCYqn3I2zeknYXLwtH30JuOKestDbSfZYxZNMqhF/OzdZFTV0zc5u5s3eN+oCWbnvl0hM+9IW0UlkdA\n-----END PRIVATE KEY-----",
-                teamId: "YWQCXGJRJL",
+                keyId: process.env.SUPERTOKENS_APPLE_SECRET_KEY_ID,
+                privateKey: process.env.SUPERTOKENS_APPLE_SECRET_PRIVATE_KEY,
+                teamId: process.env.SUPERTOKENS_APPLE_SECRET_TEAM_ID,
             },
         }),
       ],

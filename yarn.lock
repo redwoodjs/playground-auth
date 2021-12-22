@@ -17259,10 +17259,10 @@ subscriptions-transport-ws@^0.11.0:
     symbol-observable "^1.0.4"
     ws "^5.2.0 || ^6.0.0 || ^7.0.0"
 
-supertokens-auth-react@^0.17.6:
-  version "0.17.6"
-  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.17.6.tgz#9fd5602de9aa62cfccc0556315d75253b58a5389"
-  integrity sha512-JVgi2QdlOqfsYPkFDrG4YBJNqwkdNud2GnXJR+TIKGwaVmgxj41zL3xTncE7R75m8UavihWO/ErzdlUzdWXu/A==
+supertokens-auth-react@^0.17.7:
+  version "0.17.7"
+  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.17.7.tgz#dff1f329dca11e41572a88872cbfc657df347816"
+  integrity sha512-UodSDmNPhz4Pr8MDZ3gM/oO99iWpxvoSZw3lFJ4xdbtxX2OSRVV0wYjvUZNREnxfcJmStbc77EPOtmxAjmfvLA==
   dependencies:
     "@emotion/cache" "^11.1.0"
     "@emotion/react" "^11.4.1"

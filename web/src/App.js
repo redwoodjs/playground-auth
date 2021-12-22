@@ -11,24 +11,20 @@ import ThirdPartyEmailPassword, {Github, Google, Apple} from "supertokens-auth-r
 
 SuperTokens.init({
   appInfo: {
-    apiDomain: "http://localhost:8910/",
+    apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
+    websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
+    apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
     appName: "SuperTokens RedwoodJS",
-    websiteDomain: "http://localhost:8910/",
     websiteBasePath: "/supertokens",
     apiBasePath: "/auth",
-    apiGatewayPath: "/.netlify/functions",
   },
   recipeList: [
     Sessions.init(),
     ThirdPartyEmailPassword.init({
       style: {
-        container: {
-          width: "auto",
-          boxShadow: "none",
-        },
         button: {
-          backgroundColor: "rgb(191 71 34) !important",
-          borderColor: "rgb(191 71 34) !important",
+          backgroundColor: "rgb(191 71 34)",
+          borderColor: "rgb(191 71 34)",
         },
       },
       getRedirectionURL: async (context) => {
@@ -43,6 +39,12 @@ SuperTokens.init({
       },
       signInAndUpFeature: {
         disableDefaultImplementation: true,
+        style: {
+          container: {
+            width: "auto",
+            boxShadow: "none",
+          },
+        },
         providers: [
           Github.init(),
           Google.init(),
