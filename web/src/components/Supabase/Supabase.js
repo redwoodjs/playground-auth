@@ -67,7 +67,7 @@ const SupabaseUserTools = () => {
 
     if (event === 'SIGNED_OUT') {
       console.debug('>> in onAuthStateChange', event)
-      // rest auth state to ensure no longer authenticated
+      // reset the auth state to ensure no longer authenticated in all tabs
       await reauthenticate()
     }
 
