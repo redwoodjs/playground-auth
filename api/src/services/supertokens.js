@@ -3,6 +3,7 @@ import * as Sessions from "supertokens-node/recipe/session";
 
 export const config = {
   framework:"awsLambda",
+  isInServerlessEnv: true,
   appInfo: {
     apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
     websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
