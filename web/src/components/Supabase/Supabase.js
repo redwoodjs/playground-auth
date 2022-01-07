@@ -23,7 +23,8 @@ import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
 export const supabaseClient = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
+  process.env.SUPABASE_KEY,
+  { autoRefreshToken: true }
 )
 
 const thirdPartyProviders = [
@@ -57,7 +58,23 @@ const SupabaseUserTools = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
+  const { logIn, logOut, signUp, isAuthenticated, reauthenticate } = useAuth()
+
+  supabaseClient.auth.onAuthStateChange(async (event) => {
+    if (event === 'SIGNED_IN') {
+      console.debug('>> in onAuthStateChange', event)
+    }
+
+    if (event === 'SIGNED_OUT') {
+      console.debug('>> in onAuthStateChange', event)
+      // reset the auth state to ensure no longer authenticated in all tabs
+      await reauthenticate()
+    }
+
+    if (event === 'TOKEN_REFRESHED') {
+      console.debug('>> in onAuthStateChange', event)
+    }
+  })
 
   useEffect(() => {
     if (loading && isAuthenticated) {

@@ -6,7 +6,24 @@ const Supabase = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { logIn, logOut, signUp, isAuthenticated } = useAuth()
+  const { client, logIn, logOut, signUp, isAuthenticated, reauthenticate } = useAuth()
+
+  // Here you can subscribe to events
+  client.auth.onAuthStateChange(async (event) => {
+    if (event === 'SIGNED_IN') {
+      console.debug('>> in onAuthStateChange', event)
+    }
+
+    if (event === 'SIGNED_OUT') {
+      console.debug('>> in onAuthStateChange', event)
+      // reset the auth state to ensure no longer authenticated in all tabs
+      await reauthenticate()
+    }
+
+    if (event === 'TOKEN_REFRESHED') {
+      console.debug('>> in onAuthStateChange', event)
+    }
+  })
 
   const resetForm = () => {
     setEmail('')
