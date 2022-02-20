@@ -2,6 +2,7 @@ import Auth0, { auth0Client } from 'src/components/Auth0'
 import AzureActiveDirectory, {
   azureActiveDirectoryClient,
 } from 'src/components/AzureActiveDirectory'
+import Clerk, { clerkClient } from 'src/components/Clerk'
 import Netlify from 'src/components/Netlify'
 import netlifyIdentity from 'netlify-identity-widget'
 import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
@@ -23,6 +24,13 @@ export const providers = [
     client: azureActiveDirectoryClient,
     component: <AzureActiveDirectory />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#azure-active-directory',
+  },
+  {
+    name: 'Clerk',
+    slug: 'clerk',
+    client: clerkClient,
+    component: <Clerk />,
+    docsUrl: 'https://redwoodjs.com/docs/authentication#clerk',
   },
   {
     name: 'Netlify',

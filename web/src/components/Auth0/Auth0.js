@@ -1,6 +1,6 @@
 import { Auth0Client } from '@auth0/auth0-spa-js'
 import { AuthProvider } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 import UserTools from '../UserTools/UserTools'
 

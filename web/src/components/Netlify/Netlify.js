@@ -2,7 +2,7 @@ import { AuthProvider } from '@redwoodjs/auth'
 import netlifyIdentity from 'netlify-identity-widget'
 import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 import UserTools from '../UserTools/UserTools'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 if (isBrowser) {
   netlifyIdentity.init()
