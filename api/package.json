@@ -6,7 +6,6 @@
     "@clerk/clerk-sdk-node": "^2.9.0",
     "@middy/core": "^2.5.3",
     "@redwoodjs/api": "^0.47.0",
-    "@redwoodjs/graphql-server": "^0.47.0",
-    "supertokens-node": "^8.3.0"
+    "supertokens-node": "^9.0.0"
   }
 }
