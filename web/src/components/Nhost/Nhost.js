@@ -1,5 +1,5 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { createClient } from 'nhost-js-sdk'
 import { useState } from 'react'
 

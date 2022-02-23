@@ -1,5 +1,5 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
