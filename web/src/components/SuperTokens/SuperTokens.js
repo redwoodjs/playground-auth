@@ -1,31 +1,86 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 
-import ThirdPartyEmailPassword, {SignInAndUp} from "supertokens-auth-react/recipe/thirdpartyemailpassword";
-import UserTools from '../UserTools/UserTools';
+import UserTools from '../UserTools/UserTools'
 import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
 import Session from 'supertokens-auth-react/recipe/session'
 
-export const SuperTokensClient = {authRecipe: ThirdPartyEmailPassword, sessionRecipe: Session};
+import SuperTokens from 'supertokens-auth-react'
+import Sessions from 'supertokens-auth-react/recipe/session'
+import ThirdPartyEmailPassword, {
+  Github,
+  Google,
+  Apple,
+  SignInAndUp,
+} from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
 
-const Content = (props) => {
-  const {isAuthenticated, loading} = useAuth();
+export const initializeSuperTokens = () => {
+  SuperTokens.init({
+    appInfo: {
+      apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
+      websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
+      apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
+      appName: 'SuperTokens RedwoodJS',
+      websiteBasePath: '/supertokens',
+      apiBasePath: '/auth',
+    },
+    recipeList: [
+      Sessions.init(),
+      ThirdPartyEmailPassword.init({
+        style: {
+          button: {
+            backgroundColor: 'rgb(191 71 34)',
+            borderColor: 'rgb(191 71 34)',
+          },
+        },
+        getRedirectionURL: async (context) => {
+          if (context.action === 'SUCCESS') {
+            if (context.redirectToPath !== undefined) {
+              // we are navigating back to where the user was before they authenticated
+              return context.redirectToPath
+            }
+            return '/supertokens'
+          }
+          return undefined
+        },
+        signInAndUpFeature: {
+          disableDefaultImplementation: true,
+          style: {
+            container: {
+              width: 'auto',
+              boxShadow: 'none',
+            },
+          },
+          providers: [Github.init(), Google.init(), Apple.init()],
+        },
+      }),
+    ],
+  })
+}
+
+export const SuperTokensClient = {
+  authRecipe: ThirdPartyEmailPassword,
+  sessionRecipe: Session,
+}
+
+const Content = (_props) => {
+  const { isAuthenticated, loading } = useAuth()
 
   if (loading) {
-    return "loading...";
+    return <div className="p-4 text-lg">Loading profile ...</div>
   }
 
   if (isAuthenticated) {
-    return <UserTools/>;
+    return <UserTools />
   }
 
-  return <SignInAndUp/>;
+  return <SignInAndUp />
 }
 
 export default (props) => {
   return (
     <AuthProvider client={SuperTokensClient} type="supertokens" {...props}>
       <RedwoodApolloProvider>
-        <Content/>
+        <Content />
       </RedwoodApolloProvider>
     </AuthProvider>
   )
