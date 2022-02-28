@@ -18,20 +18,12 @@
     "@clerk/clerk-react": "^2.11.0",
     "@headlessui/react": "^1.0.0",
     "@heroicons/react": "^1.0.1",
-<<<<<<< HEAD
     "@redwoodjs/auth": "^0.47.0",
     "@redwoodjs/forms": "^0.47.0",
     "@redwoodjs/router": "^0.47.0",
     "@redwoodjs/web": "^0.47.0",
     "@supabase/supabase-js": "^1.21.7",
-=======
-    "@redwoodjs/auth": "^0.40.0",
-    "@redwoodjs/forms": "^0.40.0",
-    "@redwoodjs/router": "^0.40.0",
-    "@redwoodjs/web": "^0.40.0",
-    "@supabase/supabase-js": "^1.13.1",
->>>>>>> 4f1cebc (Add supertokens integration)
-    "@tailwindcss/forms": "^0.4.0-alpha.2",
+    "@tailwindcss/forms": "^0.4.0",
     "classnames": "2.3.1",
     "firebase": "^9.0.2",
     "highlight.js": "^10.7.2",
