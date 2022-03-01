@@ -48,7 +48,7 @@ export const config = {
     apiDomain,
     websiteDomain,
     appName: 'SuperTokens RedwoodJS',
-    websiteBasePath: '/auth',
+    websiteBasePath: '/supertokens',
     apiBasePath,
   },
   supertokens: {
