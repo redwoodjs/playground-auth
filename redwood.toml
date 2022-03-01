@@ -29,6 +29,9 @@
     'SUPERTOKENS_WEBSITE_DOMAIN',
     'SUPERTOKENS_API_DOMAIN',
     'SUPERTOKENS_API_GATEWAY_PATH',
+    'URL',
+    'DEPLOY_URL',
+    'BRANCH',
   ]
 [api]
   port = 8911
