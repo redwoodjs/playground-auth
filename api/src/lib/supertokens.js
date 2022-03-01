@@ -25,6 +25,10 @@ const websiteDomain =
     ? process.env.URL
     : process.env.DEPLOY_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
 
+console.log(apiDomain, '>>> SuperTokens apiDomain')
+console.log(websiteDomain, '>>> SuperTokens websiteDomain')
+console.log(process.env.BRANCH, '>>> Netlify process.env.BRANCH ')
+
 export const config = {
   framework: 'awsLambda',
   isInServerlessEnv: true,
