@@ -11,7 +11,7 @@ import * as Sessions from 'supertokens-node/recipe/session'
  * Handles local dev as well as Netlify environment settings for deploy previews and production branches
  */
 const apiDomain =
-  process.env.BRANCH === 'main'
+  process.env.CONTEXT === 'production'
     ? process.env.URL
     : process.env.DEPLOY_URL || process.env.SUPERTOKENS_API_DOMAIN
 
@@ -21,13 +21,13 @@ const apiDomain =
  * Handles local dev as well as Netlify environment settings for deploy previews and production branches
  */
 const websiteDomain =
-  process.env.BRANCH === 'main'
+  process.env.CONTEXT === 'production'
     ? process.env.URL
     : process.env.DEPLOY_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
 
 console.log(apiDomain, '>>> SuperTokens apiDomain')
 console.log(websiteDomain, '>>> SuperTokens websiteDomain')
-console.log(process.env.BRANCH, '>>> Netlify process.env.BRANCH ')
+console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
 
 export const config = {
   framework: 'awsLambda',
