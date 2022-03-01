@@ -25,6 +25,17 @@ const websiteDomain =
     ? process.env.URL
     : process.env.DEPLOY_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
 
+/**
+ * apiBasePath setting
+ *
+ * Handles local dev as well as Netlify environment settings
+ *
+ * When deployed to Netlify, the apiBasePath needs the gateway path for the functions directory
+ */
+const apiBasePath = process.env.NETLIFY
+  ? `${process.env.SUPERTOKENS_API_GATEWAY_PATH}/auth`
+  : '/auth'
+
 console.log(apiDomain, '>>> SuperTokens apiDomain')
 console.log(websiteDomain, '>>> SuperTokens websiteDomain')
 console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
@@ -38,7 +49,7 @@ export const config = {
     apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
     appName: 'SuperTokens RedwoodJS',
     websiteBasePath: '/supertokens',
-    apiBasePath: '/auth',
+    apiBasePath,
   },
   supertokens: {
     connectionURI: process.env.SUPERTOKENS_CONNECTION_URI,
