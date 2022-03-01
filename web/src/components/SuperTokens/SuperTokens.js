@@ -13,11 +13,31 @@ import ThirdPartyEmailPassword, {
   SignInAndUp,
 } from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
 
+/**
+ * apiDomain setting
+ *
+ * Handles local dev as well as Netlify environment settings for deploy previews and production branches
+ */
+const apiDomain =
+  process.env.BRANCH === 'main'
+    ? process.env.URL
+    : process.env.DEPLOY_URL || process.env.SUPERTOKENS_API_DOMAIN
+
+/**
+ * websiteDomain setting
+ *
+ * Handles local dev as well as Netlify environment settings for deploy previews and production branches
+ */
+const websiteDomain =
+  process.env.BRANCH === 'main'
+    ? process.env.URL
+    : process.env.DEPLOY_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
+
 export const initializeSuperTokens = () => {
   SuperTokens.init({
     appInfo: {
-      apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
-      websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
+      apiDomain,
+      websiteDomain,
       apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
       appName: 'SuperTokens RedwoodJS',
       websiteBasePath: '/supertokens',
@@ -46,7 +66,7 @@ export const initializeSuperTokens = () => {
           disableDefaultImplementation: true,
           style: {
             container: {
-              width: 'auto',
+              width: 'auto !important',
               boxShadow: 'none',
             },
           },
