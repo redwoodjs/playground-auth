@@ -38,6 +38,7 @@ const apiBasePath = process.env.NETLIFY
 
 console.log(apiDomain, '>>> SuperTokens apiDomain')
 console.log(websiteDomain, '>>> SuperTokens websiteDomain')
+console.log(apiBasePath, '>>> SuperTokens apiBasePath')
 console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
 
 export const config = {
@@ -46,7 +47,6 @@ export const config = {
   appInfo: {
     apiDomain,
     websiteDomain,
-    apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
     appName: 'SuperTokens RedwoodJS',
     websiteBasePath: '/supertokens',
     apiBasePath,
