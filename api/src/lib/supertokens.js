@@ -41,18 +41,20 @@ const apiBasePath = process.env.NETLIFY
  *
  * Handles local dev as well as Netlify environment settings
  *
- * In some cases you may need to provide a custom issuer, for example
- * during development you may need to test with external services
- * (like Hasura Cloud). Since the JWKS endpoint is exposed via your backend,
+ * In some cases you may need to provide a custom issuer.
+ * Since the JWKS endpoint is exposed via your backend,
  * JWT verification will fail because the service may not be able to
- * query your local environment (localhost, 127.0.0.1).
- * You can expose your local environment to the internet
- * (using ngrok for example), and set a custom issuer URL instead
+ * query your environment.
+ *
+ * The url is the apiDomain + apiBasePath + '/auth'
+ *
+ * Beware of extra "/" between apiDomain and apiBasePath on Netlify deploys as Netlify
+ * adds a trailing "/"
  *
  * @see https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/sessions/with-jwt/enabling-jwts#using-a-custom-issuer
  */
 const jwksIssuerUrl = process.env.NETLIFY
-  ? { issuer: `${apiDomain}/${apiBasePath}/auth` }
+  ? { issuer: `${apiDomain}${apiBasePath}/auth` }
   : {}
 
 console.log(apiDomain, '>>> SuperTokens apiDomain')
