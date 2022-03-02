@@ -46,15 +46,19 @@ const apiBasePath = process.env.NETLIFY
  * JWT verification will fail because the service may not be able to
  * query your environment.
  *
- * The url is the apiDomain + apiBasePath + '/auth'
+ * The url is the apiDomain + apiBasePath
  *
  * Beware of extra "/" between apiDomain and apiBasePath on Netlify deploys as Netlify
- * adds a trailing "/"
+ * adds a trailing "/" and that apiBasePath already has `auth`
+ *
+ * For example:
+ * https://621f8d3114b49d00076fe888--redwood-playground-auth.netlify.app/.netlify/functions/auth
+ * https://www.netlify.app/.netlify/functions/auth
  *
  * @see https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/sessions/with-jwt/enabling-jwts#using-a-custom-issuer
  */
 const jwksIssuerUrl = process.env.NETLIFY
-  ? { issuer: `${apiDomain}${apiBasePath}/auth` }
+  ? { issuer: `${apiDomain}${apiBasePath}` }
   : {}
 
 console.log(apiDomain, '>>> SuperTokens apiDomain')
