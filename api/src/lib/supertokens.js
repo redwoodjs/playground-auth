@@ -51,7 +51,9 @@ const apiBasePath = process.env.NETLIFY
  *
  * @see https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/sessions/with-jwt/enabling-jwts#using-a-custom-issuer
  */
-const jwksIssuerUrl = process.env.NETLIFY ? { issuer: `${apiDomain}/auth` } : {}
+const jwksIssuerUrl = process.env.NETLIFY
+  ? { issuer: `${apiDomain}/${apiBasePath}/auth` }
+  : {}
 
 console.log(apiDomain, '>>> SuperTokens apiDomain')
 console.log(websiteDomain, '>>> SuperTokens websiteDomain')
