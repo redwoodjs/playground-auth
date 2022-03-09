@@ -108,10 +108,6 @@ const Content = (_props) => {
 }
 
 export default (props) => {
-  console.log(apiDomain, '>>> SuperTokens apiDomain')
-  console.log(websiteDomain, '>>> SuperTokens websiteDomain')
-  console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
-
   return (
     <AuthProvider client={SuperTokensClient} type="supertokens" {...props}>
       <RedwoodApolloProvider>
