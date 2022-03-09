@@ -21,7 +21,7 @@ import ThirdPartyEmailPassword, {
 const apiDomain =
   process.env.CONTEXT === 'production'
     ? process.env.URL
-    : process.env.DEPLOY_URL || process.env.SUPERTOKENS_API_DOMAIN
+    : process.env.DEPLOY_PRIME_URL || process.env.SUPERTOKENS_API_DOMAIN
 
 /**
  * websiteDomain setting
@@ -31,7 +31,7 @@ const apiDomain =
 const websiteDomain =
   process.env.CONTEXT === 'production'
     ? process.env.URL
-    : process.env.DEPLOY_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
+    : process.env.DEPLOY_PRIME_URL || process.env.SUPERTOKENS_WEBSITE_DOMAIN
 
 /**
  * apiBasePath setting
