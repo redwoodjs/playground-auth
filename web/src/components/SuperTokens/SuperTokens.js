@@ -45,6 +45,11 @@ const apiBasePath = process.env.NETLIFY
   : '/auth'
 
 export const initializeSuperTokens = () => {
+  console.log(process.env.CONTEXT, '<<< process.env.CONTEXT')
+  console.log(apiDomain, '<<< apiDomain')
+  console.log(websiteDomain, '<<< websiteDomain')
+  console.log(apiBasePath, '<<< apiBasePath')
+
   SuperTokens.init({
     appInfo: {
       apiDomain,
