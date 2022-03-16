@@ -24,7 +24,6 @@ export const thirdPartyProviders = [
   { value: 'google', label: 'Google', logo: logoGoogle, disabled: true },
   { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },
   { value: 'spotify', label: 'Spotify', logo: logoSpotify, disabled: true },
-  { value: 'google', label: 'Google', logo: logoGoogle, disabled: true },
 ]
 
 const NhostUserTools = () => {
@@ -61,7 +60,7 @@ const NhostUserTools = () => {
     setError(null)
 
     try {
-      await signUp({ email, password })
+      await signUp({ email, password, options: { displayName: email } })
 
       resetForm()
     } catch (e) {
