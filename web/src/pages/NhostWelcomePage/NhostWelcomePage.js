@@ -6,8 +6,6 @@ import { nhostClient } from 'src/components/Nhost'
 
 const nhostProviderPagePath = routes.provider({ provider: 'nhost' })
 
-/** Supabase thirdparty auth confirmation collides with Netlify/Firebase providers, so must confirm in a separate page. */
-/** This page is set to redirect back to Supabase Provider Page after 3 seconds */
 const NhostWelcome = () => {
   const [seconds, setSeconds] = useState(5)
 
@@ -28,8 +26,8 @@ const NhostWelcome = () => {
 
   return (
     <>
-      <MetaTags title="Signed in to Supabase" />
-      <AuthProvider client={nhostClient} type="supabase">
+      <MetaTags title="Signed in to Nhost" />
+      <AuthProvider client={nhostClient} type="nhost">
         <div className="grid max-w-screen-sm grid-rows-3 px-4 py-8 mx-auto text-center bg-white shadow sm:rounded-lg sm:px-10 gap-y-2">
           <span role="img" aria-label="hooray" className="text-5xl">
             🎉
