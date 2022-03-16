@@ -20,6 +20,11 @@ const Routes = () => {
           page={SupabaseWelcomePage}
           name="supabaseWelcome"
         />
+        <Route
+          path="/nhost/welcome"
+          page={NhostWelcomePage}
+          name="nhostWelcome"
+        />
         <Route path="/{provider}" page={ProviderPage} name="provider" />
         <Route path="/" page={HomePage} name="home" />
       </Set>

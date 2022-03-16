@@ -1,22 +1,36 @@
 import { AuthProvider, useAuth } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { createClient } from 'nhost-js-sdk'
+import { NhostClient } from '@nhost/nhost-js'
 import { useState } from 'react'
 
 import AuthResults from 'src/components/AuthResults'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
+import logoGithub from '../../lib/images/thirdparty-logos/github.png'
+import logoDiscord from '../../lib/images/thirdparty-logos/discord.png'
+import logoGoogle from '../../lib/images/thirdparty-logos/google.png'
+import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
+import logoSpotify from '../../lib/images/thirdparty-logos/spotify.png'
 
-export const nhostClient = createClient({
-  baseURL: process.env.NHOST_BACKEND_URL,
-  autoLogin: false,
+import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
+
+export const nhostClient = new NhostClient({
+  backendUrl: process.env.NHOST_BACKEND_URL,
 })
+
+export const thirdPartyProviders = [
+  { value: 'github', label: 'GitHub', logo: logoGithub },
+  { value: 'discord', label: 'Discord', logo: logoDiscord },
+  { value: 'google', label: 'Google', logo: logoGoogle, disabled: true },
+  { value: 'facebook', label: 'Facebook', logo: logoFacebook, disabled: true },
+  { value: 'spotify', label: 'Spotify', logo: logoSpotify, disabled: true },
+]
 
 const NhostUserTools = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [method, setMethod] = useState('password')
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
@@ -26,18 +40,13 @@ const NhostUserTools = () => {
     setError(null)
   }
 
-  const isOAuth = () => {
-    return method !== 'password'
-  }
-
   const handleLogInOut = async () => {
     setError(null)
 
     if (!isAuthenticated) {
       try {
-        isOAuth()
-          ? await logIn({ provider: method })
-          : (await logIn({ email, password })) && resetForm()
+        await logIn({ email, password })
+        resetForm()
       } catch (e) {
         console.log(e)
         setError(e.response.data.message)
@@ -51,7 +60,7 @@ const NhostUserTools = () => {
     setError(null)
 
     try {
-      await signUp({ email, password })
+      await signUp({ email, password, options: { displayName: email } })
 
       resetForm()
     } catch (e) {
@@ -62,19 +71,9 @@ const NhostUserTools = () => {
   return (
     <div>
       <Badge />
-      {isAuthenticated && <PollCurrentVersionCell />}
-      <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
-        Provider
-      </label>
-      <select
-        value={method}
-        onChange={(event) => setMethod(event.target.value)}
-      >
-        <option value="password">Email/Password</option>
-        <option value="github">GitHub</option>
-      </select>
       {error && <p>{error}</p>}
-      {!isAuthenticated && method === 'password' && (
+
+      {!isAuthenticated && (
         <div style={{ marginTop: 10 }}>
           <input
             type="email"
@@ -93,10 +92,9 @@ const NhostUserTools = () => {
         </div>
       )}
       <button
+        type="submit"
         className="btn"
-        disabled={
-          !isAuthenticated && !isOAuth() && (!email.length || !password.length)
-        }
+        disabled={!isAuthenticated && (!email.length || !password.length)}
         onClick={handleLogInOut}
       >
         {isAuthenticated ? 'Log Out' : 'Log In'}
@@ -104,13 +102,27 @@ const NhostUserTools = () => {
       {!isAuthenticated && (
         <button
           className="btn btn-alt"
-          disabled={isOAuth() || !email.length || !password.length}
+          disabled={!email.length || !password.length}
           onClick={handleSignUp}
         >
           Sign Up
         </button>
       )}
+
       <br />
+
+      <ThirdPartyProviderContainer
+        providers={thirdPartyProviders}
+        loading={loading}
+        onProviderClick={async (e) => {
+          setLoading(true)
+          await logIn({
+            provider: e.target.value,
+            options: { redirectTo: `${process.env.URL}/nhost/welcome` },
+          })
+        }}
+      />
+      {isAuthenticated && <PollCurrentVersionCell />}
       <AuthResults />
     </div>
   )

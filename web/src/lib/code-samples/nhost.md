@@ -16,18 +16,13 @@ const Nhost = () => {
     setError(null)
   }
 
-  const isOAuth = () => {
-    return method !== 'password'
-  }
-
   const handleLogInOut = async () => {
     setError(null)
 
     if (!isAuthenticated) {
       try {
-        isOAuth()
-          ? await logIn({ provider: method })
-          : (await logIn({ email, password })) && resetForm()
+        await logIn({ provider: method })
+        resetForm()
       } catch (e) {
         console.log(e)
         setError(e.response.data.message)
@@ -51,18 +46,8 @@ const Nhost = () => {
 
   return (
     <div>
-      <label htmlFor="provider">
-        Provider
-      </label>
-      <select
-        value={method}
-        onChange={(event) => setMethod(event.target.value)}
-      >
-        <option value="password">Email/Password</option>
-        <option value="github">GitHub</option>
-      </select>
       {error && <p>{error}</p>}
-      {!isAuthenticated && method === 'password' && (
+      {!isAuthenticated && (
         <div style={{ marginTop: 10 }}>
           <input
             type="email"
@@ -81,8 +66,9 @@ const Nhost = () => {
         </div>
       )}
       <button
+        type="submit"
         disabled={
-          !isAuthenticated && !isOAuth() && (!email.length || !password.length)
+          !isAuthenticated && (!email.length || !password.length)
         }
         onClick={handleLogInOut}
       >
@@ -90,7 +76,7 @@ const Nhost = () => {
       </button>
       {!isAuthenticated && (
         <button
-          disabled={isOAuth() || !email.length || !password.length}
+          disabled={!email.length || !password.length}
           onClick={handleSignUp}
         >
           Sign Up
