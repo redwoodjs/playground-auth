@@ -61,11 +61,11 @@ const jwksIssuerUrl = process.env.NETLIFY
   ? { issuer: `${apiDomain}${apiBasePath}` }
   : {}
 
-console.log(apiDomain, '>>> SuperTokens apiDomain')
-console.log(websiteDomain, '>>> SuperTokens websiteDomain')
-console.log(apiBasePath, '>>> SuperTokens apiBasePath')
-console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
-console.log(jwksIssuerUrl, '>>> SuperTokens jwksIssuerUrl ')
+// console.log(apiDomain, '>>> SuperTokens apiDomain')
+// console.log(websiteDomain, '>>> SuperTokens websiteDomain')
+// console.log(apiBasePath, '>>> SuperTokens apiBasePath')
+// console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
+// console.log(jwksIssuerUrl, '>>> SuperTokens jwksIssuerUrl ')
 
 export const config = {
   framework: 'awsLambda',
