@@ -103,6 +103,21 @@ export const config = {
     }),
     Sessions.init({
       jwt: { enable: true, ...jwksIssuerUrl },
+      override: {
+        functions: function (originalImplementation) {
+          return {
+            ...originalImplementation,
+            createNewSession: async function (input) {
+              input.accessTokenPayload = {
+                ...input.accessTokenPayload,
+                role: 'user',
+              }
+
+              return originalImplementation.createNewSession(input)
+            },
+          }
+        },
+      },
     }),
   ],
 }
