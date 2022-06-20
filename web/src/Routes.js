@@ -6,11 +6,11 @@ import SuperTokens from 'supertokens-auth-react'
 import { initializeSuperTokens } from 'src/components/SuperTokens'
 
 const Routes = () => {
-  initializeSuperTokens()
+  //initializeSuperTokens()
 
-  if (SuperTokens.canHandleRoute()) {
-    return SuperTokens.getRoutingComponent()
-  }
+  // if (SuperTokens.canHandleRoute()) {
+  //   return SuperTokens.getRoutingComponent()
+  // }
 
   return (
     <Router>
