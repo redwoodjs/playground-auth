@@ -1,13 +1,15 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { initializeApp, getApp, getApps } from 'firebase/app'
-import * as firebaseAuth from '@firebase/auth'
 import { useState } from 'react'
 
+import * as firebaseAuth from '@firebase/auth'
+import { initializeApp, getApp, getApps } from 'firebase/app'
+
+import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+
 import AuthResults from 'src/components/AuthResults'
+import Badge from 'src/components/Badge'
 import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
-import Badge from 'src/components/Badge'
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,

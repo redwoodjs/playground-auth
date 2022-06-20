@@ -1,9 +1,9 @@
+import * as Sessions from 'supertokens-node/recipe/session'
 import ThirdPartyEmailPassword, {
   Google,
   Github,
   Apple,
 } from 'supertokens-node/recipe/thirdpartyemailpassword'
-import * as Sessions from 'supertokens-node/recipe/session'
 
 /**
  * apiDomain setting

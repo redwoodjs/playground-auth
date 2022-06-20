@@ -5,19 +5,20 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 import UserTools from '../UserTools/UserTools'
 
-//import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
-
-export const azureActiveDirectoryClient = new PublicClientApplication({
+export const azureActiveDirectoryB2CClient = new PublicClientApplication({
   auth: {
-    clientId: process.env.AZURE_ACTIVE_DIRECTORY_CLIENT_ID,
-    authority: process.env.AZURE_ACTIVE_DIRECTORY_AUTHORITY,
-    redirectUri: process.env.AZURE_ACTIVE_DIRECTORY_REDIRECT_URI,
+    clientId: process.env.AZURE_ACTIVE_DIRECTORY_B2C_CLIENT_ID,
+    authority: process.env.AZURE_ACTIVE_DIRECTORY_B2C_AUTHORITY,
+    redirectUri: process.env.AZURE_ACTIVE_DIRECTORY_B2C_REDIRECT_URI,
     postLogoutRedirectUri:
-      process.env.AZURE_ACTIVE_DIRECTORY_LOGOUT_REDIRECT_URI,
+      process.env.AZURE_ACTIVE_DIRECTORY_B2C_LOGOUT_REDIRECT_URI,
+    knownAuthorities: [process.env.AZURE_ACTIVE_DIRECTORY_B2C_KNOWN_AUTHORITY],
   },
 })
 
 const AzureUserTools = () => {
+  console.log(process.env.AZURE_ACTIVE_DIRECTORY_B2C_REDIRECT_URI)
+
   return (
     <div>
       {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
@@ -31,7 +32,7 @@ const AzureUserTools = () => {
 export default ({ children }) => {
   return (
     <AuthProvider
-      client={azureActiveDirectoryClient}
+      client={azureActiveDirectoryB2CClient}
       type="azureActiveDirectory"
     >
       <AzureUserTools />

@@ -16,14 +16,14 @@
     "@auth0/auth0-spa-js": "^1.19.3",
     "@azure/msal-browser": "^2.18.0",
     "@clerk/clerk-react": "^2.11.0",
-    "@headlessui/react": "^1.0.0",
-    "@heroicons/react": "^1.0.1",
-    "@redwoodjs/auth": "^0.50.0",
-    "@redwoodjs/forms": "^0.50.0",
-    "@redwoodjs/router": "^0.50.0",
-    "@redwoodjs/web": "^0.50.0",
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
+    "@redwoodjs/auth": "^2.0.0",
+    "@redwoodjs/forms": "^2.0.0",
+    "@redwoodjs/router": "^2.0.0",
+    "@redwoodjs/web": "^2.0.0",
     "@supabase/supabase-js": "^1.21.7",
-    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
     "classnames": "2.3.1",
     "firebase": "^9.0.2",
     "highlight.js": "^10.7.2",
@@ -42,9 +42,9 @@
     "supertokens-auth-react": "^0.18.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "postcss": "^8.3.6",
-    "postcss-loader": "^6.1.1",
-    "tailwindcss": "^3.0.23"
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "tailwindcss": "^3.1.3"
   }
 }

@@ -1,8 +1,10 @@
 import { useAuth } from '@redwoodjs/auth'
+
 import AuthResults from 'src/components/AuthResults'
-import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
-import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
 import Badge from 'src/components/Badge'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+
+import LogInOutButtons from '../LogInOutButtons/LogInOutButtons'
 
 const UserTools = ({
   logInOptions = {},

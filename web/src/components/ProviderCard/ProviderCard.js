@@ -1,7 +1,9 @@
-import { Link, routes } from '@redwoodjs/router'
-import { useAuth } from '@redwoodjs/auth'
-import ProviderImage from 'src/components/ProviderImage'
 import { LockOpenIcon, LockClosedIcon } from '@heroicons/react/outline'
+
+import { useAuth } from '@redwoodjs/auth'
+import { Link, routes } from '@redwoodjs/router'
+
+import ProviderImage from 'src/components/ProviderImage'
 
 const ProviderCard = ({ provider }) => {
   const { isAuthenticated } = useAuth()

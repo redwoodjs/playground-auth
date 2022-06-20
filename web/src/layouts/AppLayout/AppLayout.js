@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
-import Footer from 'src/components/Footer'
 import { MetaTags } from '@redwoodjs/web'
+
+import Footer from 'src/components/Footer'
 
 const AppLayout = ({ children }) => {
   return (

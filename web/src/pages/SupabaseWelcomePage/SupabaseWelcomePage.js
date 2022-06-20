@@ -1,7 +1,9 @@
 import { useEffect, useState, useCallback } from 'react'
-import { MetaTags } from '@redwoodjs/web'
-import { Link, routes, navigate } from '@redwoodjs/router'
+
 import { AuthProvider } from '@redwoodjs/auth'
+import { Link, routes, navigate } from '@redwoodjs/router'
+import { MetaTags } from '@redwoodjs/web'
+
 import { supabaseClient } from 'src/components/Supabase'
 
 const supabaseProviderPagePath = routes.provider({ provider: 'supabase' })

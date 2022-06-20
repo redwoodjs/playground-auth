@@ -1,10 +1,13 @@
 import { useState } from 'react'
+
+import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
+
 import { navigate, routes } from '@redwoodjs/router'
-import { providers } from 'src/lib/providers'
+import { MetaTags } from '@redwoodjs/web'
+
 import CodeSample from 'src/components/CodeSample'
 import ProviderImage from 'src/components/ProviderImage'
-import { MetaTags } from '@redwoodjs/web'
-import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
+import { providers } from 'src/lib/providers'
 
 const tabs = [
   { name: 'Demo', slug: 'demo', icon: <EyeIcon /> },

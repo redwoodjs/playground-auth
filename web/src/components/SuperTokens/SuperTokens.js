@@ -1,10 +1,5 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-
-import UserTools from '../UserTools/UserTools'
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
-import Session from 'supertokens-auth-react/recipe/session'
-
 import SuperTokens from 'supertokens-auth-react'
+import Session from 'supertokens-auth-react/recipe/session'
 import Sessions from 'supertokens-auth-react/recipe/session'
 import ThirdPartyEmailPassword, {
   Github,
@@ -12,6 +7,11 @@ import ThirdPartyEmailPassword, {
   Apple,
   SignInAndUp,
 } from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
+
+import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+
+import UserTools from '../UserTools/UserTools'
 
 /**
  * apiDomain setting
