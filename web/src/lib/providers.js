@@ -2,6 +2,10 @@ import Auth0, { auth0Client } from 'src/components/Auth0'
 import AzureActiveDirectory, {
   azureActiveDirectoryClient,
 } from 'src/components/AzureActiveDirectory'
+import AzureActiveDirectoryB2C, {
+  azureActiveDirectoryB2CClient,
+} from 'src/components/AzureActiveDirectoryB2C'
+
 import Clerk, { clerkClient } from 'src/components/Clerk'
 import Netlify from 'src/components/Netlify'
 import netlifyIdentity from 'netlify-identity-widget'
@@ -24,6 +28,14 @@ export const providers = [
     slug: 'azureActiveDirectory',
     client: azureActiveDirectoryClient,
     component: <AzureActiveDirectory />,
+    docsUrl: 'https://redwoodjs.com/docs/authentication#azure-active-directory',
+  },
+  {
+    name: 'Azure Active Directory B2C',
+    slug: 'azureActiveDirectoryB2C',
+    type: 'azureActiveDirectory',
+    client: azureActiveDirectoryB2CClient,
+    component: <AzureActiveDirectoryB2C/>,
     docsUrl: 'https://redwoodjs.com/docs/authentication#azure-active-directory',
   },
   {
