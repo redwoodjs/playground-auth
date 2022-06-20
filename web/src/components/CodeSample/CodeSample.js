@@ -5,6 +5,7 @@ import hljs from 'highlight.js'
 import hljsDefineGraphQL from 'highlightjs-graphql'
 
 hljsDefineGraphQL(hljs)
+
 const md = require('markdown-it')({
   html: true,
   linkify: true,
@@ -12,14 +13,16 @@ const md = require('markdown-it')({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(lang, str).value
-      } catch (__) {}
+      } catch (e) {
+        console.error(e)
+      }
     }
 
     return '' // use external default escaping
   },
 })
 
-const CodeSample = ({ provider }) => {
+function CodeSample({ provider }) {
   const [markdownCode, setMarkdownCode] = useState()
 
   useEffect(() => {
