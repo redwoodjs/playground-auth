@@ -11,7 +11,7 @@ const HomePage = () => {
             key={i}
             condition={provider.client}
             wrapper={(children) => (
-              <AuthProvider client={provider.client} type={provider.slug}>
+              <AuthProvider client={provider.client} type={provider.type? provider.type:provider.slug}>
                 {children}
               </AuthProvider>
             )}
