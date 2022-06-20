@@ -1,4 +1,5 @@
 import ThirdPartyProviderButton from 'src/components/ThirdPartyProviderButton'
+
 import Spinner from '../Spinner'
 
 export default ({ providers, onProviderClick, loading, ...rest }) => {

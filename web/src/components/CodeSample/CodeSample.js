@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+
 import { ExternalLinkIcon } from '@heroicons/react/outline'
 import hljs from 'highlight.js'
 import hljsDefineGraphQL from 'highlightjs-graphql'
+
 hljsDefineGraphQL(hljs)
 const md = require('markdown-it')({
   html: true,

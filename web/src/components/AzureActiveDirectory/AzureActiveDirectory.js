@@ -1,6 +1,8 @@
+import { PublicClientApplication } from '@azure/msal-browser'
+
 import { AuthProvider } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { PublicClientApplication } from '@azure/msal-browser'
+
 import UserTools from '../UserTools/UserTools'
 
 //import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'

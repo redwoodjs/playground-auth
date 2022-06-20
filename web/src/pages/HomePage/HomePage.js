@@ -1,6 +1,7 @@
 import { AuthProvider } from '@redwoodjs/auth'
-import { providers } from 'src/lib/providers'
+
 import ProviderCard from 'src/components/ProviderCard'
+import { providers } from 'src/lib/providers'
 
 const HomePage = () => {
   return (
@@ -11,7 +12,10 @@ const HomePage = () => {
             key={i}
             condition={provider.client}
             wrapper={(children) => (
-              <AuthProvider client={provider.client} type={provider.type? provider.type:provider.slug}>
+              <AuthProvider
+                client={provider.client}
+                type={provider.type ? provider.type : provider.slug}
+              >
                 {children}
               </AuthProvider>
             )}

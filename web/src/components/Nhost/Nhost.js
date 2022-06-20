@@ -1,11 +1,13 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { createClient } from 'nhost-js-sdk'
 import { useState } from 'react'
 
+import { createClient } from 'nhost-js-sdk'
+
+import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+
 import AuthResults from 'src/components/AuthResults'
-import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
 export const nhostClient = createClient({
   baseURL: process.env.NHOST_BACKEND_URL,

@@ -1,3 +1,5 @@
+import netlifyIdentity from 'netlify-identity-widget'
+
 import Auth0, { auth0Client } from 'src/components/Auth0'
 import AzureActiveDirectory, {
   azureActiveDirectoryClient,
@@ -5,15 +7,13 @@ import AzureActiveDirectory, {
 import AzureActiveDirectoryB2C, {
   azureActiveDirectoryB2CClient,
 } from 'src/components/AzureActiveDirectoryB2C'
-
 import Clerk, { clerkClient } from 'src/components/Clerk'
-import Netlify from 'src/components/Netlify'
-import netlifyIdentity from 'netlify-identity-widget'
-import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Firebase, { firebaseClient } from 'src/components/Firebase'
-import Supabase, { supabaseClient } from 'src/components/Supabase'
+import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
+import Netlify from 'src/components/Netlify'
 import Nhost, { nhostClient } from 'src/components/Nhost'
-import SuperTokens, {SuperTokensClient} from 'src/components/SuperTokens'
+import Supabase, { supabaseClient } from 'src/components/Supabase'
+import SuperTokens, { SuperTokensClient } from 'src/components/SuperTokens'
 
 export const providers = [
   {
@@ -35,7 +35,7 @@ export const providers = [
     slug: 'azureActiveDirectoryB2C',
     type: 'azureActiveDirectory',
     client: azureActiveDirectoryB2CClient,
-    component: <AzureActiveDirectoryB2C/>,
+    component: <AzureActiveDirectoryB2C />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#azure-active-directory',
   },
   {
@@ -90,6 +90,6 @@ export const providers = [
     name: 'SuperTokens',
     slug: 'supertokens',
     client: SuperTokensClient,
-    component: <SuperTokens />
-  }
+    component: <SuperTokens />,
+  },
 ]

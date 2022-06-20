@@ -1,6 +1,8 @@
+import { PublicClientApplication } from '@azure/msal-browser'
+
 import { AuthProvider } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { PublicClientApplication } from '@azure/msal-browser'
+
 import UserTools from '../UserTools/UserTools'
 
 export const azureActiveDirectoryB2CClient = new PublicClientApplication({
@@ -8,8 +10,9 @@ export const azureActiveDirectoryB2CClient = new PublicClientApplication({
     clientId: process.env.AZURE_ACTIVE_DIRECTORY_B2C_CLIENT_ID,
     authority: process.env.AZURE_ACTIVE_DIRECTORY_B2C_AUTHORITY,
     redirectUri: process.env.AZURE_ACTIVE_DIRECTORY_B2C_REDIRECT_URI,
-    postLogoutRedirectUri: process.env.AZURE_ACTIVE_DIRECTORY_B2C_LOGOUT_REDIRECT_URI,
-    knownAuthorities:[process.env.AZURE_ACTIVE_DIRECTORY_B2C_KNOWN_AUTHORITY]
+    postLogoutRedirectUri:
+      process.env.AZURE_ACTIVE_DIRECTORY_B2C_LOGOUT_REDIRECT_URI,
+    knownAuthorities: [process.env.AZURE_ACTIVE_DIRECTORY_B2C_KNOWN_AUTHORITY],
   },
 })
 

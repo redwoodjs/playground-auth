@@ -1,11 +1,13 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { Magic } from 'magic-sdk'
 import { useState } from 'react'
 
+import { Magic } from 'magic-sdk'
+
+import { AuthProvider, useAuth } from '@redwoodjs/auth'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+
 import AuthResults from 'src/components/AuthResults'
-import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 import Badge from 'src/components/Badge'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
 
 export const magicLinkClient = new Magic(process.env.MAGICLINK_PUBLIC)
 

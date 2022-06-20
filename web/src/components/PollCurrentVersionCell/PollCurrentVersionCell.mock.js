@@ -4,5 +4,5 @@ export const standard = () => {
     pollCurrentVersion: {
       id: 42,
     },
-  };
-};
+  }
+}

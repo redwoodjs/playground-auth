@@ -1,9 +1,9 @@
-import { Router, Route, Set } from '@redwoodjs/router'
-import AppLayout from 'src/layouts/AppLayout'
-
 import SuperTokens from 'supertokens-auth-react'
 
+import { Router, Route, Set } from '@redwoodjs/router'
+
 import { initializeSuperTokens } from 'src/components/SuperTokens'
+import AppLayout from 'src/layouts/AppLayout'
 
 const Routes = () => {
   //initializeSuperTokens()
