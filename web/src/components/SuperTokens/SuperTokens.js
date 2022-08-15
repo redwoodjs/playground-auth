@@ -79,7 +79,7 @@ export const initializeSuperTokens = () => {
           return undefined
         },
         signInAndUpFeature: {
-          disableDefaultImplementation: true,
+          disableDefaultUI: true,
           style: {
             container: {
               width: 'auto !important',
