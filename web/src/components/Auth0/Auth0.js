@@ -5,8 +5,6 @@ import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 import UserTools from '../UserTools/UserTools'
 
-console.log('redirect url', window.location.href)
-
 export const auth0Client = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN,
   client_id: process.env.AUTH0_CLIENT_ID,
