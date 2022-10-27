@@ -7,8 +7,15 @@
 
 // @ts-check
 
+import admin from 'firebase-admin'
+
 import { AuthenticationError } from '@redwoodjs/graphql-server'
+
 import { logger } from './logger'
+
+const _adminApp = admin.initializeApp({
+  projectId: process.env.FIREBASE_PROJECT_ID,
+})
 
 export const getCurrentUser = async (decoded, { type, token }) => {
   logger.debug(
