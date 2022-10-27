@@ -1,8 +1,11 @@
 import { Auth0Client } from '@auth0/auth0-spa-js'
+
 import { AuthProvider } from '@redwoodjs/auth'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 import UserTools from '../UserTools/UserTools'
+
+console.log('redirect url', window.location.href)
 
 export const auth0Client = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN,
