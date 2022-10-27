@@ -1,10 +1,11 @@
-import { useAuth } from '@redwoodjs/auth'
 import { useEffect, useState } from 'react'
+
+import { useAuth } from '@redwoodjs/auth'
 
 export default () => {
   const { type, userMetadata, currentUser, isAuthenticated } = useAuth()
   const typeOk = type && type === currentUser?.type
-  const emailOk = /^\w+@\w+.*\.\w\w+$/.test(userMetadata?.email)
+  const emailOk = /^[\w+]+@\w+.*\.\w\w+$/.test(userMetadata?.email)
   const tokenOk = currentUser?.token && currentUser?.token !== 'null'
 
   const [lastUpdate, setLastUpdate] = useState('lastUpdate')
