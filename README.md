@@ -39,6 +39,7 @@ Set site
 
 ```
 MAGIC_SECRET_KEY=""
+MAGICLINK_PUBLIC=""
 ```
 
 ### Firebase
