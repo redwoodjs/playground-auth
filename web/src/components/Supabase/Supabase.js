@@ -1,23 +1,25 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { createClient } from '@supabase/supabase-js'
 import { useState, useEffect } from 'react'
+
+import { createClient } from '@supabase/supabase-js'
+
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import { toast } from '@redwoodjs/web/toast'
 
 import AuthResults from 'src/components/AuthResults'
-import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 import Badge from 'src/components/Badge'
+import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
+import { useAuth } from 'src/supabaseAuth'
 
 import logoApple from '../../lib/images/thirdparty-logos/apple.png'
 import logoAzure from '../../lib/images/thirdparty-logos/azure.png'
-import logoDiscord from '../../lib/images/thirdparty-logos/discord.png'
 import logoBitbucket from '../../lib/images/thirdparty-logos/bitbucket.png'
+import logoDiscord from '../../lib/images/thirdparty-logos/discord.png'
 import logoFacebook from '../../lib/images/thirdparty-logos/facebook.png'
 import logoGithub from '../../lib/images/thirdparty-logos/github.png'
 import logoGitlab from '../../lib/images/thirdparty-logos/gitlab.png'
 import logoGoogle from '../../lib/images/thirdparty-logos/google.png'
-import logoSpotify from '../../lib/images/thirdparty-logos/spotify.png'
 import logoSlack from '../../lib/images/thirdparty-logos/slack.png'
+import logoSpotify from '../../lib/images/thirdparty-logos/spotify.png'
 import logoTwitter from '../../lib/images/thirdparty-logos/twitter.png'
 import ThirdPartyProviderContainer from '../ThirdPartyProviderContainer'
 
@@ -113,7 +115,7 @@ const SupabaseUserTools = () => {
 
   return (
     <div>
-      <Badge />
+      <Badge useAuth={useAuth} />
       {!isAuthenticated && (
         <>
           <form>
@@ -168,18 +170,15 @@ const SupabaseUserTools = () => {
         </>
       )}
       {isAuthenticated && <PollCurrentVersionCell />}
-      <AuthResults />
+      <AuthResults useAuth={useAuth} />
     </div>
   )
 }
 
 export default () => {
   return (
-    <AuthProvider client={supabaseClient} type="supabase">
-      {/* Add apollo provider here, so that useAuth gets passed in for Cells,etc.  */}
-      <RedwoodApolloProvider>
-        <SupabaseUserTools />
-      </RedwoodApolloProvider>
-    </AuthProvider>
+    <RedwoodApolloProvider useAuth={useAuth}>
+      <SupabaseUserTools />
+    </RedwoodApolloProvider>
   )
 }

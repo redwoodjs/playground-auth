@@ -1,30 +1,20 @@
-import { AuthProvider } from '@redwoodjs/auth'
-import { providers } from 'src/lib/providers'
+import { useAuth as useAuth0Auth } from 'src/auth0Auth'
 import ProviderCard from 'src/components/ProviderCard'
+import { useAuth as useFirebaseAuth } from 'src/firebaseAuth'
+import { useAuth as useNetlifyAuth } from 'src/netlifyAuth'
+import { useAuth as useSupabaseAuth } from 'src/supabaseAuth'
 
 const HomePage = () => {
   return (
     <div className="max-w-7xl w-full mx-auto sm:px-6 lg:px-8">
       <div className="grid sm:grid-cols-2 gap-3 md:grid-cols-3">
-        {providers.map((provider, i) => (
-          <ConditionalWrapper
-            key={i}
-            condition={provider.client}
-            wrapper={(children) => (
-              <AuthProvider client={provider.client} type={provider.slug}>
-                {children}
-              </AuthProvider>
-            )}
-          >
-            <ProviderCard provider={provider} />
-          </ConditionalWrapper>
-        ))}
+        <ProviderCard name="Auth0" useAuth={useAuth0Auth} />
+        <ProviderCard name="Firebase" useAuth={useFirebaseAuth} />
+        <ProviderCard name="Netlify" useAuth={useNetlifyAuth} />
+        <ProviderCard name="Supabase" useAuth={useSupabaseAuth} />
       </div>
     </div>
   )
 }
-
-const ConditionalWrapper = ({ condition, wrapper, children }) =>
-  condition ? wrapper(children) : children
 
 export default HomePage

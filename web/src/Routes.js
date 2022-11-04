@@ -1,9 +1,11 @@
-import { Router, Route, Set } from '@redwoodjs/router'
-import AppLayout from 'src/layouts/AppLayout'
-
 import SuperTokens from 'supertokens-auth-react'
 
+import { Router, Route, Set } from '@redwoodjs/router'
+
 import { initializeSuperTokens } from 'src/components/SuperTokens'
+import AppLayout from 'src/layouts/AppLayout'
+
+import { useAuth } from './auth'
 
 const Routes = () => {
   initializeSuperTokens()
@@ -13,7 +15,7 @@ const Routes = () => {
   }
 
   return (
-    <Router>
+    <Router useAuth={useAuth}>
       <Set wrap={AppLayout}>
         <Route
           path="/supabase/welcome"
