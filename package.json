@@ -7,7 +7,7 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "^3.2.1-canary.158",
+    "@redwoodjs/core": "^4.0.0-canary.172",
     "lodash-decorators": "^6.0.1",
     "netlify-plugin-inline-functions-env": "^1.0.9"
   },
