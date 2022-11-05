@@ -10,7 +10,7 @@ import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
 import Netlify from 'src/components/Netlify'
 import Nhost, { nhostClient } from 'src/components/Nhost'
 import Supabase, { supabaseClient } from 'src/components/Supabase'
-import SuperTokens, { SuperTokensClient } from 'src/components/SuperTokens'
+import SuperTokens from 'src/components/SuperTokens'
 
 export const providers = [
   {
@@ -76,7 +76,6 @@ export const providers = [
   {
     name: 'SuperTokens',
     slug: 'supertokens',
-    client: SuperTokensClient,
     component: <SuperTokens />,
   },
 ]

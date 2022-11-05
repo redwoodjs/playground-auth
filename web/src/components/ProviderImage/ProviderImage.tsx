@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 
-const ProviderImage = ({ slug, name }) => {
+interface Props {
+  name: string
+}
+
+const ProviderImage: React.VFC<Props> = ({ name }) => {
   const [image, setImage] = useState()
+  const slug = name.toLowerCase()
 
   useEffect(() => {
     async function getMarkdown() {

@@ -3,6 +3,7 @@ import ProviderCard from 'src/components/ProviderCard'
 import { useAuth as useFirebaseAuth } from 'src/firebaseAuth'
 import { useAuth as useNetlifyAuth } from 'src/netlifyAuth'
 import { useAuth as useSupabaseAuth } from 'src/supabaseAuth'
+import { useAuth as useSupertokensAuth } from 'src/supertokensAuth'
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
         <ProviderCard name="Firebase" useAuth={useFirebaseAuth} />
         <ProviderCard name="Netlify" useAuth={useNetlifyAuth} />
         <ProviderCard name="Supabase" useAuth={useSupabaseAuth} />
+        <ProviderCard name="SuperTokens" useAuth={useSupertokensAuth} />
       </div>
     </div>
   )

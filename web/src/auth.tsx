@@ -5,6 +5,7 @@ import {
   useAuth as useNetlifyAuth,
 } from './netlifyAuth'
 import { AuthProvider as SupabaseAuthProvider } from './supabaseAuth'
+import { AuthProvider as SupertokensAuthProvider } from './supertokensAuth'
 
 interface Props {
   children: React.ReactNode
@@ -15,7 +16,9 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
     <NetlifyAuthProvider>
       <Auth0AuthProvider>
         <SupabaseAuthProvider>
-          <FirebaseAuthProvider>{children}</FirebaseAuthProvider>
+          <FirebaseAuthProvider>
+            <SupertokensAuthProvider>{children}</SupertokensAuthProvider>
+          </FirebaseAuthProvider>
         </SupabaseAuthProvider>
       </Auth0AuthProvider>
     </NetlifyAuthProvider>

@@ -47,7 +47,7 @@ const ProviderCard: React.VFC<Props> = ({ useAuth, name }) => {
         )}
       </div>
       <div className="flex items-center justify-center text-xl font-semibold max-h-10 max-w-xl w-full h-full">
-        <ProviderImage slug={slug} name={name} />
+        <ProviderImage name={name} />
       </div>
     </Link>
   )

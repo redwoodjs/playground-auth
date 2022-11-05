@@ -7,6 +7,6 @@
     "@redwoodjs/api": "^4.0.0-canary.172",
     "@redwoodjs/auth-providers-api": "^4.0.0-canary.172",
     "firebase-admin": "^11.2.0",
-    "supertokens-node": "^11.0.1"
+    "supertokens-node": "11.0.1"
   }
 }

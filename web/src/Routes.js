@@ -2,13 +2,14 @@ import SuperTokens from 'supertokens-auth-react'
 
 import { Router, Route, Set } from '@redwoodjs/router'
 
-import { initializeSuperTokens } from 'src/components/SuperTokens'
+// TODO: Remove, and also remove the actual function
+// import { initializeSuperTokens } from 'src/components/SuperTokens'
 import AppLayout from 'src/layouts/AppLayout'
 
 import { useAuth } from './auth'
 
 const Routes = () => {
-  initializeSuperTokens()
+  // initializeSuperTokens()
 
   if (SuperTokens.canHandleRoute()) {
     return SuperTokens.getRoutingComponent()

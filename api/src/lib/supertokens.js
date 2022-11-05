@@ -1,9 +1,9 @@
+import * as Sessions from 'supertokens-node/recipe/session'
 import ThirdPartyEmailPassword, {
   Google,
   Github,
   Apple,
 } from 'supertokens-node/recipe/thirdpartyemailpassword'
-import * as Sessions from 'supertokens-node/recipe/session'
 
 /**
  * apiDomain setting
@@ -61,11 +61,11 @@ const jwksIssuerUrl = process.env.NETLIFY
   ? { issuer: `${apiDomain}${apiBasePath}` }
   : {}
 
-// console.log(apiDomain, '>>> SuperTokens apiDomain')
-// console.log(websiteDomain, '>>> SuperTokens websiteDomain')
-// console.log(apiBasePath, '>>> SuperTokens apiBasePath')
-// console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
-// console.log(jwksIssuerUrl, '>>> SuperTokens jwksIssuerUrl ')
+console.log(apiDomain, '>>> SuperTokens apiDomain')
+console.log(websiteDomain, '>>> SuperTokens websiteDomain')
+console.log(apiBasePath, '>>> SuperTokens apiBasePath')
+console.log(process.env.CONTEXT, '>>> Netlify process.env.CONTEXT ')
+console.log(jwksIssuerUrl, '>>> SuperTokens jwksIssuerUrl ')
 
 export const config = {
   framework: 'awsLambda',
@@ -73,7 +73,7 @@ export const config = {
   appInfo: {
     apiDomain,
     websiteDomain,
-    appName: 'SuperTokens RedwoodJS',
+    appName: 'SuperTokens Test',
     websiteBasePath: '/supertokens',
     apiBasePath,
   },

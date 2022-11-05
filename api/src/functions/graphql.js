@@ -1,3 +1,4 @@
+import { supertokensAuthDecoder } from '@redwoodjs/auth-providers-api'
 import {
   firebaseAuthDecoder,
   supabaseAuthDecoder,
@@ -15,8 +16,6 @@ import { getCurrentUser } from 'src/lib/auth'
 import { logger } from 'src/lib/logger'
 
 const authDecoder = (token, type, req) => {
-  console.log('authDecoder', token, type, req)
-
   switch (type) {
     case 'auth0':
       return auth0AuthDecoder(token, type, req)
@@ -26,6 +25,8 @@ const authDecoder = (token, type, req) => {
       return firebaseAuthDecoder(token, type, req)
     case 'supabase':
       return supabaseAuthDecoder(token, type, req)
+    case 'supertokens':
+      return supertokensAuthDecoder(token, type, req)
   }
 
   throw new Error(type + ' is not a supported auth type')

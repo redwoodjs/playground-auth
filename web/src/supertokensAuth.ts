@@ -1,18 +1,19 @@
 import SuperTokens from 'supertokens-auth-react'
 import Session from 'supertokens-auth-react/recipe/session'
-import Sessions from 'supertokens-auth-react/recipe/session'
 import ThirdPartyEmailPassword, {
   Github,
   Google,
   Apple,
-  SignInAndUp,
 } from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
 
-import { RedwoodApolloProvider } from '@redwoodjs/web/dist/apollo'
+import { createSuperTokensAuth } from '@redwoodjs/auth-providers-web'
+import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 
-import { useAuth } from 'src/supertokensAuth'
-
-import UserTools from '../UserTools/UserTools'
+// const websiteDomain =
+//   process.env.SUPERTOKENS_WEBSITE_DOMAIN || 'http://localhost:8910'
+// const apiDomain =
+//   process.env.SUPERTOKENS_API_DOMAIN ||
+//   `${websiteDomain}${process.env.RWJS_API_URL}`
 
 /**
  * apiDomain setting
@@ -37,31 +38,34 @@ const websiteDomain =
 /**
  * apiBasePath setting
  *
- * Handles local dev as well as Netlify environment settings
- *
- * When deployed to Netlify, the apiBasePath needs the gateway path for the functions directory
+ * Handles local dev as well as Netlify environment settings. When deployed to
+ * Netlify, the apiBasePath needs the gateway path for the functions directory
  */
 const apiBasePath = process.env.NETLIFY
   ? `${process.env.SUPERTOKENS_API_GATEWAY_PATH}/auth`
   : '/auth'
 
-export const initializeSuperTokens = () => {
-  console.log(process.env.CONTEXT, '<<< process.env.CONTEXT')
-  console.log(apiDomain, '<<< apiDomain')
-  console.log(websiteDomain, '<<< websiteDomain')
-  console.log(apiBasePath, '<<< apiBasePath')
+console.log(process.env.CONTEXT, '<<< process.env.CONTEXT')
+console.log(apiDomain, '<<< apiDomain')
+console.log(websiteDomain, '<<< websiteDomain')
+console.log(apiBasePath, '<<< apiBasePath')
 
+const superTokensClient = {
+  authRecipe: ThirdPartyEmailPassword,
+  sessionRecipe: Session,
+}
+
+isBrowser &&
   SuperTokens.init({
     appInfo: {
       apiDomain,
       websiteDomain,
-      apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
       appName: 'SuperTokens RedwoodJS',
       websiteBasePath: '/supertokens',
-      apiBasePath,
+      apiBasePath: '/auth',
     },
     recipeList: [
-      Sessions.init(),
+      Session.init(),
       ThirdPartyEmailPassword.init({
         style: {
           button: {
@@ -92,31 +96,6 @@ export const initializeSuperTokens = () => {
       }),
     ],
   })
-}
 
-export const SuperTokensClient = {
-  authRecipe: ThirdPartyEmailPassword,
-  sessionRecipe: Session,
-}
-
-const Content = () => {
-  const { isAuthenticated, loading } = useAuth()
-
-  if (loading) {
-    return <div className="p-4 text-lg">Loading profile ...</div>
-  }
-
-  if (isAuthenticated) {
-    return <UserTools useAuth={useAuth} />
-  }
-
-  return <SignInAndUp />
-}
-
-export default () => {
-  return (
-    <RedwoodApolloProvider useAuth={useAuth}>
-      <Content />
-    </RedwoodApolloProvider>
-  )
-}
+export const { AuthProvider, useAuth } =
+  createSuperTokensAuth(superTokensClient)

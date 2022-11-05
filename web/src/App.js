@@ -5,6 +5,7 @@ import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
 import { AuthProvider } from './auth'
+
 import './index.css'
 import 'highlight.js/styles/atom-one-dark.css'
 

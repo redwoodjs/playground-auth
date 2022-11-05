@@ -3322,9 +3322,9 @@
     uuid "9.0.0"
 
 "@redwoodjs/auth-providers-api@^4.0.0-canary.172":
-  version "4.0.0-canary.172"
-  resolved "https://registry.yarnpkg.com/@redwoodjs/auth-providers-api/-/auth-providers-api-4.0.0-canary.172.tgz#6d28809a165e436f180008a4ed3333c776b5073b"
-  integrity sha512-W5Zrqq6DvFks6npYmocjUdsyEbmcQFeo4AJPjjP/VY78ZO8hiCwY+VDjnkbWoEjvsmlmCsLEq9uBnZCVRQOTsg==
+  version "4.0.0-canary.174"
+  resolved "https://registry.yarnpkg.com/@redwoodjs/auth-providers-api/-/auth-providers-api-4.0.0-canary.174.tgz#fe5ca237f2ed4767c029eefac84d17e547adbcb9"
+  integrity sha512-LIT0ixrLaUYfk0HdD8ZdsdSoCjhF+SQtDGRV+XMr9481F6dMs5hvTdY2d3AJH/PI/NNnhI5tJrW+L/hJBWhF7Q==
   dependencies:
     "@babel/runtime-corejs3" "7.19.4"
     core-js "3.25.5"
@@ -3342,7 +3342,7 @@
     core-js "3.25.5"
     secure-random-password "0.2.3"
 
-"@redwoodjs/auth-providers-web@^4.0.0-canary.172":
+"@redwoodjs/auth-providers-web@4.0.0-canary.172":
   version "4.0.0-canary.172"
   resolved "https://registry.yarnpkg.com/@redwoodjs/auth-providers-web/-/auth-providers-web-4.0.0-canary.172.tgz#f72419e750fca1f21760e18c9c476863f14de10a"
   integrity sha512-Pmk45duphTaWbdD06CCa59Ip6DHG+VD8iX6OPl4NgrDdvgN/pw4T0d5Se7RGCGPwBK+sfupOFZ4MR4iCFlZQOg==
@@ -3351,7 +3351,7 @@
     core-js "3.25.5"
     uuid "9.0.0"
 
-"@redwoodjs/auth@^4.0.0-canary.172", "@redwoodjs/auth@^4.0.0-canary.172+45ffcefc2":
+"@redwoodjs/auth@4.0.0-canary.172", "@redwoodjs/auth@^4.0.0-canary.172+45ffcefc2":
   version "4.0.0-canary.172"
   resolved "https://registry.yarnpkg.com/@redwoodjs/auth/-/auth-4.0.0-canary.172.tgz#184903715f56696416a5dc1ac5db732fad10a637"
   integrity sha512-QNMVessEyP+Ekp5Vwvc4rwLKjAYmoCYIB4+GAsGyt5Wl5eZ8UXZSQdmoDLSbe+ewppriKfrHXPeLewCGndoxqw==
@@ -17997,10 +17997,10 @@ stylis@4.0.13, stylis@^4.0.6:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.13.tgz#f5db332e376d13cc84ecfe5dace9a2a51d954c91"
   integrity sha512-xGPXiFVl4YED9Jh7Euv2V220mriG9u4B2TA6Ybjc1catrstKD2PpIdU3U0RKpkVBC2EhmL/F0sPCr9vrFTNRag==
 
-supertokens-auth-react@^0.24.1:
-  version "0.24.1"
-  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.24.1.tgz#84c1a7919b3a2063ac8c7920d73c30190622a5cd"
-  integrity sha512-lUNAO4x00W3f8oZdv5SnAacJjUjTy2/3bTawZgCVO0yu3z0CIsWsknfOuLkD9ONkT8b1P7x+j+LKFZlek820Iw==
+supertokens-auth-react@0.24.8:
+  version "0.24.8"
+  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.24.8.tgz#92e8e61aa06c66f9a71a27ee1efadff4f2da93c2"
+  integrity sha512-7Jl/Y0b+RJemj24fc+a+RzHILj6eEwyF76NS5BkIwTKS4yotaMdDCh/g3yNDHFuZXpoOa9jyq8o+DUqkZ+73jw==
   dependencies:
     "@emotion/react" "^11.4.1"
     chroma-js "2.1.2"
@@ -18017,7 +18017,7 @@ supertokens-js-override@0.0.4, supertokens-js-override@^0.0.4:
   resolved "https://registry.yarnpkg.com/supertokens-js-override/-/supertokens-js-override-0.0.4.tgz#9af583fbc5e1f0195dbb358c4fcf75f44c76dc09"
   integrity sha512-r0JFBjkMIdep3Lbk3JA+MpnpuOtw4RSyrlRAbrzMcxwiYco3GFWl/daimQZ5b1forOiUODpOlXbSOljP/oyurg==
 
-supertokens-node@^11.0.1:
+supertokens-node@11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/supertokens-node/-/supertokens-node-11.0.1.tgz#a8c91a8394596a6102c54f1f6bf3e8ecc1fba598"
   integrity sha512-zGeaRENb0x1AgyqwpvMYMbJKd33Hjk0iipS+Qyd6U2LDwjMwQol+BiVSXe9KUz2Vh4Utush2nqhFtxAWV9Bk+g==
@@ -18037,17 +18037,17 @@ supertokens-node@^11.0.1:
     verify-apple-id-token "^2.1.0"
 
 supertokens-web-js@^0.1.2:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/supertokens-web-js/-/supertokens-web-js-0.1.3.tgz#6ccd08e0fddfd8e6383f095e8ea16835a9571f9d"
-  integrity sha512-H+UkgdrsKO10gmxQJ4JlCb7mfNede/V2O2dpVNcIWkAwFHtm9rneWR/N4RSmunvl+5KDmQxM31lovtmLr5EeAQ==
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/supertokens-web-js/-/supertokens-web-js-0.1.6.tgz#81165f9f7604518db05088a8a527c756b3b48178"
+  integrity sha512-Cyu97r6tRJc4ryiKhOqYlqYQ+1XB5x5rJfMudg0kgANu7bvNMo39mI4KAb4eLaXQfXAPQ6Y/As+uqUVP7gbKDw==
   dependencies:
     supertokens-js-override "0.0.4"
-    supertokens-website "^13.0.0"
+    supertokens-website "^13.0.2"
 
-supertokens-website@^13.0.0:
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-13.0.1.tgz#0e4227abbc155a4586b3b4eac376e4eb5d0c3667"
-  integrity sha512-lH/pTFn/SHRNvGYgDtApnquUz9+QvirYP+OWBFS7aXvJB3xNr90E0KfEiB+PwN4zzhAm78mnKbCUM7KKgeeKJg==
+supertokens-website@^13.0.2:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-13.1.1.tgz#5901cb15a06e956da1da373e4ea119f732a4d232"
+  integrity sha512-gnIBGyoq7Tx+eHGNajcso0UNxOBuOKr1EqIgQuoiBVQV/9b9SPBmtGtQh8Mv9e+Ivtr/G2OTE9RQ4iZOSOO/2Q==
   dependencies:
     browser-tabs-lock "^1.2.14"
     supertokens-js-override "^0.0.4"
