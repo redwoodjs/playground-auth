@@ -9,8 +9,6 @@ import AppLayout from 'src/layouts/AppLayout'
 import { useAuth } from './auth'
 
 const Routes = () => {
-  // initializeSuperTokens()
-
   if (SuperTokens.canHandleRoute()) {
     return SuperTokens.getRoutingComponent()
   }

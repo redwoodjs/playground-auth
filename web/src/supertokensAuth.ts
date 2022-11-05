@@ -62,7 +62,7 @@ isBrowser &&
       websiteDomain,
       appName: 'SuperTokens RedwoodJS',
       websiteBasePath: '/supertokens',
-      apiBasePath: '/auth',
+      apiBasePath: '/.netlify/functions/auth',
     },
     recipeList: [
       Session.init(),

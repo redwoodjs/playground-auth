@@ -45,60 +45,6 @@ const apiBasePath = process.env.NETLIFY
   ? `${process.env.SUPERTOKENS_API_GATEWAY_PATH}/auth`
   : '/auth'
 
-export const initializeSuperTokens = () => {
-  console.log(process.env.CONTEXT, '<<< process.env.CONTEXT')
-  console.log(apiDomain, '<<< apiDomain')
-  console.log(websiteDomain, '<<< websiteDomain')
-  console.log(apiBasePath, '<<< apiBasePath')
-
-  SuperTokens.init({
-    appInfo: {
-      apiDomain,
-      websiteDomain,
-      apiGatewayPath: process.env.SUPERTOKENS_API_GATEWAY_PATH,
-      appName: 'SuperTokens RedwoodJS',
-      websiteBasePath: '/supertokens',
-      apiBasePath,
-    },
-    recipeList: [
-      Sessions.init(),
-      ThirdPartyEmailPassword.init({
-        style: {
-          button: {
-            backgroundColor: 'rgb(191 71 34)',
-            borderColor: 'rgb(191 71 34)',
-          },
-        },
-        getRedirectionURL: async (context) => {
-          if (context.action === 'SUCCESS') {
-            if (context.redirectToPath !== undefined) {
-              // we are navigating back to where the user was before they authenticated
-              return context.redirectToPath
-            }
-            return '/supertokens'
-          }
-          return undefined
-        },
-        signInAndUpFeature: {
-          disableDefaultUI: true,
-          style: {
-            container: {
-              width: 'auto !important',
-              boxShadow: 'none',
-            },
-          },
-          providers: [Github.init(), Google.init(), Apple.init()],
-        },
-      }),
-    ],
-  })
-}
-
-export const SuperTokensClient = {
-  authRecipe: ThirdPartyEmailPassword,
-  sessionRecipe: Session,
-}
-
 const Content = () => {
   const { isAuthenticated, loading } = useAuth()
 
@@ -114,8 +60,17 @@ const Content = () => {
 }
 
 export default () => {
+  const { logIn } = useAuth()
+
   return (
     <RedwoodApolloProvider useAuth={useAuth}>
+      <button
+        onClick={() => {
+          logIn()
+        }}
+      >
+        LogIn
+      </button>
       <Content />
     </RedwoodApolloProvider>
   )
