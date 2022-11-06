@@ -34,7 +34,7 @@ const websiteDomain =
  */
 const apiBasePath = process.env.NETLIFY
   ? `${process.env.SUPERTOKENS_API_GATEWAY_PATH}/auth`
-  : '.netlify/functions/auth'
+  : '/auth'
 
 /**
  * jwksIssuerUrl setting

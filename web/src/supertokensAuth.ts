@@ -79,8 +79,10 @@ isBrowser &&
               // we are navigating back to where the user was before they authenticated
               return context.redirectToPath
             }
+
             return '/supertokens'
           }
+
           return undefined
         },
         signInAndUpFeature: {
