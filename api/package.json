@@ -4,8 +4,9 @@
   "private": true,
   "dependencies": {
     "@clerk/clerk-sdk-node": "^2.9.0",
-    "@redwoodjs/api": "^3.2.1",
+    "@redwoodjs/api": "^4.0.0-canary.172",
+    "@redwoodjs/auth-providers-api": "^4.0.0-canary.172",
     "firebase-admin": "^11.2.0",
-    "supertokens-node": "^11.0.1"
+    "supertokens-node": "11.0.1"
   }
 }

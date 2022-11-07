@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { useAuth } from '@redwoodjs/auth'
-
-export default () => {
+export default ({ useAuth }) => {
   const { type, userMetadata, currentUser, isAuthenticated } = useAuth()
   const typeOk = type && type === currentUser?.type
   const emailOk = /^[\w+]+@\w+.*\.\w\w+$/.test(userMetadata?.email)

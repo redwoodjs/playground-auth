@@ -1,10 +1,13 @@
 import { useState } from 'react'
+
+import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
+
 import { navigate, routes } from '@redwoodjs/router'
-import { providers } from 'src/lib/providers'
+import { MetaTags } from '@redwoodjs/web'
+
 import CodeSample from 'src/components/CodeSample'
 import ProviderImage from 'src/components/ProviderImage'
-import { MetaTags } from '@redwoodjs/web'
-import { CodeIcon, EyeIcon } from '@heroicons/react/outline'
+import { providers } from 'src/lib/providers'
 
 const tabs = [
   { name: 'Demo', slug: 'demo', icon: <EyeIcon /> },
@@ -85,7 +88,7 @@ const ProviderPage = ({ provider }) => {
       >
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <div className="flex justify-center text-2xl font-medium max-h-8 max-w-sm mx-auto w-full h-full mb-3">
-            <ProviderImage provider={currentProvider} />
+            <ProviderImage name={currentProvider.name} />
           </div>
 
           {viewTab === 'demo' &&

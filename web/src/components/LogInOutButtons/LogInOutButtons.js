@@ -1,6 +1,9 @@
-import { useAuth } from '@redwoodjs/auth'
-
-const LogInOutButtons = ({ logInOptions, logOutOptions, signUpOptions }) => {
+const LogInOutButtons = ({
+  useAuth,
+  logInOptions,
+  logOutOptions,
+  signUpOptions,
+}) => {
   const { logIn, logOut, signUp, isAuthenticated } = useAuth()
 
   return (

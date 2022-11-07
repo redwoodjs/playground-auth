@@ -1,19 +1,20 @@
-import { Router, Route, Set } from '@redwoodjs/router'
-import AppLayout from 'src/layouts/AppLayout'
-
 import SuperTokens from 'supertokens-auth-react'
 
-import { initializeSuperTokens } from 'src/components/SuperTokens'
+import { Router, Route, Set } from '@redwoodjs/router'
+
+// TODO: Remove, and also remove the actual function
+// import { initializeSuperTokens } from 'src/components/SuperTokens'
+import AppLayout from 'src/layouts/AppLayout'
+
+import { useAuth } from './auth'
 
 const Routes = () => {
-  initializeSuperTokens()
-
   if (SuperTokens.canHandleRoute()) {
     return SuperTokens.getRoutingComponent()
   }
 
   return (
-    <Router>
+    <Router useAuth={useAuth}>
       <Set wrap={AppLayout}>
         <Route
           path="/supabase/welcome"

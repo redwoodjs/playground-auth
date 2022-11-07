@@ -1,6 +1,4 @@
-import { useAuth } from '@redwoodjs/auth'
-
-const Badge = () => {
+const Badge = ({ useAuth }) => {
   const { isAuthenticated } = useAuth()
 
   return (

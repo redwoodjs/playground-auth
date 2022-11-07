@@ -1,21 +1,21 @@
-import Auth0, { auth0Client } from 'src/components/Auth0'
+import netlifyIdentity from 'netlify-identity-widget'
+
+import Auth0 from 'src/components/Auth0'
 import AzureActiveDirectory, {
   azureActiveDirectoryClient,
 } from 'src/components/AzureActiveDirectory'
 import Clerk, { clerkClient } from 'src/components/Clerk'
-import Netlify from 'src/components/Netlify'
-import netlifyIdentity from 'netlify-identity-widget'
+import Firebase from 'src/components/Firebase'
 import MagicLink, { magicLinkClient } from 'src/components/MagicLink'
-import Firebase, { firebaseClient } from 'src/components/Firebase'
-import Supabase, { supabaseClient } from 'src/components/Supabase'
+import Netlify from 'src/components/Netlify'
 import Nhost, { nhostClient } from 'src/components/Nhost'
-import SuperTokens, {SuperTokensClient} from 'src/components/SuperTokens'
+import Supabase, { supabaseClient } from 'src/components/Supabase'
+import SuperTokens from 'src/components/SuperTokens'
 
 export const providers = [
   {
     name: 'Auth0',
     slug: 'auth0',
-    client: auth0Client,
     component: <Auth0 />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#auth0',
   },
@@ -51,7 +51,6 @@ export const providers = [
   {
     name: 'Firebase',
     slug: 'firebase',
-    client: firebaseClient,
     component: <Firebase />,
     docsUrl: 'https://redwoodjs.com/docs/authentication#firebase',
   },
@@ -77,7 +76,6 @@ export const providers = [
   {
     name: 'SuperTokens',
     slug: 'supertokens',
-    client: SuperTokensClient,
-    component: <SuperTokens />
-  }
+    component: <SuperTokens />,
+  },
 ]

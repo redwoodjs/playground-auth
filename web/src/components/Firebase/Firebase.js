@@ -1,35 +1,14 @@
-import { AuthProvider, useAuth } from '@redwoodjs/auth'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-import { initializeApp, getApp, getApps } from 'firebase/app'
-import * as firebaseAuth from '@firebase/auth'
 import { useState } from 'react'
 
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+
 import AuthResults from 'src/components/AuthResults'
+import Badge from 'src/components/Badge'
 import LogInOutButtons from 'src/components/LogInOutButtons/LogInOutButtons'
 import PollCurrentVersionCell from 'src/components/PollCurrentVersionCell'
-import Badge from 'src/components/Badge'
+import { useAuth } from 'src/firebaseAuth'
 
-const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  appId: process.env.FIREBASE_APP_ID,
-}
-
-const firebaseApp = ((config) => {
-  const apps = getApps()
-  if (!apps.length) {
-    initializeApp(config)
-  }
-  return getApp()
-})(firebaseConfig)
-
-export const firebaseClient = {
-  firebaseAuth,
-  firebaseApp,
-}
-
-const FirebaseUserTools = () => {
+const FirebaseUserTools = ({ useAuth }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [provider, setProvider] = useState('google.com')
@@ -38,7 +17,7 @@ const FirebaseUserTools = () => {
 
   return (
     <div>
-      <Badge />
+      <Badge useAuth={useAuth} />
       <label htmlFor="provider" style={{ display: 'block', marginTop: 10 }}>
         Provider
       </label>
@@ -63,7 +42,11 @@ const FirebaseUserTools = () => {
       </select>
 
       {provider !== 'password' ? (
-        <LogInOutButtons logInOptions={provider} signUpOptions={provider} />
+        <LogInOutButtons
+          useAuth={useAuth}
+          logInOptions={provider}
+          signUpOptions={provider}
+        />
       ) : (
         <>
           {isAuthenticated ? (
@@ -109,18 +92,15 @@ const FirebaseUserTools = () => {
       <br />
       {isAuthenticated && <PollCurrentVersionCell />}
 
-      <AuthResults />
+      <AuthResults useAuth={useAuth} />
     </div>
   )
 }
 
-export default (props) => {
+export default () => {
   return (
-    // Alternatively can add prop skipFetchCurrentUser instead of setting up firebase-admin app in api/lib/auth.js
-    <AuthProvider client={firebaseClient} type="firebase" {...props}>
-      <RedwoodApolloProvider>
-        <FirebaseUserTools />
-      </RedwoodApolloProvider>
-    </AuthProvider>
+    <RedwoodApolloProvider useAuth={useAuth}>
+      <FirebaseUserTools useAuth={useAuth} />
+    </RedwoodApolloProvider>
   )
 }
